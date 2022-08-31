@@ -14,6 +14,17 @@ const styles = css`
 
   body {
     font-family: ${({ theme }) => theme.fonts.poppins};
+    background-color: ${({ theme }) => theme.colors.dark[900]};
+    color: ${({ theme }) => theme.colors.light[100]};
+  }
+
+  #__next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    height: 100vh;
   }
 `
 
