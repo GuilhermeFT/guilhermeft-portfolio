@@ -15,6 +15,8 @@ const MainLayout = ({ children }: MainLayoutProps) => {
       <Header />
       <S.ContentWrapper>{children}</S.ContentWrapper>
       <Footer />
+
+      <S.AssetShadow />
     </S.Wrapper>
   )
 }

@@ -9,7 +9,12 @@ const styles = css`
   }
 
   html {
-    font-size: 62.5%;
+    font-size: 56.25%;
+    transition: font-size 0.2s;
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.maxMobile}) {
+      font-size: 62.5%;
+    }
   }
 
   body {
@@ -19,7 +24,11 @@ const styles = css`
   }
 
   a {
-    text-decoration: none;
+    color: inherit;
+  }
+
+  .Typewriter__cursor {
+    background: ${({ theme }) => theme.colors.violet[100]};
   }
 `
 

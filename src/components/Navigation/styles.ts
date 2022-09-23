@@ -19,8 +19,6 @@ export const ListWrapper = styled.ul`
   justify-content: space-between;
 `
 
-export const StyledLink = styled.a``
-
 export const ListItemWrapper = styled.li<ListItemWrapperProps>`
   position: relative;
   font-size: 1.6rem;
@@ -30,6 +28,7 @@ export const ListItemWrapper = styled.li<ListItemWrapperProps>`
   padding: 0.4rem 1rem;
 
   a {
+    text-decoration: none;
     transition: all 0.2s;
     color: ${({ isActive, theme }) =>
       isActive ? theme.colors.light[100] : theme.colors.dark[100]};

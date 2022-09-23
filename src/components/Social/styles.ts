@@ -21,6 +21,7 @@ export const StyledSpan = styled.span`
 `
 
 export const StyledAnchor = styled.a`
+  text-decoration: none;
   position: relative;
   display: flex;
   flex-direction: column;
