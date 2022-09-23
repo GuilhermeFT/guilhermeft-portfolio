@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import * as S from './styles'
 
 import Logo from '@/assets/logo.svg'
+import Navigation from '@/components/Navigation'
+
+import * as S from './styles'
 
 const Header = () => {
   return (
@@ -12,6 +14,8 @@ const Header = () => {
           <Image src={Logo} alt="Guilherme FT | Logotipo" />
         </S.Logo>
       </Link>
+
+      <Navigation />
     </S.HeaderWrapper>
   )
 }

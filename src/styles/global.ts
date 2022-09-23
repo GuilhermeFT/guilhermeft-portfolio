@@ -18,13 +18,8 @@ const styles = css`
     color: ${({ theme }) => theme.colors.light[100]};
   }
 
-  #__next {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    height: 100vh;
+  a {
+    text-decoration: none;
   }
 `
 
