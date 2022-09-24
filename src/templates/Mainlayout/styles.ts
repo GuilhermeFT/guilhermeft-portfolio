@@ -5,9 +5,11 @@ export const Wrapper = styled.div`
 
   display: flex;
   flex-direction: column;
+  gap: 5.2rem;
 `
 
 export const ContentWrapper = styled.main`
+  padding: 0 1rem;
   margin: auto;
   flex: 1;
   width: 100%;

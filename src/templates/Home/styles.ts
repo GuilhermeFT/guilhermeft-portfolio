@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   margin: auto;
-  padding: 1rem;
 
   display: flex;
   gap: 0.1rem;
@@ -13,7 +12,7 @@ export const Wrapper = styled.div`
   }
 `
 
-export const Name = styled.div`
+export const Title = styled.div`
   font-size: 3.8rem;
   font-weight: 700;
 
@@ -38,6 +37,7 @@ export const Paragraph = styled.p`
 `
 
 export const Description = styled.p`
+  text-align: justify;
   font-size: 1.8rem;
   color: ${({ theme }) => theme.colors.dark[100]};
 `

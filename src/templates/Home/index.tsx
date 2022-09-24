@@ -7,13 +7,13 @@ import * as S from './styles'
 const HomePage = () => {
   return (
     <S.Wrapper>
-      <S.Name>
+      <S.Title>
         <Typewriter
           onInit={(typewriter) => {
             typewriter.typeString('Guilherme FT').start()
           }}
         />
-      </S.Name>
+      </S.Title>
 
       <S.Paragraph>
         Front-end Developer | Dev-leader at{' '}
@@ -21,7 +21,7 @@ const HomePage = () => {
       </S.Paragraph>
 
       <S.Description>
-        A Software Engineer student focused in developthe best solutions and
+        A Software Engineer student focused in develop the best solutions and
         manage teams.
       </S.Description>
     </S.Wrapper>

@@ -10,7 +10,7 @@ const About: NextPage = () => {
         <title>Guilherme FT | About</title>
       </Head>
 
-      <h1>about</h1>
+      <AboutPage />
     </>
   )
 }
