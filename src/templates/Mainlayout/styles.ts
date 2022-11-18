@@ -20,7 +20,7 @@ export const ContentWrapper = styled.main`
 `
 
 export const AssetShadow = styled.span`
-  z-index: 0;
+  z-index: -1;
   top: 100%;
   left: 100%;
   position: fixed;

@@ -34,10 +34,14 @@ export const Title = styled.div`
 export const Paragraph = styled.p`
   font-size: 2.2rem;
   color: ${({ theme }) => theme.colors.light[100]};
+
+  animation: 2s lineUp ease-out;
 `
 
 export const Description = styled.p`
   text-align: justify;
   font-size: 1.8rem;
   color: ${({ theme }) => theme.colors.dark[100]};
+
+  animation: 2s lineUp ease-out;
 `

@@ -30,6 +30,24 @@ const styles = css`
   .Typewriter__cursor {
     background: ${({ theme }) => theme.colors.violet[100]};
   }
+
+  @keyframes lineUp {
+    0% {
+      opacity: 0;
+      transform: translateY(80%);
+    }
+    20% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
 `
 
 const GlobalStyles = createGlobalStyle`${styles}`

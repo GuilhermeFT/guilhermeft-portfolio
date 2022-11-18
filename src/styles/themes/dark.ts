@@ -28,6 +28,6 @@ export const darkTheme = {
 
   breakpoints: {
     maxMobile: '76.8rem',
-    maxContent: '120rem'
+    maxContent: '117rem'
   }
 }

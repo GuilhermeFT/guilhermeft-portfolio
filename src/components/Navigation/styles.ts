@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 interface ListItemWrapperProps {
   isActive?: boolean
+  isDisabled?: boolean
 }
 
 export const NavigationWrapper = styled.nav`
@@ -11,7 +12,7 @@ export const NavigationWrapper = styled.nav`
 
 export const ListWrapper = styled.ul`
   width: 100%;
-  max-width: 29.8rem;
+  max-width: 32.8rem;
   list-style-type: none;
 
   display: flex;
@@ -27,14 +28,17 @@ export const ListItemWrapper = styled.li<ListItemWrapperProps>`
   justify-content: center;
   padding: 0.4rem 1rem;
 
+  cursor: ${({ isDisabled }) => (isDisabled ? 'not-allowed' : 'pointer')};
+  color: ${({ isActive, theme }) =>
+    isActive ? theme.colors.light[100] : theme.colors.dark[100]};
+
   a {
     text-decoration: none;
     transition: all 0.2s;
-    color: ${({ isActive, theme }) =>
-      isActive ? theme.colors.light[100] : theme.colors.dark[100]};
 
     :hover {
-      color: ${({ theme }) => theme.colors.light[100]};
+      color: ${({ theme, isDisabled }) =>
+        !isDisabled && theme.colors.light[100]};
     }
   }
 
@@ -50,8 +54,8 @@ export const ListItemWrapper = styled.li<ListItemWrapperProps>`
         bottom: 0;
 
         width: 2rem;
-        height: 0.2rem;
-        border-radius: 100%;
+        height: 0.3rem;
+        border-radius: 10rem;
         position: absolute;
         background-color: ${({ theme }) => theme.colors.light[100]};
       }

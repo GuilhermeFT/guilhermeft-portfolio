@@ -29,4 +29,11 @@ export const Description = styled.p`
   text-align: justify;
   font-size: 1.8rem;
   color: ${({ theme }) => theme.colors.dark[100]};
+
+  animation: 2s lineUp ease-out;
+`
+
+export const AboutFooter = styled.div`
+  flex: 1;
+  padding: 12.8rem 0;
 `

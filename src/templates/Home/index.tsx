@@ -16,13 +16,13 @@ const HomePage = () => {
       </S.Title>
 
       <S.Paragraph>
-        Front-end Developer | Dev-leader at{' '}
+        Desenvolvedor front-end | Líder de desenvolvimento na{' '}
         <Link href="https://www.fuerzastudio.com.br/">Fuerza Studio</Link>.
       </S.Paragraph>
 
       <S.Description>
-        A Software Engineer student focused in develop the best solutions and
-        manage teams.
+        Estudante de Engenharia de Software focado em desenvolver as melhores
+        soluções e gerenciar equipes.
       </S.Description>
     </S.Wrapper>
   )
