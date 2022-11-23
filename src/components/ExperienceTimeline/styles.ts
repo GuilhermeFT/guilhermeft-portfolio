@@ -18,7 +18,7 @@ export const TitleTimeline = styled.h2`
   font-size: 2.2rem;
 `
 export const CompanyList = styled.ul`
-  gap: 1rem;
+  gap: 2rem;
   display: flex;
   flex-direction: column;
 

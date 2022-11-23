@@ -12,7 +12,7 @@ export const NavigationWrapper = styled.nav`
 
 export const ListWrapper = styled.ul`
   width: 100%;
-  max-width: 32.8rem;
+  max-width: 29.8rem;
   list-style-type: none;
 
   display: flex;

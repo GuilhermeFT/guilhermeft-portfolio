@@ -8,21 +8,21 @@ const Navigation = () => {
 
   const pages = [
     {
-      pageName: 'Sobre',
+      pageName: 'About',
       pagePath: '/about'
     },
     {
-      pageName: 'Projetos',
+      pageName: 'Projects',
       pagePath: '/projects'
     },
     {
-      pageName: 'Contato',
+      pageName: 'Contact',
       pagePath: '/contact'
-    },
+    } /* ,
     {
       pageName: 'Blog',
       pagePath: '/blog'
-    }
+    } */
   ]
 
   return (
