@@ -11,7 +11,8 @@ export const NavigationWrapper = styled.nav`
 `
 
 export const ListWrapper = styled.ul`
-  width: 100%;
+  gap: 3.2rem;
+  width: auto;
   max-width: 29.8rem;
   list-style-type: none;
 

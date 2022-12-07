@@ -8,17 +8,21 @@ const Navigation = () => {
 
   const pages = [
     {
+      pageName: 'Home',
+      pagePath: '/'
+    },
+    {
       pageName: 'About',
       pagePath: '/about'
     },
     {
       pageName: 'Projects',
       pagePath: '/projects'
-    },
+    } /*,
     {
       pageName: 'Contact',
       pagePath: '/contact'
-    } /* ,
+    }  ,
     {
       pageName: 'Blog',
       pagePath: '/blog'

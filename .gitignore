@@ -37,6 +37,5 @@ next-env.d.ts
 
 /customtypes
 /.slicemachine
-sm.json
 .env
 /slices

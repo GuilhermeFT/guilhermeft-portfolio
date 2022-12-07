@@ -27,15 +27,17 @@ const AboutPage = () => {
       <S.Title>
         <Typewriter
           onInit={(typewriter) => {
-            typewriter.typeString('Sobre mim.').start()
+            typewriter.typeString('About me.').start()
           }}
         />
       </S.Title>
 
       <S.Description>
-        Hey, {"I'm"} Guilherme Trindade and {"I'm"} 35 years old. Currently{' '}
-        {"I'm"} studying Software Engineer and I work as Front-end Developer
-        since 2020. Today
+        Hey, {"I'm"} Guilherme Trindade and {"I'm"} 35 years old.
+        <br />
+        <br />
+        Currently {"I'm"} studying Software Engineer and I work as Front-end
+        Developer since 2020. Today
         {" I'm"} working at Fuerza Studio.
         <br />
         As goal I pretender improve my english and learn mobile development,

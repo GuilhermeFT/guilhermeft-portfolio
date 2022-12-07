@@ -48,6 +48,27 @@ const styles = css`
       transform: translateY(0%);
     }
   }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 0.4rem;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.colors.dark[900]};
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10rem;
+    background: ${({ theme }) => theme.colors.violet[200]};
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 `
 
 const GlobalStyles = createGlobalStyle`${styles}`
