@@ -12,7 +12,7 @@ const AboutPage = () => {
       company: 'Fuerza Studio',
       cityState: 'Porto Alegre, RS',
       companyLink: 'https://www.fuerzastudio.com.br/',
-      timeOfJob: 'Out 2021 - o momento'
+      timeOfJob: 'Oct 2021 - the moment'
     },
     {
       company: 'SinalizeWeb® SEO & Performance',

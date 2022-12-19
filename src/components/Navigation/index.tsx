@@ -14,11 +14,11 @@ const Navigation = () => {
     {
       pageName: 'About',
       pagePath: '/about'
-    },
+    } /*,
     {
       pageName: 'Projects',
       pagePath: '/projects'
-    } /*,
+    } ,
     {
       pageName: 'Contact',
       pagePath: '/contact'
