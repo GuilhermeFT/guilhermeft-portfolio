@@ -6,16 +6,25 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
+    "@prismicio/client": "^6.7.1",
+    "@prismicio/helpers": "^2.3.6",
+    "@prismicio/next": "^1.0.2",
+    "@prismicio/react": "^2.5.0",
+    "@prismicio/slice-simulator-react": "^0.2.2",
     "next": "12.2.5",
+    "nextjs-progressbar": "^0.0.14",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "typewriter-effect": "^2.19.0"
   },
   "devDependencies": {
+    "@prismicio/types": "^0.2.4",
     "@types/node": "18.7.14",
     "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
@@ -26,11 +35,13 @@
     "eslint-config-next": "12.2.5",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "2.25.2",
+    "eslint-plugin-import-helpers": "^1.2.1",
     "eslint-plugin-n": "15.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "6.0.0",
     "eslint-plugin-react": "^7.31.1",
     "prettier": "^2.7.1",
+    "slice-machine-ui": "^0.5.2",
     "typescript": "4.8.2"
   }
 }

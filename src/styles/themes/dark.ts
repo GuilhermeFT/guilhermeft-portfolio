@@ -24,5 +24,10 @@ export const darkTheme = {
     poppins: `'Poppins', sans-serif`
   },
 
-  fontSizes: {}
+  fontSizes: {},
+
+  breakpoints: {
+    maxMobile: '76.8rem',
+    maxContent: '117rem'
+  }
 }

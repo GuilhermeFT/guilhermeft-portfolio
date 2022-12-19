@@ -1,6 +1,7 @@
-import HomePage from '@/templates/Home'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+
+import HomePage from '@/templates/Home'
 
 const Home: NextPage = () => {
   return (
@@ -8,7 +9,6 @@ const Home: NextPage = () => {
       <Head>
         <title>Guilherme FT | Home</title>
       </Head>
-
       <HomePage />
     </>
   )

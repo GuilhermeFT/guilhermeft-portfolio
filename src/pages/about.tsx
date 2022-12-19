@@ -1,6 +1,7 @@
-import AboutPage from '@/templates/About'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+
+import AboutPage from '@/templates/About'
 
 const About: NextPage = () => {
   return (

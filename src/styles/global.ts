@@ -9,7 +9,12 @@ const styles = css`
   }
 
   html {
-    font-size: 62.5%;
+    font-size: 56.25%;
+    transition: font-size 0.2s;
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.maxMobile}) {
+      font-size: 62.5%;
+    }
   }
 
   body {
@@ -18,13 +23,51 @@ const styles = css`
     color: ${({ theme }) => theme.colors.light[100]};
   }
 
-  #__next {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  a {
+    color: inherit;
+  }
 
-    height: 100vh;
+  .Typewriter__cursor {
+    background: ${({ theme }) => theme.colors.violet[100]};
+  }
+
+  @keyframes lineUp {
+    0% {
+      opacity: 0;
+      transform: translateY(80%);
+    }
+    20% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 0.4rem;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.colors.dark[900]};
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10rem;
+    background: ${({ theme }) => theme.colors.violet[200]};
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
   }
 `
 
