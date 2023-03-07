@@ -5,7 +5,7 @@ import Header from '@/components/Header'
 
 import * as S from './styles'
 
-interface MainLayoutProps {
+type MainLayoutProps = {
   children: ReactNode
 }
 

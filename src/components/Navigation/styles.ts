@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-interface ListItemWrapperProps {
+type ListItemWrapperProps = {
   isActive?: boolean
   isDisabled?: boolean
 }

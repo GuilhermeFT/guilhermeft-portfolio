@@ -9,6 +9,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Guilherme FT | Home</title>
       </Head>
+
       <HomePage />
     </>
   )
