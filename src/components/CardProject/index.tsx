@@ -6,8 +6,13 @@ type CardProjectProps = {
   url?: string
 }
 
-const CardProject = ({ title }: CardProjectProps) => {
-  return <S.CardProjectWrapper>{title}</S.CardProjectWrapper>
+const CardProject = ({ title, description }: CardProjectProps) => {
+  return (
+    <S.CardProjectWrapper>
+      <S.CardTitle>{title}</S.CardTitle>
+      <S.CardDescription>{description}</S.CardDescription>
+    </S.CardProjectWrapper>
+  )
 }
 
 export default CardProject

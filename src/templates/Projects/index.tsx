@@ -35,7 +35,11 @@ const ProjectsPage = ({ projects }: ProjectsPageProps) => {
           <CardProject key={project.title} title={project.title} />
         ))}
         {projects.map((project) => (
-          <CardProject key={project.title} title={project.title} />
+          <CardProject
+            key={project.title}
+            title={project.title}
+            description="Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/basic-features/fast-refresh#how-it-works"
+          />
         ))}
         {projects.map((project) => (
           <CardProject key={project.title} title={project.title} />
