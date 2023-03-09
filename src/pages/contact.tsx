@@ -6,6 +6,14 @@ const Contact: NextPage = () => {
     <>
       <Head>
         <title>Guilherme FT | Contact</title>
+        <meta
+          name="description"
+          content="Hello, I am Guilherme and I'm a front-end developer"
+        />
+        <meta
+          name="keywords"
+          content="developer, desenvolvedor, frontend, front-end, frontend developer, desenvolvedor front-end"
+        />
       </Head>
 
       <h1>Contact</h1>

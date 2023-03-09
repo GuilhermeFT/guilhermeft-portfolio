@@ -4,7 +4,8 @@ import CardProject from '@/components/CardProject'
 
 import * as S from './styles'
 
-export type Project = {
+export type Projects = {
+  id: string
   title: string
   thumbnail: string
   isHighlighted: boolean
@@ -13,7 +14,7 @@ export type Project = {
 }
 
 type ProjectsPageProps = {
-  projects: Project[]
+  projects: Projects[]
 }
 
 const ProjectsPage = ({ projects }: ProjectsPageProps) => {
@@ -28,22 +29,19 @@ const ProjectsPage = ({ projects }: ProjectsPageProps) => {
       </S.Title>
 
       <S.ProjectsListWrapper>
-        {projects.map((project) => (
-          <CardProject key={project.title} title={project.title} />
-        ))}
-        {projects.map((project) => (
-          <CardProject key={project.title} title={project.title} />
-        ))}
-        {projects.map((project) => (
-          <CardProject
-            key={project.title}
-            title={project.title}
-            description="Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/basic-features/fast-refresh#how-it-works"
-          />
-        ))}
-        {projects.map((project) => (
-          <CardProject key={project.title} title={project.title} />
-        ))}
+        {projects.length ? (
+          projects.map((project) => (
+            <CardProject
+              key={project.id}
+              title={project.title}
+              description={project.excerpt}
+              url={project.url}
+              backgroundUrl={project.thumbnail}
+            />
+          ))
+        ) : (
+          <S.Paragraph>{'We have no projects at the moment :('}</S.Paragraph>
+        )}
       </S.ProjectsListWrapper>
     </S.Wrapper>
   )

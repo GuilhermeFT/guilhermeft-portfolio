@@ -3,10 +3,10 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 
 import { getPrismicClient } from '@/services/prismic'
-import ProjectsPage, { Project } from '@/templates/Projects'
+import ProjectsPage, { Projects as ProjectType } from '@/templates/Projects'
 
 type ProjectsProps = {
-  projects: Project[]
+  projects: ProjectType[]
 }
 
 const Projects: NextPage<ProjectsProps> = ({ projects }) => {
@@ -14,6 +14,14 @@ const Projects: NextPage<ProjectsProps> = ({ projects }) => {
     <>
       <Head>
         <title>Guilherme FT | Projects</title>
+        <meta
+          name="description"
+          content="Hello, I am Guilherme and I'm a front-end developer"
+        />
+        <meta
+          name="keywords"
+          content="developer, desenvolvedor, frontend, front-end, frontend developer, desenvolvedor front-end"
+        />
       </Head>
 
       <ProjectsPage projects={projects} />
@@ -28,7 +36,8 @@ export const getStaticProps: GetStaticProps<ProjectsProps> = async ({
 
   const projects = await client.getByType('projects', { pageSize: 100 })
 
-  const projectList: Project[] = projects.results.map((project) => ({
+  const projectList: ProjectType[] = projects.results.map((project) => ({
+    id: project.id,
     title: project.data.title,
     thumbnail: project.data.thumb.url,
     isHighlighted: project.data.highlighted,

@@ -1,17 +1,27 @@
+import Link from 'next/link'
+
 import * as S from './styles'
 
 type CardProjectProps = {
   title: string
-  description?: string
-  url?: string
+  description: string
+  url: string
+  backgroundUrl: string
 }
 
-const CardProject = ({ title, description }: CardProjectProps) => {
+const CardProject = ({
+  title,
+  description,
+  url,
+  backgroundUrl
+}: CardProjectProps) => {
   return (
-    <S.CardProjectWrapper>
-      <S.CardTitle>{title}</S.CardTitle>
-      <S.CardDescription>{description}</S.CardDescription>
-    </S.CardProjectWrapper>
+    <Link href={url}>
+      <S.CardProjectWrapper backgroundUrl={backgroundUrl}>
+        <S.CardTitle>{title}</S.CardTitle>
+        <S.CardDescription>{description}</S.CardDescription>
+      </S.CardProjectWrapper>
+    </Link>
   )
 }
 

@@ -25,6 +25,11 @@ const styles = css`
 
   a {
     color: inherit;
+    transition: opacity 0.2s;
+
+    :hover {
+      opacity: 0.8;
+    }
   }
 
   .Typewriter__cursor {

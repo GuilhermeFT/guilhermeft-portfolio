@@ -31,10 +31,9 @@ export const ProjectsListWrapper = styled.div`
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, 37rem);
+`
 
-  /*   @media (min-width: ${({ theme }) => theme.breakpoints.maxMobile}) {
-    gap: 3rem 1.6rem;
-    justify-content: space-evenly;
-    grid-template-columns: repeat(4, auto);
-  } */
+export const Paragraph = styled.p`
+  font-size: 1.6rem;
+  color: ${({ theme }) => theme.colors.dark[100]};
 `
