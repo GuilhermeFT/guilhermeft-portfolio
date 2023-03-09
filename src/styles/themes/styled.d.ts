@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-interface */
-
 import { darkTheme } from './dark'
 
 type Theme = typeof darkTheme

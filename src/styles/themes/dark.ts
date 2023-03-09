@@ -6,7 +6,8 @@ export const darkTheme = {
     },
 
     light: {
-      100: '#FFFFFF'
+      100: '#FFFFFF',
+      300: '#DDDDDD'
     },
 
     violet: {
@@ -28,6 +29,7 @@ export const darkTheme = {
 
   breakpoints: {
     maxMobile: '76.8rem',
+    maxTablet: '102.4rem',
     maxContent: '117rem'
   }
 }

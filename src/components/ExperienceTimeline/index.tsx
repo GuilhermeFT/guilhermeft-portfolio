@@ -9,7 +9,7 @@ export type TimelineData = {
   companyLink: string
 }
 
-interface ExperienceTimelineProps {
+type ExperienceTimelineProps = {
   title: string
   timeline: TimelineData[]
 }

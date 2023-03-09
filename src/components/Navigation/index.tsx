@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import * as S from './styles'
 
 const Navigation = () => {
-  const { route, pathname } = useRouter()
+  const { route } = useRouter()
 
   const pages = [
     {
@@ -14,11 +14,11 @@ const Navigation = () => {
     {
       pageName: 'About',
       pagePath: '/about'
-    } /*,
+    },
     {
       pageName: 'Projects',
       pagePath: '/projects'
-    } ,
+    } /*,
     {
       pageName: 'Contact',
       pagePath: '/contact'

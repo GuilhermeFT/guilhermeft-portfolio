@@ -34,6 +34,8 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en-US">
         <Head>
+          <meta charSet="utf-8" />
+
           <link
             rel="icon"
             sizes="any"

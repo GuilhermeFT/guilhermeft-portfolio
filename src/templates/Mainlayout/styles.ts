@@ -26,6 +26,7 @@ export const AssetShadow = styled.span`
   position: fixed;
   width: 100vh;
   height: 100vh;
+
   border-radius: 50%;
 
   background: linear-gradient(120deg, rgba(0, 194, 255, 0.2) 0%, #ff29c3 100%);
