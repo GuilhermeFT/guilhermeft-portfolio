@@ -44,13 +44,13 @@ export const getStaticProps: GetStaticProps<ProjectProps> = async ({
     id: projectResponse.id,
     title: projectResponse.data.title,
     image: {
-      src: projectResponse.data.thumb.url,
-      height: projectResponse.data.thumb.dimensions.height,
-      width: projectResponse.data.thumb.dimensions.width
+      src: projectResponse.data?.thumb?.url ?? null,
+      height: projectResponse.data?.thumb?.dimensions?.height ?? 0,
+      width: projectResponse.data?.thumb?.dimensions?.width ?? 0
     },
-    githubLink: projectResponse.data.repository.url,
-    link: projectResponse.data.link.url,
-    content: projectResponse.data.content,
+    githubLink: projectResponse.data?.repository?.url ?? null,
+    link: projectResponse.data?.link?.url ?? null,
+    content: projectResponse.data?.content,
     excerpt:
       projectResponse.data.content.find(
         (content: Record<string, string>) =>

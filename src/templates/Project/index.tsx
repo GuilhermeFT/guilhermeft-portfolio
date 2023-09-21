@@ -1,7 +1,11 @@
 import { RiExternalLinkLine } from 'react-icons/ri'
 import { SiGithub } from 'react-icons/si'
 
-import Image, { StaticImageData } from 'next/image'
+import Image, {
+  ImageLoader,
+  ImageLoaderProps,
+  StaticImageData
+} from 'next/image'
 import Link from 'next/link'
 
 import Typewriter from 'typewriter-effect'
@@ -25,6 +29,10 @@ type ProjectPageProps = {
 }
 
 const ProjectPage = ({ project }: ProjectPageProps) => {
+  const customLoader = ({ src, width, quality }: ImageLoaderProps) => {
+    return `${src}?w=${width}&q=${quality || 75}`
+  }
+
   return (
     <S.Wrapper>
       <S.Title>
@@ -35,26 +43,33 @@ const ProjectPage = ({ project }: ProjectPageProps) => {
         />
       </S.Title>
       <S.LinksWrapper>
-        <S.LinkGroup>
-          <RiExternalLinkLine />
-          <Link href={project.link} passHref>
-            <S.StyledLink>{project.link}</S.StyledLink>
-          </Link>
-        </S.LinkGroup>
-        <S.LinkGroup>
-          <SiGithub />
-          <Link href={project.githubLink} passHref>
-            <S.StyledLink>{project.githubLink}</S.StyledLink>
-          </Link>
-        </S.LinkGroup>
+        {project.link ? (
+          <S.LinkGroup>
+            <RiExternalLinkLine />
+            <Link href={project.link} passHref>
+              <S.StyledLink>{project.link}</S.StyledLink>
+            </Link>
+          </S.LinkGroup>
+        ) : null}
+        {project.githubLink ? (
+          <S.LinkGroup>
+            <SiGithub />
+            <Link href={project.githubLink} passHref>
+              <S.StyledLink>{project.githubLink}</S.StyledLink>
+            </Link>
+          </S.LinkGroup>
+        ) : null}
       </S.LinksWrapper>
 
       <S.ImageWrapper>
-        <Image
-          src={project.image}
-          alt={'Image for ' + project.title}
-          objectFit="cover"
-        />
+        {project.image?.src ? (
+          <Image
+            src={project.image}
+            alt={'Image for ' + project.title}
+            objectFit="cover"
+            loader={customLoader}
+          />
+        ) : null}
       </S.ImageWrapper>
 
       <S.ContentWrapper>
