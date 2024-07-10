@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-background: hsla(0, 0%, 100%, 1);
+  --color-gray-dark: hsla(220, 20%, 15%, 1);
+  --color-gray-light: hsla(220, 10%, 35%, 1);
+}
+
+.dark {
+  --color-background: hsla(0, 0%, 10%, 1);
+  --color-gray-dark: hsla(220, 20%, 10%, 1);
+  --color-gray-light: hsla(220, 10%, 47%, 1);
+}
