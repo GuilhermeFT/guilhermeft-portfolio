@@ -14,13 +14,11 @@ export const MenuItem = ({ href, children }: MenuItemProps) => {
   return (
     <li>
       {pathname === href ? (
-        <span className="text-custom-gray-dark dark:text-white">
-          {children}
-        </span>
+        <span className="text-custom-blue-upper-medium">{children}</span>
       ) : (
         <Link
           href={href}
-          className="text-custom-gray-light transition-colors hover:text-gray-400"
+          className="text-custom-gray-dark transition-colors hover:text-gray-400 dark:text-custom-gray-light"
         >
           {children}
         </Link>

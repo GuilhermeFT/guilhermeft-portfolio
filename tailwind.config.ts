@@ -6,15 +6,19 @@ const config: Config = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/[lang]/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
-        custom: {
-          'gray-light': 'var(--color-gray-light)',
-          'gray-dark': 'var(--color-gray-dark)',
-          background: 'var(--color-background)',
-        },
+        'custom-page-background': 'var(--color-page-background)',
+        'custom-gray-dark': 'var(--color-gray-dark)',
+        'custom-gray-light': 'var(--color-gray-light)',
+        'custom-blue-dark': 'var(--color-blue-dark)',
+        'custom-blue-medium': 'var(--color-blue-medium)',
+        'custom-blue-upper-medium': 'var(--color-blue-upper-medium)',
+        'custom-blue': 'var(--color-blue)',
+        'custom-blue-light': 'var(--color-blue-light)',
       },
     },
   },

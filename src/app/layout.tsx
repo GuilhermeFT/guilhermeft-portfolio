@@ -1,8 +1,10 @@
+import './globals.css'
+
 import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
 import { Poppins } from 'next/font/google'
 
-import './globals.css'
+import { PageProps } from '@/types/page'
 
 const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700', '800'],
@@ -14,13 +16,16 @@ export const metadata: Metadata = {
   description: 'I am a Developer based in Brazil.',
 }
 
+export async function generateStaticParams() {
+  return [{ lang: 'en-US' }, { lang: 'pt-BR' }]
+}
+
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+  params: { lang = 'pt-BR' },
+}: PageProps & { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html lang={lang} suppressHydrationWarning>
       <body className={poppins.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}

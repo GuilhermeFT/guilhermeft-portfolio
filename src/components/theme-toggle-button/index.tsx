@@ -1,7 +1,8 @@
 'use client'
 
-import { Moon, Sun } from 'lucide-react'
+import { LoaderCircle, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 type ThemeToggleButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>
@@ -11,6 +12,11 @@ export const ThemeToggleButton = ({
   ...props
 }: ThemeToggleButtonProps) => {
   const { theme, setTheme } = useTheme()
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   const isDark = theme === 'dark'
 
@@ -18,16 +24,20 @@ export const ThemeToggleButton = ({
     setTheme(isDark ? 'light' : 'dark')
   }
 
-  return (
+  return isClient ? (
     <button
       {...props}
       className={twMerge(
-        'w-8 h-8 flex items-center justify-center transition-colors ease-in-out duration-300 text-custom-gray-light hover:text-custom-gray-dark dark:hover:text-gray-300',
+        'w-5 h-5 flex items-center justify-center text-custom-gray-dark hover:text-gray-400 transition-colors dark:text-custom-gray-light',
         className,
       )}
       onClick={handleThemeChange}
     >
       {isDark ? <Sun /> : <Moon />}
     </button>
+  ) : (
+    <div className="w-5 h-5">
+      <LoaderCircle className="animate-spin w-5 h-5 text-custom-gray-light" />
+    </div>
   )
 }

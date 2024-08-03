@@ -1,5 +1,7 @@
-import { Header } from '@/components/header'
+import { getDictionary } from './dictionaries'
 
-export default function Home() {
-  return <main className=""></main>
+export default async function Home() {
+  const dict = await getDictionary()
+
+  return <main></main>
 }

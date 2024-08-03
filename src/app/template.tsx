@@ -1,8 +1,10 @@
 import { Header } from '@/components/header'
 
-export default function Template({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+type TemplateProps = {
+  children: React.ReactNode
+}
+
+export default function Template({ children }: TemplateProps) {
   return (
     <>
       <Header />

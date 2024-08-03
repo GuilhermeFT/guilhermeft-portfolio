@@ -3,13 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --color-background: hsla(0, 0%, 100%, 1);
-  --color-gray-dark: hsla(220, 20%, 15%, 1);
-  --color-gray-light: hsla(220, 10%, 35%, 1);
+  --color-page-background: #ffffff;
+  --color-gray-dark: #50555c;
+  --color-blue-dark: #1b232e;
+  --color-blue-medium: #355e97;
+  --color-blue-upper-medium: #4c70a1;
+  --color-blue: #4290f5;
+  --color-blue-light: #9cc2f3;
 }
 
 .dark {
-  --color-background: hsla(0, 0%, 10%, 1);
-  --color-gray-dark: hsla(220, 20%, 10%, 1);
-  --color-gray-light: hsla(220, 10%, 47%, 1);
+  --color-page-background: #0f0f11;
+  --color-gray-dark: #161618;
+  --color-gray-light: #767a7e;
+  --color-blue-dark: #1b232e;
+  --color-blue-medium: #355e97;
+  --color-blue-upper-medium: #4c70a1;
+  --color-blue: #4290f5;
+  --color-blue-light: #9cc2f3;
 }

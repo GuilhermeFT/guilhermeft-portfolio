@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import logo from '@/assets/logo.svg'
 import { navLinks } from '@/utils/const'
+import { GitHub } from '@/components/icons/github'
 
 import { ThemeToggleButton } from '../theme-toggle-button'
 
@@ -28,7 +29,17 @@ export const Header = () => {
         </ul>
       </nav>
 
-      <ThemeToggleButton className="hidden md:flex md:row-start-1 md:col-start-3 md:ml-auto" />
+      <div className="hidden ml-auto pl-6 border-l border-l-gray-400 transition-colors gap-6 md:flex row-start-1 col-start-3">
+        <ThemeToggleButton className="" />
+
+        <Link
+          href="https://github.com/GuilhermeFT"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GitHub className="text-custom-gray-dark transition-colors hover:text-gray-400 dark:text-custom-gray-light" />
+        </Link>
+      </div>
     </header>
   )
 }
