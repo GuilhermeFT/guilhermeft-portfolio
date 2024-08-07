@@ -27,17 +27,14 @@ export const ThemeToggleButton = ({
   return isClient ? (
     <button
       {...props}
-      className={twMerge(
-        'w-5 h-5 flex items-center justify-center text-custom-gray-dark hover:text-gray-400 transition-colors dark:text-custom-gray-light',
-        className,
-      )}
+      className={twMerge(className)}
       onClick={handleThemeChange}
     >
       {isDark ? <Sun /> : <Moon />}
     </button>
   ) : (
     <div className="w-5 h-5">
-      <LoaderCircle className="animate-spin w-5 h-5 text-custom-gray-light" />
+      <LoaderCircle />
     </div>
   )
 }

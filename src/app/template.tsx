@@ -1,3 +1,4 @@
+import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
 
 type TemplateProps = {
@@ -9,6 +10,7 @@ export default function Template({ children }: TemplateProps) {
     <>
       <Header />
       {children}
+      <Footer />
     </>
   )
 }

@@ -1,4 +1,4 @@
-export type Languages = 'en' | 'pt-br'
+export type Languages = 'en' | 'pt-BR'
 
 export type Dictionary = {
   hero: {

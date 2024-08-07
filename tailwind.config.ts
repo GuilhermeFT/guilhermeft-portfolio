@@ -1,27 +1,34 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  darkMode: 'selector',
+  darkMode: ['selector'],
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/[lang]/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/utils/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  plugins: [require('tailwindcss-animated')],
   theme: {
+    container: {
+      center: true,
+    },
     extend: {
+      height: {
+        '17': '4.25rem',
+      },
+      screens: {
+        '2xl': '1390px',
+      },
       colors: {
-        'custom-page-background': 'var(--color-page-background)',
-        'custom-gray-dark': 'var(--color-gray-dark)',
-        'custom-gray-light': 'var(--color-gray-light)',
-        'custom-blue-dark': 'var(--color-blue-dark)',
-        'custom-blue-medium': 'var(--color-blue-medium)',
-        'custom-blue-upper-medium': 'var(--color-blue-upper-medium)',
-        'custom-blue': 'var(--color-blue)',
-        'custom-blue-light': 'var(--color-blue-light)',
+        'gft-background': '#0F0F11',
+        'gft-dark-gray': '#161618',
+        'gft-light-gray': '#8F9BA8',
+        'gft-purple': '#A9A6FF',
+        'gft-light-purple': '#C7A6FF',
       },
     },
   },
-  plugins: [],
 }
 export default config

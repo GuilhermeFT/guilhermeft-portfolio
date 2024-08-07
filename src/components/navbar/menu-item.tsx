@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { twMerge } from 'tailwind-merge'
 
 type MenuItemProps = {
   href: string
@@ -12,14 +13,16 @@ export const MenuItem = ({ href, children }: MenuItemProps) => {
   const pathname = usePathname()
 
   return (
-    <li>
+    <li
+      className={twMerge(
+        'px-2 py-4 text-center text-4xl font-bold text-gft-light-gray',
+        'md:font-normal md:text-base md:p-0',
+      )}
+    >
       {pathname === href ? (
-        <span className="text-custom-blue-upper-medium">{children}</span>
+        <span className="text-white">{children}</span>
       ) : (
-        <Link
-          href={href}
-          className="text-custom-gray-dark transition-colors hover:text-gray-400 dark:text-custom-gray-light"
-        >
+        <Link className="transition-colors hover:text-white" href={href}>
           {children}
         </Link>
       )}
