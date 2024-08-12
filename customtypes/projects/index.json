@@ -1,0 +1,103 @@
+{
+  "format": "custom",
+  "id": "projects",
+  "label": "Projects",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "project_name": {
+        "type": "Text",
+        "config": {
+          "label": "Project Name",
+          "placeholder": ""
+        }
+      },
+      "project_link": {
+        "type": "Link",
+        "config": {
+          "label": " Project Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "repository_link": {
+        "type": "Link",
+        "config": {
+          "label": "Repository Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "is_highlighted": {
+        "type": "Boolean",
+        "config": {
+          "label": "Is Highlighted",
+          "default_value": false,
+          "placeholder_true": "true",
+          "placeholder_false": "false"
+        }
+      },
+      "year_started": {
+        "type": "Number",
+        "config": {
+          "label": "Year Started",
+          "placeholder": ""
+        }
+      },
+      "year_finished": {
+        "type": "Number",
+        "config": {
+          "label": "Year Finished",
+          "placeholder": ""
+        }
+      },
+      "stack": {
+        "type": "Group",
+        "config": {
+          "label": "Stack",
+          "repeat": true,
+          "fields": {
+            "technology": {
+              "type": "Select",
+              "config": {
+                "label": "Technology",
+                "placeholder": "",
+                "options": [
+                  "Typescript",
+                  "JavaScript",
+                  "Next.js",
+                  "React.js",
+                  "Go"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "banner": {
+        "type": "Image",
+        "config": {
+          "label": "Banner",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "content": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Content",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      }
+    }
+  }
+}

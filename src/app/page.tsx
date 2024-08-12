@@ -5,6 +5,8 @@ import { Card } from '@/components/card'
 import { MouseIcon } from '@/components/icons/mouse-icon'
 import { PageTitle } from '@/components/page-title'
 import { companies } from '@/utils/const'
+import { ScrollFade } from '@/components/scroll-fade'
+import { ScrollToButton } from '@/components/scroll-to-button'
 
 export default async function Home() {
   return (
@@ -21,12 +23,14 @@ export default async function Home() {
           </p>
         </div>
 
-        <Link href="#">
-          <MouseIcon className="mb-8 w-7 h-7 transition-transform  hover:scale-110" />
-        </Link>
+        <ScrollFade>
+          <ScrollToButton elementId="projetos-selecionados">
+            <MouseIcon className="mb-8 w-7 h-7 transition-transform  hover:scale-110" />
+          </ScrollToButton>
+        </ScrollFade>
       </section>
 
-      <section className="px-4 py-32">
+      <section id="projetos-selecionados" className="px-4 py-32 lg:px-12">
         <div className="container flex flex-col gap-9">
           <h2 className="flex flex-col gap-1 text-center md:text-left">
             <span className="uppercase text-gft-light-gray text-base">
@@ -37,7 +41,7 @@ export default async function Home() {
             </span>
           </h2>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-16 lg:px-12">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-16">
             <Card.Rectangle />
             <Card.Rectangle />
             <Card.Rectangle />
@@ -76,7 +80,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="px-4 py-32">
+      <section className="px-4 py-32 lg:px-12">
         <div className="container flex flex-col gap-9">
           <h2 className="flex flex-col gap-1 text-center md:text-left">
             <span className="uppercase text-gft-light-gray text-base">
