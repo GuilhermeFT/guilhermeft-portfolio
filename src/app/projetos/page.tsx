@@ -9,7 +9,7 @@ export default async function Projects() {
 
   return (
     <main>
-      <section className="min-h-[calc(100dvh-5rem)] px-4 bg-gradient-to-b from-gft-dark-gray from-60%% to-gft-background flex flex-col justify-center items-center gap-8">
+      <section className="min-h-[calc(100dvh-5rem)] mb-32 px-4 bg-gradient-to-b from-gft-dark-gray from-60%% to-gft-background flex flex-col justify-center items-center gap-8">
         <div className="container flex flex-1 flex-col pt-36 gap-2 md:items-start">
           <PageTitle className="[font-size:_clamp(2rem,13.25vw,4rem)] md:text-[4rem]">
             Projetos

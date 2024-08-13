@@ -83,7 +83,7 @@ export default async function Project({
             </div>
           </section>
 
-          <section className="mt-32 w-full grid gap-8 text-justify">
+          <section className="mt-32 mb-32 w-full grid gap-8 text-justify">
             <PrismicRichText
               components={componentRender}
               field={project.content}
