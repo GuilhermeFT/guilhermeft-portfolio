@@ -1,51 +1,30 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "node": true
-  },
-  "extends": ["prettier", "next/core-web-vitals", "plugin:react/recommended"],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
-  "plugins": [
-    "react",
+  "extends": [
+    "next/core-web-vitals",
     "prettier",
-    "@typescript-eslint",
-    "react-hooks",
-    "eslint-plugin-import-helpers"
+    "plugin:import/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:@typescript-eslint/recommended"
   ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["import"],
   "rules": {
-    "prettier/prettier": "error",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "react/prop-types": "off",
-    "react/react-in-jsx-scope": "off",
-    "react/self-closing-comp": "warn",
+    "@typescript-eslint/no-unused-vars": "warn",
     "no-console": "warn",
-    "import-helpers/order-imports": [
+    "import/order": [
       "warn",
       {
-        "newlinesBetween": "always",
         "groups": [
-          "/^react/",
-          "/^next/",
-          "module",
-          "/^@/",
-          ["parent", "sibling", "index"]
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
         ],
-        "alphabetize": { "order": "asc", "ignoreCase": true }
+        "newlines-between": "always"
       }
     ]
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
   }
 }
