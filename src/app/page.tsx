@@ -107,9 +107,11 @@ export default async function Home() {
             </h2>
 
             <div className="grid grid-cols-2 gap-16">
-              <Card.Square />
-              <Card.Square />
-              <Card.Square />
+              {/* 
+              <Card.Square isButton={false} />
+              <Card.Square isButton={false} />
+              <Card.Square isButton={false} />
+              */}
             </div>
           </div>
         </section>
