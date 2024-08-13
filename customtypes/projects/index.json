@@ -24,6 +24,7 @@
         "config": {
           "label": " Project Link",
           "placeholder": "",
+          "allowTargetBlank": true,
           "select": null
         }
       },
@@ -32,6 +33,7 @@
         "config": {
           "label": "Repository Link",
           "placeholder": "",
+          "allowTargetBlank": true,
           "select": null
         }
       },
@@ -74,11 +76,29 @@
                   "JavaScript",
                   "Next.js",
                   "React.js",
-                  "Go"
+                  "Go",
+                  "Python",
+                  "Docker",
+                  "Framer Motion",
+                  "Tailwind CSS",
+                  "Styled Components",
+                  "Kotlin",
+                  "Java",
+                  "Redux",
+                  "Jest",
+                  "Cypress"
                 ]
               }
             }
           }
+        }
+      },
+      "image": {
+        "type": "Image",
+        "config": {
+          "label": "image",
+          "constraint": {},
+          "thumbnails": []
         }
       },
       "banner": {

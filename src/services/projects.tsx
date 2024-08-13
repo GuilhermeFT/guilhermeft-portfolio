@@ -1,0 +1,31 @@
+import { createClient, filter } from '@/prismicio'
+
+export const getAllProjects = async () => {
+  const client = createClient()
+
+  const projects = await client.getAllByType('projects')
+
+  return projects
+}
+
+export const getHighlightedProjects = async (max?: number) => {
+  const client = createClient()
+
+  const projects = await client.getAllByType('projects', {
+    filters: [filter.at('my.projects.is_highlighted', true)],
+  })
+
+  if (max) {
+    return projects.slice(0, max)
+  }
+
+  return projects
+}
+
+export const getProjectByUid = async (uid: string) => {
+  const client = createClient()
+
+  const project = await client.getByUID('projects', uid)
+
+  return project
+}

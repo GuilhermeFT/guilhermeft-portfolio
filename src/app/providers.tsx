@@ -1,7 +1,6 @@
 'use client'
 
 import { PrismicPreview } from '@prismicio/next'
-import { ThemeProvider } from 'next-themes'
 
 import { repositoryName } from '@/prismicio'
 
@@ -12,13 +11,13 @@ type ProvidersProps = {
 export const Providers = ({ children }: ProvidersProps) => {
   return (
     <PrismicPreview repositoryName={repositoryName}>
-      <ThemeProvider
+      {/*  <ThemeProvider
         defaultTheme="system"
         enableSystem
         disableTransitionOnChange
-      >
-        {children}
-      </ThemeProvider>
+      > */}
+      {children}
+      {/* </ThemeProvider> */}
     </PrismicPreview>
   )
 }

@@ -7,11 +7,17 @@ import { PageTitle } from '@/components/page-title'
 import { companies } from '@/utils/const'
 import { ScrollFade } from '@/components/scroll-fade'
 import { ScrollToButton } from '@/components/scroll-to-button'
+import { getHighlightedProjects } from '@/services/projects'
 
 export default async function Home() {
+  const projects = await getHighlightedProjects(3)
+
+  const hasProjects = projects.length > 0
+  const hasPersonalProjects = false
+
   return (
     <main>
-      <section className="px-4 h-[calc(100dvh-5rem)] flex flex-col items-center gap-8 bg-gradient-to-b from-gft-dark-gray from-75% to-gft-background">
+      <section className="px-4 h-[calc(100dvh-5rem)] flex flex-col items-center gap-8 bg-gradient-to-b from-gft-dark-gray from-60%% to-gft-background">
         <div className="container flex flex-1 flex-col justify-center items-center gap-2 md:items-start">
           <PageTitle>Guilherme FT</PageTitle>
           <p className="text-2xl text-center max-w-2xl md:text-left">
@@ -30,24 +36,32 @@ export default async function Home() {
         </ScrollFade>
       </section>
 
-      <section id="projetos-selecionados" className="px-4 py-32 lg:px-12">
-        <div className="container flex flex-col gap-9">
-          <h2 className="flex flex-col gap-1 text-center md:text-left">
-            <span className="uppercase text-gft-light-gray text-base">
-              Projetos selecionados
-            </span>
-            <span className="text-5xl text-gft-purple font-extrabold uppercase">
-              Projetos
-            </span>
-          </h2>
+      {hasProjects ? (
+        <section id="projetos-selecionados" className="px-4 py-32 lg:px-12">
+          <div className="container flex flex-col gap-9">
+            <h2 className="flex flex-col gap-1 text-center md:text-left">
+              <span className="uppercase text-gft-light-gray text-base">
+                Projetos selecionados
+              </span>
+              <span className="text-5xl text-gft-purple font-extrabold uppercase">
+                Projetos
+              </span>
+            </h2>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-16">
-            <Card.Rectangle />
-            <Card.Rectangle />
-            <Card.Rectangle />
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-16">
+              {projects.map((project, index) => (
+                <Card.Rectangle
+                  key={index}
+                  isButton={false}
+                  id={project.uid}
+                  project={project.data}
+                />
+              ))}
+              <Card.Rectangle isButton />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
 
       <section className="px-4 py-24 bg-gft-dark-gray">
         <div className="container flex flex-col gap-16">
@@ -80,22 +94,41 @@ export default async function Home() {
         </div>
       </section>
 
+      {hasPersonalProjects ? (
+        <section className="px-4 py-32 lg:px-12">
+          <div className="container flex flex-col gap-9">
+            <h2 className="flex flex-col gap-1 text-center md:text-left">
+              <span className="uppercase text-gft-light-gray text-base">
+                Projetos no ar
+              </span>
+              <span className="text-5xl text-gft-purple font-extrabold uppercase">
+                Projetos Pessais
+              </span>
+            </h2>
+
+            <div className="grid grid-cols-2 gap-16">
+              <Card.Square />
+              <Card.Square />
+              <Card.Square />
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       <section className="px-4 py-32 lg:px-12">
         <div className="container flex flex-col gap-9">
-          <h2 className="flex flex-col gap-1 text-center md:text-left">
-            <span className="uppercase text-gft-light-gray text-base">
-              Projetos selecionados
-            </span>
-            <span className="text-5xl text-gft-purple font-extrabold uppercase">
-              Projetos
-            </span>
-          </h2>
+          <p className="text-slate-200 text-2xl text-center max-w-2xl md:text-justify">
+            Se você gostou do que viu e quer saber mais sobre mim, meus projetos
+            ou até mesmo bater um papo, fique a vontade para me chamar nas redes
+            sociais ou me enviar um e-mail.
+          </p>
 
-          <div className="grid grid-cols-2 gap-16">
-            <Card.Square />
-            <Card.Square />
-            <Card.Square />
-          </div>
+          <Link
+            className="text-xl underline text-center text-gft-light-gray py-2 rounded-md transition-colors w-max hover:text-gft-purple"
+            href="/sobre-mim?tabId=contact"
+          >
+            Entre em contato
+          </Link>
         </div>
       </section>
     </main>

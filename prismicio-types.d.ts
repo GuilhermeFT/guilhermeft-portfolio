@@ -17,7 +17,21 @@ export interface ProjectsDocumentDataStackItem {
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   technology: prismic.SelectField<
-    'Typescript' | 'JavaScript' | 'Next.js' | 'React.js' | 'Go'
+    | 'Typescript'
+    | 'JavaScript'
+    | 'Next.js'
+    | 'React.js'
+    | 'Go'
+    | 'Python'
+    | 'Docker'
+    | 'Framer Motion'
+    | 'Tailwind CSS'
+    | 'Styled Components'
+    | 'Kotlin'
+    | 'Java'
+    | 'Redux'
+    | 'Jest'
+    | 'Cypress'
   >
 }
 
@@ -45,7 +59,9 @@ interface ProjectsDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  project_link: prismic.LinkField
+  project_link: prismic.LinkField & {
+    url?: string
+  }
 
   /**
    * Repository Link field in *Projects*
@@ -56,7 +72,9 @@ interface ProjectsDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  repository_link: prismic.LinkField
+  repository_link: prismic.LinkField & {
+    url?: string
+  }
 
   /**
    * Is Highlighted field in *Projects*
@@ -102,6 +120,17 @@ interface ProjectsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   stack: prismic.GroupField<Simplify<ProjectsDocumentDataStackItem>>
+
+  /**
+   * image field in *Projects*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>
 
   /**
    * Banner field in *Projects*

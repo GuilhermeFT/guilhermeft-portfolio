@@ -1,7 +1,6 @@
 import { twMerge } from 'tailwind-merge'
 import Link from 'next/link'
 
-import { ThemeToggleButton } from '../theme-toggle-button'
 import { GitHub } from '../icons/github'
 
 type NavButtonsProps = {
@@ -18,7 +17,7 @@ export const NavButtons = ({ className }: NavButtonsProps) => {
       )}
     >
       <div className="flex justify-center gap-4 w-max md:pl-4 md:border-l md:border-l-gft-light-gray">
-        <ThemeToggleButton className="transition-colors hover:text-white" />
+        {/*  <ThemeToggleButton className="transition-colors hover:text-white" /> */}
 
         <Link
           className="flex w-max transition-colors hover:text-white"
