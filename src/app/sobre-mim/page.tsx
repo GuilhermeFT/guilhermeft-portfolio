@@ -30,7 +30,7 @@ export default async function About({ searchParams }: PageProps) {
         </div>
 
         <ScrollFade>
-          <ScrollToButton elementId="sobre-mim">
+          <ScrollToButton elementId="about-me">
             <MouseIcon className="mb-8 w-7 h-7 transition-transform  hover:scale-110" />
           </ScrollToButton>
         </ScrollFade>
