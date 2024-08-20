@@ -13,7 +13,6 @@ import {
 import { formatTabnewsData } from './helpers'
 
 export const getMyPosts = async (): Promise<ReturnType<AllPostsResponse[]>> => {
-  await new Promise((resolve) => setTimeout(resolve, 6000))
   try {
     const { data } = await TabnewsAPI.get<AllPostsResponse[]>(
       TabnewsRoutes.contents,
