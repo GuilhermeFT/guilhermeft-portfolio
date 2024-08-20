@@ -21,11 +21,11 @@ export default async function Home() {
         <div className="container flex flex-1 flex-col justify-center items-center gap-2 md:items-start">
           <PageTitle>Guilherme FT</PageTitle>
           <p className="text-2xl text-center max-w-2xl md:text-left">
-            Front-end Developer | Dev-leader at Fuerza Studio.
+            Olá 👋, eu sou o Guilherme, um estudante de Engenharia de Software
           </p>
           <p className="text-xl text-center max-w-2xl text-gft-light-gray md:text-justify">
-            A Software Engineer student focused in develop the best solutions
-            and manage teams.
+            Desenvolvedor Front-end com foco em React e Next.js e com o pesinho
+            no back-end com Node.js. Bem-vindo ao meu portfólio!
           </p>
         </div>
 
