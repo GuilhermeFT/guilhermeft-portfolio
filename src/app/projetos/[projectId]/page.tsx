@@ -36,21 +36,12 @@ export default async function Project({
           <section className="grid gap-8 grid-cols-1 xl:grid-cols-3">
             <div className="p-4 bg-zinc-800 rounded-lg border-2 border-gft-purple h-max">
               <ul className="flex flex-col gap-2">
-                {hasTechStack ? (
-                  <li className="flex gap-2">
-                    <p className="text-zinc-200">
-                      <strong className="text-white">Tecnologias: </strong>
-                      {project.stack.map((tech) => tech.technology).join(', ')}.
-                    </p>
-                  </li>
-                ) : null}
-
                 {hasProjectLink ? (
                   <li className="flex gap-2">
                     <p className="text-zinc-200">
                       <strong className="text-white">Link: </strong>
                       <PrismicNextLink
-                        className="underline hover:text-gray-400"
+                        className="underline text-zinc-300 hover:text-gray-400"
                         field={project.project_link}
                       >
                         {project.project_link?.url}
@@ -64,11 +55,28 @@ export default async function Project({
                     <p className="text-zinc-200">
                       <strong className="text-white">Repositório: </strong>
                       <PrismicNextLink
-                        className="underline hover:text-gray-400"
+                        className="underline text-zinc-300 hover:text-gray-400"
                         field={project.repository_link}
                       >
                         {project.repository_link?.url}
                       </PrismicNextLink>
+                    </p>
+                  </li>
+                ) : null}
+
+                {hasTechStack ? (
+                  <li className="flex gap-2">
+                    <p className="text-zinc-200 flex items-center flex-wrap gap-2">
+                      <strong className="text-white">Tecnologias: </strong>
+                      {project.stack.map((tech) => (
+                        <span
+                          key={tech.technology}
+                          className="flex justify-center items-center px-2 py-1 bg-zinc-700 rounded-lg"
+                        >
+                          {tech.technology}
+                        </span>
+                      ))}
+                      .
                     </p>
                   </li>
                 ) : null}
