@@ -7,7 +7,8 @@ import { PageProps } from '@/types/page'
 
 import { tabMenuItems } from './content'
 
-export default async function About({ searchParams }: PageProps) {
+export default async function About(props: PageProps) {
+  const searchParams = await props.searchParams;
   return (
     <main>
       <section className="h-[calc(100dvh-5rem)] px-4 bg-gradient-to-b from-gft-dark-gray from-60%% to-gft-background flex flex-col justify-center items-center gap-8">

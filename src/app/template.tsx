@@ -6,11 +6,5 @@ type TemplateProps = {
 }
 
 export default function Template({ children }: TemplateProps) {
-  return (
-    <>
-      <Header />
-      {children}
-      <Footer />
-    </>
-  )
+  return <>{children}</>
 }

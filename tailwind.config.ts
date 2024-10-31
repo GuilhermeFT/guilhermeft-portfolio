@@ -22,7 +22,7 @@ const config: Config = {
         '2xl': '1390px',
       },
       colors: {
-        'gft-background': '#0F0F11',
+        'gft-background': '#0C1017',
         'gft-dark-gray': '#161618',
         'gft-light-gray': '#8F9BA8',
         'gft-purple': '#A9A6FF',

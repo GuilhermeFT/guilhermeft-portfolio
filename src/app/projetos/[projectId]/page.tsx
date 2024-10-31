@@ -11,9 +11,13 @@ type ProjectProps = {
   projectId: string
 }
 
-export default async function Project({
-  params: { projectId },
-}: PageProps<ProjectProps>) {
+export default async function Project(props: PageProps<ProjectProps>) {
+  const params = await props.params;
+
+  const {
+    projectId
+  } = params;
+
   const project = (await getProjectByUid(projectId)).data
 
   const hasTechStack = project.stack.length > 0
