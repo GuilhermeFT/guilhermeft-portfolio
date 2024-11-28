@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-gft-background font-light text-white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gft-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-lg bg-zinc-800/75;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-l from-g-blue from-55% to-g-light-blue bg-clip-text text-transparent;
+  }
+}

@@ -20,7 +20,7 @@ export const Navbar = () => {
 
       <nav
         className={twMerge(
-          'hidden absolute z-20 top-full h-[calc(100dvh-5rem)] left-0 w-full px-4 pb-8 bg-gft-background flex-col items-center my-auto',
+          'hidden h-full absolute z-20 top-full left-0 w-full px-4 gap-2 pb-8 bg-gft-background flex-col items-center my-auto',
           isMenuOpen && 'flex',
           isMenuOpen && 'border-t border-t-zinc-700',
 

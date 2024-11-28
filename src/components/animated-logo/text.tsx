@@ -6,16 +6,18 @@ export const Text = ({ className }: { className?: string }) => {
   const path3Variants: Variants = {
     hidden: {
       stroke: '#fff',
-      strokeWidth: 1,
+      strokeWidth: 0,
       pathLength: 0,
       pathOffset: 1,
       fill: '#ffffff00',
     },
     visible: {
+      strokeWidth: 1,
       pathLength: [1, 0],
       pathOffset: 0,
       fill: '#fff',
       transition: {
+        delay: 1,
         duration: 3,
         ease: 'circInOut',
       },

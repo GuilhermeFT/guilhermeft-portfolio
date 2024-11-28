@@ -21,7 +21,7 @@ export type RectangleCardProps =
 
 export const RectangleCard = ({ ...props }: RectangleCardProps) => {
   return (
-    <div className="group aspect-[3/4] w-full bg-zinc-900 relative flex justify-center items-center overflow-hidden">
+    <div className="group relative flex aspect-[3/4] w-full items-center justify-center overflow-hidden bg-gray-900">
       {!props.isButton ? (
         <RectangleContentOne {...props} />
       ) : (

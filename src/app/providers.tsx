@@ -2,7 +2,7 @@
 
 import { PrismicPreview } from '@prismicio/next'
 
-import { repositoryName } from '@/prismicio'
+import { repositoryName } from '@/lib/prismicio'
 
 type ProvidersProps = {
   children: React.ReactNode
@@ -10,14 +10,6 @@ type ProvidersProps = {
 
 export const Providers = ({ children }: ProvidersProps) => {
   return (
-    <PrismicPreview repositoryName={repositoryName}>
-      {/*  <ThemeProvider
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-      > */}
-      {children}
-      {/* </ThemeProvider> */}
-    </PrismicPreview>
+    <PrismicPreview repositoryName={repositoryName}>{children}</PrismicPreview>
   )
 }

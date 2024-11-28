@@ -2,7 +2,7 @@ import { AxiosError } from 'axios'
 
 import { TabnewsRoutes } from '@/utils/enum'
 
-import { TabnewsAPI } from '../api'
+import { TabnewsAPI } from '../../lib/tabnews'
 
 import {
   AllPostsResponse,

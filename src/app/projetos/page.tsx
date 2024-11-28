@@ -1,6 +1,6 @@
 import { Card } from '@/components/card'
 import { PageTitle } from '@/components/page-title'
-import { getAllProjects } from '@/services/projects'
+import { getAllProjects } from '@/services/prismic/projects'
 
 export default async function Projects() {
   const projects = await getAllProjects()

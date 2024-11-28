@@ -18,15 +18,16 @@ const config: Config = {
       height: {
         '17': '4.25rem',
       },
-      screens: {
-        '2xl': '1390px',
-      },
+
       colors: {
-        'gft-background': '#0C1017',
+        'gft-background': '#030917',
         'gft-dark-gray': '#161618',
         'gft-light-gray': '#8F9BA8',
         'gft-purple': '#A9A6FF',
         'gft-light-purple': '#C7A6FF',
+
+        'g-blue': '#4271EB',
+        'g-light-blue': '#6BBAFF',
       },
     },
   },

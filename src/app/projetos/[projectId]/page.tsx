@@ -2,7 +2,7 @@ import { PrismicRichText } from '@prismicio/react'
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next'
 
 import { PageTitle } from '@/components/page-title'
-import { getProjectByUid } from '@/services/projects'
+import { getProjectByUid } from '@/services/prismic/projects'
 import { PageProps } from '@/types/page'
 
 import { componentRender } from './component-render'
@@ -12,11 +12,9 @@ type ProjectProps = {
 }
 
 export default async function Project(props: PageProps<ProjectProps>) {
-  const params = await props.params;
+  const params = await props.params
 
-  const {
-    projectId
-  } = params;
+  const { projectId } = params
 
   const project = (await getProjectByUid(projectId)).data
 

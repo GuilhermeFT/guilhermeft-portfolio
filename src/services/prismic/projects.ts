@@ -1,4 +1,4 @@
-import { createClient, filter } from '@/prismicio'
+import { createClient, filter } from '@/lib/prismicio'
 
 export const getAllProjects = async () => {
   const client = createClient()
