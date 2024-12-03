@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, Variants } from 'framer-motion'
+import { motion, type Variants } from 'motion/react'
 
 export const Logo = ({ className }: { className?: string }) => {
   const pathVariants: Variants = {
