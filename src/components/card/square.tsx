@@ -20,8 +20,9 @@ export type SquareCardProps =
     }
 
 export const SquareCard = ({ ...props }: SquareCardProps) => {
+
   return (
-    <div className="group aspect-square w-full bg-zinc-900 relative flex justify-center items-center overflow-hidden">
+    <div className="group relative flex aspect-square w-full items-center justify-center overflow-hidden bg-zinc-900">
       {!props.isButton ? (
         <SquareContentOne {...props} />
       ) : (

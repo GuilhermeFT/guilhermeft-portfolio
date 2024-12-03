@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply bg-gft-background font-light text-white;
+    @apply bg-g-background font-light text-white;
   }
 
   ::-webkit-scrollbar {
@@ -16,7 +16,7 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-gft-background;
+    @apply bg-g-background;
   }
 
   ::-webkit-scrollbar-thumb {
@@ -26,6 +26,6 @@
 
 @layer utilities {
   .gradient-text {
-    @apply bg-gradient-to-l from-g-blue from-55% to-g-light-blue bg-clip-text text-transparent;
+    @apply bg-gradient-to-bl from-g-blue to-g-light-blue bg-clip-text text-transparent;
   }
 }

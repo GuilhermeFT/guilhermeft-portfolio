@@ -1,7 +1,23 @@
 import { ButtonHTMLAttributes } from 'react'
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
+import { buttonStyles, type ButtonVariants } from './types'
 
-export const Button = ({ children, ...props }: ButtonProps) => {
-  return <button {...props}>{children}</button>
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & ButtonVariants
+
+export const Button = ({
+  children,
+  className,
+  variant,
+  ...props
+}: ButtonProps) => {
+  const styles = buttonStyles({
+    className,
+    variant,
+  })
+
+  return (
+    <button {...props} className={styles}>
+      {children}
+    </button>
+  )
 }

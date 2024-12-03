@@ -4,6 +4,9 @@ import { MapPin } from 'lucide-react'
 import { Card } from '@/components/card'
 import { getHighlightedProjects } from '@/services/prismic/projects'
 import { Section } from '@/components/section'
+import { Button } from '@/components/button'
+
+import { HeroButtons } from './hero-buttons'
 
 export default async function Home() {
   const projects = await getHighlightedProjects(2)
@@ -12,38 +15,49 @@ export default async function Home() {
 
   return (
     <main>
-      <Section className="flex h-dvh items-center">
-        <div className="container grid items-center gap-10 sm:gap-0 lg:grid-cols-2 lg:justify-between xl:grid-cols-[1fr_40%]">
-          <div className="grid w-full gap-3 p-4">
-            <span className="gradient-text text-2xl">Olá, meu nome é</span>
-            <h1 className="pl-4 text-5xl font-extralight sm:text-7xl xl:text-nowrap">
-              Guilherme Trindade
+      <Section className="flex h-[88dvh]">
+        <div className="container grid auto-rows-auto gap-10 lg:grid-cols-[1fr_40%] lg:justify-between">
+          <div className="grid w-full gap-2 self-end lg:self-center">
+            <p className="gradient-text md:text-xl">Olá, meu nome é</p>
+
+            <h1 className="flex flex-col gap-2 pl-4 text-5xl font-extralight sm:flex-row md:text-6xl xl:text-nowrap xl:text-7xl">
+              <span>Guilherme</span>
+              <span className="translate-x-[30vw] sm:translate-x-0">
+                Trindade
+              </span>
             </h1>
-            <h2 className="gradient-text mt-6 pl-4 text-3xl">
-              Desenvolvedor Front-end
-            </h2>
+
+            <p className="gradient-text ml-4 mt-6 flex w-max gap-2 text-xl md:text-3xl lg:flex-col">
+              <span className="ml-10">Desenvolvedor</span>
+              <span>Front-end.</span>
+            </p>
+
+            <HeroButtons className="mt-16 hidden lg:flex" />
           </div>
 
-          <div className="grid w-full gap-3 p-4">
-            <span className="gradient-text text-2xl">Eu sou</span>
-            <p className="pl-4 text-3xl">
+          <div className="grid w-full gap-3 self-start lg:self-center">
+            <span className="gradient-text text-lg md:text-xl">Eu sou</span>
+
+            <p className="pl-4 text-xl md:text-2xl">
               Um desenvolvedor front-end especializado em React e Next.js.
             </p>
 
             <div className="mt-4 flex w-max items-center justify-center gap-2 pl-4">
-              <MapPin className="text-g-blue" />
-              <span className="text-xl">Anápolis, GO</span>
+              <MapPin className="w-5 text-g-blue" />
+              <span className="md:text-lg">Anápolis, GO</span>
             </div>
           </div>
+
+          <HeroButtons className="lg:hidden" />
         </div>
       </Section>
 
       <Section className="py-16 text-zinc-200">
         <div className="container flex flex-col gap-6 md:grid-cols-2">
-          <h3 className="gradient-text text-4xl">Um pouco sobre mim</h3>
+          <h3 className="gradient-text text-2xl">Um pouco sobre mim</h3>
 
           <div className="grid items-start gap-10 lg:grid-cols-2">
-            <div className="grid gap-7 text-2xl">
+            <div className="grid gap-7 text-xl">
               <p className="text-pretty pl-4 text-justify text-lg">
                 Atuo como desenvolvedor a +5 anos, trabalhando ativamente no{' '}
                 <strong className="font-semibold">Frontend</strong> com{' '}
@@ -60,7 +74,7 @@ export default async function Home() {
             </div>
 
             <div className="grid gap-3">
-              <p className="gradient-text text-2xl">Em diversos projetos eu</p>
+              <p className="gradient-text text-xl">Em diversos projetos eu</p>
 
               <ul className="mb-10 list-inside list-disc text-lg">
                 <li>Integrei CI/CD com GitHub Actions;</li>
@@ -72,11 +86,8 @@ export default async function Home() {
                 </li>
               </ul>
 
-              <Link
-                href="#"
-                className="flex w-max self-end rounded border border-g-blue px-4 py-3 text-white transition-all hover:bg-g-blue"
-              >
-                Mais sobre minha carreira
+              <Link href="/about-me">
+                <Button variant="secondary">Mais sobre minha carreira</Button>
               </Link>
             </div>
           </div>
@@ -89,7 +100,7 @@ export default async function Home() {
             <span className="text-sm uppercase text-zinc-400 md:text-lg">
               Veja alguns dos meus projetos
             </span>
-            <h3 className="gradient-text text-4xl font-normal md:text-5xl">
+            <h3 className="gradient-text text-4xl font-normal uppercase md:text-5xl">
               Projetos Selecionados
             </h3>
           </header>

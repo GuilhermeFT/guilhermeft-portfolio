@@ -26,8 +26,10 @@ const config: Config = {
         'gft-purple': '#A9A6FF',
         'gft-light-purple': '#C7A6FF',
 
-        'g-blue': '#4271EB',
-        'g-light-blue': '#6BBAFF',
+        'g-background': '#030917',
+        'g-blue': '#367AF9',
+        'g-dark-blue': '#11338C',
+        'g-light-blue': '#9DD1FF',
       },
     },
   },

@@ -12,13 +12,13 @@ export const PageTitle = ({ children, className }: PageTitleProps) => {
   return (
     <h1
       className={twMerge(
-        '[font-size:_clamp(2rem,13.25vw,6.875rem)] h-40 bg-gradient-to-r from-gft-purple from-0% to-gft-light-purple to-100% bg-clip-text text-transparent w-max font-bold md:text-[6.875rem]',
+        'h-40 w-max bg-gradient-to-r from-g-blue from-0% to-g-light-blue to-100% bg-clip-text font-normal text-transparent [font-size:_clamp(2rem,13.25vw,6.875rem)] md:text-[6.875rem]',
         className,
       )}
     >
       <Typewriter
         options={{
-          cursorClassName: 'Typewriter__cursor text-gft-light-purple',
+          cursorClassName: 'Typewriter__cursor text-g-light-blue',
         }}
         onInit={(typewriter) => {
           typewriter.typeString(children).start()
