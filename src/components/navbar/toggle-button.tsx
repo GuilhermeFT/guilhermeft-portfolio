@@ -9,7 +9,7 @@ export const ToggleButton = ({ isOpen, toggleMenu }: ToggleButtonProps) => {
   return (
     <button
       onClick={toggleMenu}
-      className="absolute right-10 z-30 flex h-10 w-10 items-center justify-center p-2"
+      className="z-30 flex h-10 w-10 items-center justify-center p-2"
     >
       <div className="relative flex h-3 w-full flex-col justify-between">
         <span

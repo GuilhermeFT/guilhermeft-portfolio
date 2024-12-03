@@ -11,7 +11,7 @@ export const Navbar = () => {
   const handleToggleMenu = () => setIsMenuOpen((prev) => !prev)
 
   return (
-    <div className="">
+    <div className="absolute right-10">
       <ToggleButton isOpen={isMenuOpen} toggleMenu={handleToggleMenu} />
 
       <Nav isOpen={isMenuOpen} />

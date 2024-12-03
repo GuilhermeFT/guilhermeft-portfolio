@@ -22,7 +22,7 @@ export default async function Home() {
 
             <h1 className="flex flex-col gap-2 pl-4 text-5xl font-extralight sm:flex-row md:text-6xl xl:text-nowrap xl:text-7xl">
               <span>Guilherme</span>
-              <span className="translate-x-[30vw] sm:translate-x-0">
+              <span className="w-max translate-x-[30vw] sm:translate-x-0">
                 Trindade
               </span>
             </h1>
