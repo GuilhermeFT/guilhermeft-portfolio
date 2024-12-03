@@ -88,6 +88,7 @@ export default async function Project(props: PageProps<ProjectProps>) {
 
             <div className="group max-h-[40rem] overflow-hidden xl:col-span-2">
               <PrismicNextImage
+                alt=""
                 className="animate-fade transition-transform"
                 field={project.image}
               />
