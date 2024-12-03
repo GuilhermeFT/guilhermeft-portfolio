@@ -31,7 +31,7 @@ export const Nav = ({ isOpen }: NavProps) => {
 
   return (
     <motion.nav
-      className="fixed bottom-0 left-0 top-0 z-20 flex h-dvh w-dvw items-center justify-center bg-gft-background/90 backdrop-blur-lg"
+      className="fixed left-0 top-0 z-20 flex h-dvh w-dvw items-center justify-center bg-gft-background/90 backdrop-blur-lg"
       initial={{
         opacity: 0,
         y: '-100%',
