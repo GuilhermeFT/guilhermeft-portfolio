@@ -2,6 +2,7 @@ import { twMerge } from 'tailwind-merge'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion } from 'motion/react'
+import { useEffect } from 'react'
 
 type NavProps = {
   isOpen?: boolean
@@ -28,6 +29,14 @@ export const Nav = ({ isOpen }: NavProps) => {
       label: 'Blog',
     },
   ]
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+  }, [isOpen])
 
   return (
     <motion.nav
