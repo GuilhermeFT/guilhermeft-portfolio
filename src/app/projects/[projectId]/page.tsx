@@ -26,24 +26,25 @@ export default async function Project(props: PageProps<ProjectProps>) {
 
   return (
     <main>
-      <div className="min-h-[calc(100dvh-5rem)] px-4 bg-gradient-to-b from-gft-dark-gray from-60%% to-gft-background flex flex-col justify-center items-center gap-8">
-        <div className="container flex flex-1 flex-col pt-36 gap-2 md:items-start">
-          <PageTitle className="[font-size:_clamp(2rem,13.25vw,3rem)] h-17 md:text-[3rem]">
+      <div className="flex min-h-dvh flex-col items-center justify-center gap-8 px-4">
+        <div className="container flex flex-1 flex-col gap-2 pt-36 md:items-start">
+          <PageTitle className="h-17 [font-size:_clamp(2rem,13.25vw,3rem)] md:text-[3rem]">
             {project.project_name as string}
           </PageTitle>
-          <span className="block font-light text-gft-light-gray text-sm">
+
+          <span className="block text-sm font-light text-zinc-400">
             {project?.year_started} — {project?.year_finished}
           </span>
 
-          <section className="grid gap-8 grid-cols-1 xl:grid-cols-3">
-            <div className="p-4 bg-zinc-800 rounded-lg border-2 border-gft-purple h-max">
+          <section className="grid grid-cols-1 gap-8 xl:grid-cols-3">
+            <div className="h-max rounded-lg border-2 border-g-blue p-4">
               <ul className="flex flex-col gap-2">
                 {hasProjectLink ? (
                   <li className="flex gap-2">
                     <p className="text-zinc-200">
                       <strong className="text-white">Link: </strong>
                       <PrismicNextLink
-                        className="underline text-zinc-300 hover:text-gray-400"
+                        className="text-zinc-300 underline hover:text-gray-400"
                         field={project.project_link}
                       >
                         {project.project_link?.url}
@@ -57,7 +58,7 @@ export default async function Project(props: PageProps<ProjectProps>) {
                     <p className="text-zinc-200">
                       <strong className="text-white">Repositório: </strong>
                       <PrismicNextLink
-                        className="underline text-zinc-300 hover:text-gray-400"
+                        className="text-zinc-300 underline hover:text-gray-400"
                         field={project.repository_link}
                       >
                         {project.repository_link?.url}
@@ -68,12 +69,12 @@ export default async function Project(props: PageProps<ProjectProps>) {
 
                 {hasTechStack ? (
                   <li className="flex gap-2">
-                    <p className="text-zinc-200 flex items-center flex-wrap gap-2">
+                    <p className="flex flex-wrap items-center gap-2 text-zinc-200">
                       <strong className="text-white">Tecnologias: </strong>
                       {project.stack.map((tech) => (
                         <span
                           key={tech.technology}
-                          className="flex justify-center items-center px-2 py-1 bg-zinc-700 rounded-lg"
+                          className="flex items-center justify-center rounded-lg bg-g-dark-blue px-2 py-1 text-sm"
                         >
                           {tech.technology}
                         </span>
@@ -93,7 +94,7 @@ export default async function Project(props: PageProps<ProjectProps>) {
             </div>
           </section>
 
-          <section className="mt-32 mb-32 w-full grid gap-8 text-justify">
+          <section className="mb-32 mt-32 grid w-full gap-8 text-justify">
             <PrismicRichText
               components={componentRender}
               field={project.content}

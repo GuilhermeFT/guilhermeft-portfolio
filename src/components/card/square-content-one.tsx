@@ -21,7 +21,7 @@ export const SquareContentOne = ({
       />
 
       <Link
-        href={href || `/projetos/${id}`}
+        href={href || `/projects/${id}`}
         className="absolute h-full w-full transition-all group-hover:bg-zinc-950 group-hover:bg-opacity-85"
       >
         <div className="flex flex-col gap-4 bg-gradient-to-b from-zinc-950 to-transparent p-4 transition-all lg:pl-10 lg:pr-12 lg:pt-8">
