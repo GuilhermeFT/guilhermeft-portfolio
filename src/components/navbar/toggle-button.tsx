@@ -9,19 +9,19 @@ export const ToggleButton = ({ isOpen, toggleMenu }: ToggleButtonProps) => {
   return (
     <button
       onClick={toggleMenu}
-      className="p-2 w-10 h-10 flex justify-center items-center  md:hidden"
+      className="absolute right-10 z-30 flex h-10 w-10 items-center justify-center p-2"
     >
-      <div className="relative flex flex-col w-full h-3 justify-between">
+      <div className="relative flex h-3 w-full flex-col justify-between">
         <span
           className={twMerge(
-            'absolute top-0 w-full h-0.5 bg-white rounded-xl transition-all duration-500',
-            isOpen && 'top-1.5 -rotate-45 -translate-y-1/2',
+            'absolute top-0 h-0.5 w-full rounded-xl bg-white transition-all duration-500',
+            isOpen && 'top-1.5 -translate-y-1/2 -rotate-45',
           )}
         />
         <span
           className={twMerge(
-            'absolute bottom-0 w-3/4 h-0.5 bg-white rounded-xl transition-all duration-500',
-            isOpen && 'w-full bottom-1.5 rotate-45 translate-y-1/2',
+            'absolute bottom-0 h-0.5 w-3/4 rounded-xl bg-white transition-all duration-500',
+            isOpen && 'bottom-1.5 w-full translate-y-1/2 rotate-45',
           )}
         />
       </div>

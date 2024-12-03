@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { twMerge } from 'tailwind-merge'
+
+import { Button } from '../button'
 
 type TabMenuProps = {
   id?: string
@@ -32,21 +33,18 @@ export const TabMenu = ({ id, items }: TabMenuProps) => {
   }, [id])
 
   return (
-    <div className="flex flex-col gap-4 min-h-96">
-      <header className="bg-zinc-800 px-4 py-4 sticky top-0">
+    <div className="flex min-h-96 flex-col gap-4">
+      <header className="sticky top-0 bg-g-dark-blue/20 px-4 py-4">
         <div className="container">
           <nav>
-            <ul className="flex justify-center gap-4 flex-wrap">
+            <ul className="flex flex-wrap justify-center gap-4">
               {items.map((item) => (
-                <li
-                  key={item.id}
-                  onClick={() => handleTabClick(item.id)}
-                  className={twMerge(
-                    'px-4 py-2 cursor-pointer rounded transition-colors  hover:bg-zinc-700',
-                    item.id === activeTab ? 'bg-zinc-700' : '',
-                  )}
-                >
-                  {item.label}
+                <li key={item.id} onClick={() => handleTabClick(item.id)}>
+                  <Button
+                    variant={item.id === activeTab ? 'primary' : 'secondary'}
+                  >
+                    {item.label}
+                  </Button>
                 </li>
               ))}
             </ul>
@@ -54,8 +52,8 @@ export const TabMenu = ({ id, items }: TabMenuProps) => {
         </div>
       </header>
 
-      <div className="container flex flex-col gap-8 text-gft-light-gray text-lg text-justify px-4">
-        <h1 className="text-white font-bold text-4xl text-center md:text-left">
+      <div className="container flex flex-col gap-8 px-4 text-justify text-lg text-gft-light-gray">
+        <h1 className="text-center text-4xl font-bold text-white md:text-left">
           {activeTitle}
         </h1>
 

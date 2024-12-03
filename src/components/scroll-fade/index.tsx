@@ -1,6 +1,6 @@
 'use client'
 
-import { useScroll, useTransform, motion } from 'framer-motion'
+import { useScroll, useTransform, motion } from 'motion/react'
 import { ReactElement } from 'react'
 
 type ScrollFadeProps = {

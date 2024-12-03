@@ -1,12 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { twMerge } from 'tailwind-merge'
 
-import { navLinks } from '@/utils/const'
-
-import { MenuItem } from './menu-item'
-import { NavButtons } from './nav-buttons'
+import { Nav } from './nav'
 import { ToggleButton } from './toggle-button'
 
 export const Navbar = () => {
@@ -15,33 +11,10 @@ export const Navbar = () => {
   const handleToggleMenu = () => setIsMenuOpen((prev) => !prev)
 
   return (
-    <>
+    <div className="">
       <ToggleButton isOpen={isMenuOpen} toggleMenu={handleToggleMenu} />
 
-      <nav
-        className={twMerge(
-          'hidden h-full absolute z-20 top-full left-0 w-full px-4 gap-2 pb-8 bg-gft-background flex-col items-center my-auto',
-          isMenuOpen && 'flex',
-          isMenuOpen && 'border-t border-t-zinc-700',
-
-          'md:flex md:flex-row md:h-auto md:bg-transparent md:static md:p-0 md:w-max md:flex-1 md:border-t-0',
-        )}
-      >
-        <ul
-          className={twMerge(
-            'w-full m-auto mt-[calc(50%-5rem)]',
-            'md:m-0 md:flex md:gap-20 md:justify-center',
-          )}
-        >
-          {navLinks.map(({ href, label }) => (
-            <MenuItem key={href} href={href}>
-              {label}
-            </MenuItem>
-          ))}
-        </ul>
-
-        <NavButtons />
-      </nav>
-    </>
+      <Nav isOpen={isMenuOpen} />
+    </div>
   )
 }
