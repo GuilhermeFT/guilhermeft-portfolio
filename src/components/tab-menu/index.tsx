@@ -34,7 +34,7 @@ export const TabMenu = ({ id, items }: TabMenuProps) => {
 
   return (
     <div className="flex min-h-96 flex-col gap-4">
-      <header className="bg-g-dark-blue/20 px-4 py-4 md:sticky md:top-24">
+      <header className="bg-g-dark-blue/20 px-4 py-4 md:top-24">
         <div className="container">
           <nav>
             <ul className="flex flex-wrap justify-center gap-4">
