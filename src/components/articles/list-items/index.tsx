@@ -9,7 +9,7 @@ export const ArticleListItems = async () => {
 
   if (!posts.success || !posts.data.length) {
     return (
-      <p className="text-center text-gft-light-gray">Sem posts para exibir</p>
+      <p className="text-g-light-gray text-center">Sem posts para exibir</p>
     )
   }
 

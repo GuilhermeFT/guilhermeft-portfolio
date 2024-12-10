@@ -52,7 +52,7 @@ export const TabMenu = ({ id, items }: TabMenuProps) => {
         </div>
       </header>
 
-      <div className="container flex flex-col gap-8 px-4 text-justify text-lg text-gft-light-gray">
+      <div className="text-g-light-gray container flex flex-col gap-8 px-4 text-justify text-lg">
         <h1 className="text-center text-4xl font-bold text-white md:text-left">
           {activeTitle}
         </h1>

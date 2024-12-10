@@ -20,16 +20,11 @@ const config: Config = {
       },
 
       colors: {
-        'gft-background': '#030917',
-        'gft-dark-gray': '#161618',
-        'gft-light-gray': '#8F9BA8',
-        'gft-purple': '#A9A6FF',
-        'gft-light-purple': '#C7A6FF',
-
         'g-background': '#030917',
         'g-blue': '#367AF9',
         'g-dark-blue': '#11338C',
         'g-light-blue': '#9DD1FF',
+        'g-light-gray': '#8F9BA8',
       },
     },
   },

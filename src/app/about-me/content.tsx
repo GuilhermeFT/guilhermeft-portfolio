@@ -34,7 +34,7 @@ export const tabMenuItems: TabMenuType[] = [
           com desenvolvimento e desde então venho me aprimorando cada vez mais.
         </p>
 
-        <h2 className="text-white text-2xl font-bold">Ensino técnico</h2>
+        <h2 className="text-2xl font-bold text-white">Ensino técnico</h2>
         <p className="indent-10">
           Aos 16 anos, ingressei a uma instituição de ensino técnico, o IFMT -
           Campus Barra do Garças, onde tive meu primeiro contato com a
@@ -63,7 +63,7 @@ export const tabMenuItems: TabMenuType[] = [
           novidades acerca do desenvolvimento web e do Node.js.
         </p>
 
-        <h2 className="text-white text-2xl font-bold">
+        <h2 className="text-2xl font-bold text-white">
           Servidor de Jogos Online
         </h2>
         <p className="indent-10">
@@ -86,7 +86,7 @@ export const tabMenuItems: TabMenuType[] = [
           trouxe muita diversão para muitas pessoas.
         </p>
 
-        <h2 className="text-white text-2xl font-bold">Primeiro emprego</h2>
+        <h2 className="text-2xl font-bold text-white">Primeiro emprego</h2>
 
         <p className="indent-10">
           Em 2020, consegui meu primeiro emprego como desenvolvedor Front-end,
@@ -106,7 +106,7 @@ export const tabMenuItems: TabMenuType[] = [
     content: (
       <>
         <div className="grid gap-2">
-          <h2 className="text-white font-bold">Nov 2020 — Jul 2021</h2>
+          <h2 className="font-bold text-white">Nov 2020 — Jul 2021</h2>
           <p className="indent-10">
             Trabalhei na empresa <strong>SinalizeWeb</strong> como desenvolvedor
             Front-end, onde desenvolvi sites em Joomla, React e Next.js. e
@@ -117,7 +117,7 @@ export const tabMenuItems: TabMenuType[] = [
         </div>
 
         <div className="grid gap-2">
-          <h2 className="text-white font-bold">Ago 2021 — Nov 2021</h2>
+          <h2 className="font-bold text-white">Ago 2021 — Nov 2021</h2>
           <p className="indent-10">
             Recebi uma proposta de frelance para
             <strong> Wilson Pilar - Maia</strong> como desenvolvedor Front-end
@@ -127,7 +127,7 @@ export const tabMenuItems: TabMenuType[] = [
         </div>
 
         <div className="grid gap-2">
-          <h2 className="text-white font-bold">Out 2021 — Atualmente</h2>
+          <h2 className="font-bold text-white">Out 2021 — Atualmente</h2>
           <p className="indent-10">
             Atualmente, estou trabalhando como desenvolvedor Front-end na
             empresa <strong>Fuerza Studio</strong>, onde desenvolvo sistemas em
@@ -141,7 +141,7 @@ export const tabMenuItems: TabMenuType[] = [
         </div>
 
         <div className="grid gap-2">
-          <h2 className="text-white font-bold">Futuro</h2>
+          <h2 className="font-bold text-white">Futuro</h2>
           <p className="indent-10">
             Que tal trabalharmos juntos? Estou sempre em busca de novos desafios
             e oportunidades para me desenvolver profissionalmente. Se você
@@ -150,7 +150,8 @@ export const tabMenuItems: TabMenuType[] = [
             <a
               href="mailto:
               guilhermetrind12@gmail.com"
-              className="text-gft-blue underline text-white"
+              rel="noopener noreferrer"
+              className="text-white underline hover:text-g-blue"
             >
               guilhermetrind12@gmail.com
             </a>
@@ -166,7 +167,7 @@ export const tabMenuItems: TabMenuType[] = [
     content: (
       <>
         <div className="grid gap-2">
-          <h2 className="text-white font-bold">Em código</h2>
+          <h2 className="font-bold text-white">Em código</h2>
           <p className="indent-10">
             Eu tenho muita experiência com o desenvolvimento web atrelado ao
             <strong> React</strong> e <strong>Next.js</strong>, e também tenho
@@ -197,7 +198,7 @@ export const tabMenuItems: TabMenuType[] = [
         </div>
 
         <div className="grid gap-2">
-          <h2 className="text-white font-bold">Em soft skills</h2>
+          <h2 className="font-bold text-white">Em soft skills</h2>
           <p className="indent-10">
             Além das habilidades técnicas, também possuo habilidades
             comportamentais, como
@@ -212,7 +213,7 @@ export const tabMenuItems: TabMenuType[] = [
         </div>
 
         <div className="grid gap-2">
-          <h2 className="text-white font-bold">Em idiomas</h2>
+          <h2 className="font-bold text-white">Em idiomas</h2>
           <p className="indent-10">
             Além do português, que é minha língua nativa, também tenho
             conhecimento em inglês, mas ainda estou em processo de aprendizado.
@@ -227,7 +228,7 @@ export const tabMenuItems: TabMenuType[] = [
     content: (
       <>
         <div className="grid gap-2">
-          <h2 className="text-white font-bold">
+          <h2 className="font-bold text-white">
             React, Next.js e Tailwind CSS
           </h2>
           <p className="indent-10">
@@ -245,7 +246,7 @@ export const tabMenuItems: TabMenuType[] = [
         </div>
 
         <div className="grid gap-2">
-          <h2 className="text-white font-bold">Git e GitHub</h2>
+          <h2 className="font-bold text-white">Git e GitHub</h2>
           <p className="indent-10">
             Também utilizo o<strong> Git</strong> e o<strong> GitHub</strong> em
             meus projetos, seguindo as<strong> boas práticas</strong> de
@@ -255,7 +256,7 @@ export const tabMenuItems: TabMenuType[] = [
         </div>
 
         <div className="grid gap-2">
-          <h2 className="text-white font-bold">TypeScript</h2>
+          <h2 className="font-bold text-white">TypeScript</h2>
           <p className="indent-10">
             Além disso, também tenho conhecimento em<strong> TypeScript</strong>
             , que é um superset do JavaScript que traz tipagem estática para o
@@ -277,7 +278,7 @@ export const tabMenuItems: TabMenuType[] = [
             <a
               href="mailto:
               guilhermetrind12@gmail.com"
-              className="text-gft-blue underline text-white"
+              className="text-white underline hover:text-g-blue"
             >
               guilhermetrind12@gmail.com
             </a>
@@ -292,7 +293,7 @@ export const tabMenuItems: TabMenuType[] = [
               href="https://www.linkedin.com/in/guilhermeft/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gft-blue underline text-white"
+              className="text-white underline hover:text-g-blue"
             >
               LinkedIn
             </a>
