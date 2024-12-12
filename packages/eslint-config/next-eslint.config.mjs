@@ -13,7 +13,13 @@ const eslintConfig = tseslint.config(
       sourceType: "module",
     },
     rules: {
-      "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          args: "none",
+          varsIgnorePattern: "^_",
+        },
+      ],
 
       "no-console": "warn",
       "import/order": [
