@@ -1,4 +1,4 @@
-/* eslint-disable import/named */
+ 
 import { JSXFunctionSerializer, JSXMapSerializer } from '@prismicio/react'
 
 export const componentRender: JSXMapSerializer | JSXFunctionSerializer = {

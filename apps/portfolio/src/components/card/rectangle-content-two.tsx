@@ -1,10 +1,10 @@
 import { MoveRight } from 'lucide-react'
 import Link from 'next/link'
 
-import { RectangleCardProps } from './rectangle'
+//import { RectangleCardProps } from './rectangle'
 
-type RectangleContentTwoProps = RectangleCardProps
-export const RectangleContentTwo = ({}: RectangleContentTwoProps) => {
+//type RectangleContentTwoProps = RectangleCardProps
+export const RectangleContentTwo = () => {
   return (
     <Link
       href="/projetos"

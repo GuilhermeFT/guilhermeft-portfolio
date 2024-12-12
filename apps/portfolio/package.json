@@ -9,44 +9,39 @@
     "lint": "next lint",
     "slicemachine": "start-slicemachine"
   },
+  "peerDependencies": {
+    "next": "15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "eslint": "^9",
+    "typescript": "^5"
+  },
   "dependencies": {
-    "@prismicio/client": "^7.13.0",
+    "@prismicio/client": "^7.13.1",
     "@prismicio/next": "^1.7.1",
     "@prismicio/react": "^2.9.1",
-    "axios": "^1.7.8",
+    "axios": "^1.7.9",
     "lucide-react": "^0.407.0",
     "motion": "12.0.0-alpha.2",
-    "next": "15.0.4",
     "next-themes": "^0.3.0",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
     "tailwind-merge": "^2.5.5",
     "tailwind-variants": "^0.3.0",
     "tailwindcss-animated": "^1.1.2",
     "typewriter-effect": "^2.21.0",
-    "zod": "^3.23.8"
+    "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@slicemachine/adapter-next": "^0.3.59",
-    "@types/node": "^20.17.9",
-    "@types/react": "19.0.1",
-    "@types/react-dom": "19.0.2",
-    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@eslint/eslintrc": "^3.2.0",
+    "@gft/eslint-config": "workspace:*",
+    "@slicemachine/adapter-next": "^0.3.60",
+    "@types/node": "^20.17.10",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.2",
+    "@typescript-eslint/eslint-plugin": "^8.18.0",
     "autoprefixer": "^10.4.20",
-    "eslint": "^8.57.1",
-    "eslint-config-next": "15.0.4",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.31.0",
+    "eslint-config-next": "15.1.0",
     "postcss": "^8.4.49",
-    "prettier-plugin-tailwindcss": "^0.6.9",
-    "slice-machine-ui": "^2.10.5",
-    "tailwindcss": "^3.4.15",
-    "typescript": "^5.7.2"
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "19.0.1",
-      "@types/react-dom": "19.0.2"
-    }
+    "slice-machine-ui": "^2.11.0",
+    "tailwindcss": "^3.4.16"
   }
 }

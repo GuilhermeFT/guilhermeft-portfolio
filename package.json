@@ -1,17 +1,23 @@
 {
   "name": "guilhermeft-portfolio",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "dev": "turbo dev --filter=portfolio",
-    "check-types": "tsc --noEmit"
+    "dev:studio": "turbo dev --filter=studio",
+    "check-types": "tsc --noEmit",
+    "lint:all": "turbo lint -- --fix"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "dependencies": {
+    "next": "15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5"
+  },
   "devDependencies": {
-    "turbo": "^2.3.3"
+    "turbo": "^2.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "typescript": "^5",
+    "eslint": "^9"
   },
   "packageManager": "pnpm@9.0.0"
 }
