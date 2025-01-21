@@ -2,7 +2,8 @@
   "name": "guilhermeft-portfolio",
   "version": "1.0.0",
   "scripts": {
-    "dev": "turbo dev --filter=portfolio",
+    "dev": "turbo dev",
+    "dev:portfolio": "turbo dev --filter=portfolio",
     "dev:studio": "turbo dev --filter=studio",
     "check-types": "tsc --noEmit",
     "lint:all": "turbo lint -- --fix"
