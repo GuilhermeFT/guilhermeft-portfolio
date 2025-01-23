@@ -21,9 +21,9 @@ const config: Config = {
 
       colors: {
         'g-background': '#030917',
-        'g-blue': '#367AF9',
+        'g-blue': '#1b6cff',
         'g-dark-blue': '#11338C',
-        'g-light-blue': '#9DD1FF',
+        'g-light-blue': '#c4e3ff',
         'g-light-gray': '#8F9BA8',
       },
     },

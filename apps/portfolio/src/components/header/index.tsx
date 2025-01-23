@@ -7,12 +7,14 @@ import { Navbar } from '../navbar'
 
 export const Header = async () => {
   return (
-    <header className="fixed z-10 flex w-full flex-col items-center gap-2 bg-gradient-to-b from-g-background to-black/0 p-6 pb-9">
-      <Link className="flex w-max" href="/">
-        <Image src={logo} alt="Logo Guilherme Trindade" className="w-12" />
-      </Link>
+    <header className="absolute flex z-10 h-20 w-full flex-col items-center justify-center gap-2 px-4 pt-6">
+      <div className="container flex w-full items-center justify-between">
+        <Link className="flex w-max" href="/">
+          <Image src={logo} alt="Logo Guilherme Trindade" className="w-12" />
+        </Link>
 
-      <Navbar />
+        <Navbar />
+      </div>
     </header>
   )
 }

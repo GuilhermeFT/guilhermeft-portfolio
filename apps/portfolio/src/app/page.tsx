@@ -1,12 +1,9 @@
 import Link from 'next/link'
-import { MapPin } from 'lucide-react'
 
 import { Card } from '@/components/card'
 import { getHighlightedProjects } from '@/services/prismic/projects'
 import { Section } from '@/components/section'
 import { Button } from '@/components/button'
-
-import { HeroButtons } from './hero-buttons'
 
 export default async function Home() {
   const projects = await getHighlightedProjects(2)
@@ -15,40 +12,20 @@ export default async function Home() {
 
   return (
     <main>
-      <Section className="flex h-[88dvh]">
-        <div className="container grid auto-rows-auto gap-10 lg:grid-cols-[1fr_40%] lg:justify-between">
-          <div className="grid w-full gap-2 self-end lg:self-center">
-            <p className="gradient-text md:text-xl">Olá, meu nome é</p>
-
-            <h1 className="flex flex-col gap-2 pl-4 text-5xl font-extralight sm:flex-row md:text-6xl xl:text-nowrap xl:text-7xl">
-              <span>Guilherme</span>
-              <span className="w-max translate-x-[30vw] sm:translate-x-0">
-                Trindade
-              </span>
+      <Section className="flex h-dvh">
+        <div className="container relative flex flex-col items-center justify-center">
+          <div className="flex w-full flex-1 flex-col items-center justify-center gap-2 text-center">
+            <h6 className="gradient-text uppercase">Olá, eu sou</h6>
+            <h1 className="mb-6 flex items-center gap-2 text-5xl font-extralight tracking-widest md:text-7xl">
+              Guilherme Trindade
             </h1>
 
-            <p className="gradient-text ml-4 mt-6 flex w-max gap-2 text-xl md:text-3xl lg:flex-col">
-              <span className="ml-10">Desenvolvedor</span>
-              <span>Front-end.</span>
-            </p>
-
-            <HeroButtons className="mt-16 hidden lg:flex" />
+            <h6 className="gradient-text uppercase">
+              Desenvolvedor Front-end.
+            </h6>
           </div>
 
-          <div className="grid w-full gap-3 self-start lg:self-center">
-            <span className="gradient-text text-lg md:text-xl">Eu sou</span>
-
-            <p className="pl-4 text-xl md:text-2xl">
-              Um desenvolvedor front-end especializado em React e Next.js.
-            </p>
-
-            <div className="mt-4 flex w-max items-center justify-center gap-2 pl-4">
-              <MapPin className="w-5 text-g-blue" />
-              <span className="md:text-lg">Anápolis, GO</span>
-            </div>
-          </div>
-
-          <HeroButtons className="lg:hidden" />
+          <div className="bottom-0 bg-red-500 p-2"></div>
         </div>
       </Section>
 
