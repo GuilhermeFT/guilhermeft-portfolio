@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply w-full bg-g-background text-white;
+    @apply fixed w-full bg-g-background text-white;
   }
 
   ::-webkit-scrollbar {
@@ -22,10 +22,47 @@
   ::-webkit-scrollbar-thumb {
     @apply rounded-lg bg-zinc-800/75;
   }
+
+  :root {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 219 100% 55.3%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 223 78.3% 30.8%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 223 78.3% 30.8%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 223 78.3% 30.8%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 223 78.3% 30.8%;
+    --input: 223 78.3% 30.8%;
+    --ring: 219 100% 55.3%;
+    --radius: 0.8rem;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
 }
 
 @layer utilities {
   .gradient-text {
     @apply bg-gradient-to-bl from-g-blue to-g-light-blue bg-clip-text text-transparent;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }

@@ -12,7 +12,7 @@ import { paths } from './desktop-navbar'
 export const MobileNavbar = () => {
   const pathname = usePathname()
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>()
 
   const handleToggleMenu = () => setIsMenuOpen((prev) => !prev)
 
@@ -33,7 +33,12 @@ export const MobileNavbar = () => {
           y: '100%',
         }}
         animate={{
-          y: isMenuOpen ? ['100%', 0] : [0, '-100%'],
+          y:
+            isMenuOpen === undefined
+              ? '100%'
+              : isMenuOpen
+                ? ['100%', 0]
+                : [0, '-100%'],
           transition: {
             bounce: 0,
             duration: 0.5,

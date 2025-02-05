@@ -3,7 +3,9 @@ import Link from 'next/link'
 import { Card } from '@/components/card'
 import { getHighlightedProjects } from '@/services/prismic/projects'
 import { Section } from '@/components/section'
-import { Button } from '@/components/button'
+import { Button } from '@/components/ui/button'
+
+import { HeroSection } from './components/hero-section'
 
 export default async function Home() {
   const projects = await getHighlightedProjects(2)
@@ -12,22 +14,7 @@ export default async function Home() {
 
   return (
     <main>
-      <Section className="flex h-dvh">
-        <div className="container relative flex flex-col items-center justify-center">
-          <div className="flex w-full flex-1 flex-col items-center justify-center gap-2 text-center">
-            <h6 className="gradient-text uppercase">Olá, eu sou</h6>
-            <h1 className="mb-6 flex items-center gap-2 text-5xl font-extralight tracking-widest md:text-7xl">
-              Guilherme Trindade
-            </h1>
-
-            <h6 className="gradient-text uppercase">
-              Desenvolvedor Front-end.
-            </h6>
-          </div>
-
-          <div className="bottom-0 bg-red-500 p-2"></div>
-        </div>
-      </Section>
+      <HeroSection />
 
       <Section className="py-16 text-zinc-200">
         <div className="container flex flex-col gap-6 md:grid-cols-2">
