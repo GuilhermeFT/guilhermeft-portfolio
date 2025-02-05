@@ -1,7 +1,6 @@
 'use client'
 
 import { twMerge } from 'tailwind-merge'
-import Typewriter from 'typewriter-effect'
 
 type PageTitleProps = {
   children: string
@@ -16,14 +15,7 @@ export const PageTitle = ({ children, className }: PageTitleProps) => {
         className,
       )}
     >
-      <Typewriter
-        options={{
-          cursorClassName: 'Typewriter__cursor text-g-light-blue',
-        }}
-        onInit={(typewriter) => {
-          typewriter.typeString(children).start()
-        }}
-      />
+      
     </h1>
   )
 }

@@ -1,26 +1,63 @@
 {
-  "name": "guilhermeft-portfolio",
-  "version": "1.0.0",
+  "name": "portfolio",
+  "version": "0.1.2",
+  "private": true,
   "scripts": {
-    "dev": "turbo dev",
-    "dev:portfolio": "turbo dev --filter=portfolio",
-    "dev:studio": "turbo dev --filter=studio",
-    "check-types": "tsc --noEmit",
-    "lint:all": "turbo lint -- --fix"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "slicemachine": "start-slicemachine"
   },
-  "dependencies": {
-    "motion": "12.0.0-alpha.2",
+  "peerDependencies": {
+    "eslint": "^9",
     "next": "15.1.0",
-    "portfolio": "^0.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "typescript": "^5"
   },
-  "devDependencies": {
-    "eslint": "^9",
-    "prettier-plugin-tailwindcss": "^0.6.9",
-    "turbo": "^2.3.3",
-    "typescript": "^5"
+  "dependencies": {
+    "@prismicio/client": "^7.16.0",
+    "@prismicio/next": "^2.0.0",
+    "@prismicio/react": "^3.0.0",
+    "@radix-ui/react-slot": "^1.1.1",
+    "axios": "^1.7.9",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.474.0",
+    "motion": "12.3.1",
+    "next": "15.1.6",
+    "next-themes": "^0.4.4",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "tailwind-merge": "^3.0.1",
+    "tailwind-variants": "^0.3.1",
+    "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-animated": "^2.0.0",
+    "zod": "^3.24.1"
   },
-  "packageManager": "pnpm@9.0.0"
+  "devDependencies": {
+    "@eslint/compat": "^1.2.6",
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.19.0",
+    "@slicemachine/adapter-next": "^0.3.66",
+    "@types/node": "^22.13.1",
+    "@types/react": "19.0.8",
+    "@types/react-dom": "19.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.23.0",
+    "autoprefixer": "^10.4.20",
+    "eslint-config-next": "15.1.6",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-import": "^2.31.0",
+    "postcss": "^8.5.1",
+    "slice-machine-ui": "^2.12.3",
+    "tailwindcss": "^4.0.3",
+    "typescript-eslint": "^8.23.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.0.8",
+      "@types/react-dom": "19.0.3"
+    }
+  }
 }
