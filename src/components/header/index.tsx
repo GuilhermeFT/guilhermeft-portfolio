@@ -4,9 +4,9 @@ import Image from 'next/image'
 import { motion } from 'motion/react'
 import Link from 'next/link'
 
-import logo from '@/assets/logo.svg'
-
 import { Navbar } from '../navbar'
+
+import logo from '@/assets/logo.svg'
 
 export const Header = () => {
   return (

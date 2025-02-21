@@ -37,7 +37,7 @@ export default async function Project(props: PageProps<ProjectProps>) {
           </span>
 
           <section className="grid grid-cols-1 gap-8 xl:grid-cols-3">
-            <div className="h-max rounded-lg border-2 border-g-blue p-4">
+            <div className="border-g-blue h-max rounded-lg border-2 p-4">
               <ul className="flex flex-col gap-2">
                 {hasProjectLink ? (
                   <li className="flex gap-2">
@@ -74,7 +74,7 @@ export default async function Project(props: PageProps<ProjectProps>) {
                       {project.stack.map((tech) => (
                         <span
                           key={tech.technology}
-                          className="flex items-center justify-center rounded-lg bg-g-dark-blue px-2 py-1 text-sm"
+                          className="bg-g-dark-blue flex items-center justify-center rounded-lg px-2 py-1 text-sm"
                         >
                           {tech.technology}
                         </span>
@@ -95,7 +95,7 @@ export default async function Project(props: PageProps<ProjectProps>) {
             </div>
           </section>
 
-          <section className="mb-32 mt-32 grid w-full gap-8 text-justify">
+          <section className="mt-32 mb-32 grid w-full gap-8 text-justify">
             <PrismicRichText
               components={componentRender}
               field={project.content}

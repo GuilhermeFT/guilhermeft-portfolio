@@ -40,12 +40,12 @@ export const HeroSection = () => {
 
   return (
     <Section className="flex h-dvh">
-      <div className="relative container flex flex-col items-center justify-center">
+      <div className="container relative flex flex-col items-center justify-center">
         <div
           ref={scope}
           className="flex w-full flex-1 flex-col items-center justify-center gap-4 text-center"
         >
-          <h6 className="gradient-text flex items-center gap-2 text-base uppercase opacity-0 md:text-lg">
+          <h6 className="gradient-text flex items-center gap-2 text-base uppercase opacity-0 md:text-xl">
             Olá, eu sou
           </h6>
 
@@ -53,7 +53,7 @@ export const HeroSection = () => {
             Guilherme Trindade
           </h1>
 
-          <h6 className="gradient-text mb-10 text-base uppercase opacity-0 md:text-lg">
+          <h6 className="gradient-text mb-10 text-base uppercase opacity-0 md:text-xl">
             Desenvolvedor Sênior - Frontend
           </h6>
 

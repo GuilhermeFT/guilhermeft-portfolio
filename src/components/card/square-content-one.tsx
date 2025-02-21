@@ -22,17 +22,17 @@ export const SquareContentOne = ({
 
       <Link
         href={href || `/projects/${id}`}
-        className="absolute h-full w-full transition-all group-hover:bg-zinc-950 group-hover:bg-opacity-85"
+        className="group-hover:bg-opacity-85 absolute h-full w-full transition-all group-hover:bg-zinc-950"
       >
-        <div className="flex flex-col gap-4 bg-gradient-to-b from-zinc-950 to-transparent p-4 transition-all lg:pl-10 lg:pr-12 lg:pt-8">
-          <span className="text-g-light-gray block text-sm font-light animate-duration-500 animate-ease-out group-hover:animate-fade-up">
+        <div className="flex flex-col gap-4 bg-linear-to-b from-zinc-950 to-transparent p-4 transition-all lg:pt-8 lg:pr-12 lg:pl-10">
+          <span className="text-g-light-gray animate-duration-500 animate-ease-out group-hover:animate-fade-up block text-sm font-light">
             {project?.year_started} — {project?.year_finished}
           </span>
-          <h3 className="break-md:words text-2xl font-bold animate-delay-75 animate-duration-500 animate-ease-out group-hover:animate-fade-up lg:max-w-80">
+          <h3 className="break-md:words animate-delay-75 animate-duration-500 animate-ease-out group-hover:animate-fade-up text-2xl font-bold lg:max-w-80">
             {project?.project_name}
           </h3>
 
-          <button className="text-g-light-gray hidden items-center gap-2 animate-delay-150 animate-duration-500 group-hover:flex group-hover:animate-fade-right">
+          <button className="text-g-light-gray animate-delay-150 animate-duration-500 group-hover:animate-fade-right hidden items-center gap-2 group-hover:flex">
             <span>Veja mais</span>
             <MoveRight />
           </button>

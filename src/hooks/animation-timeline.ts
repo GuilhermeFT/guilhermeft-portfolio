@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import {
-  DOMKeyframesDefinition,
-  DynamicAnimationOptions,
-  ElementOrSelector,
+  type DOMKeyframesDefinition,
+  type AnimationOptions,
+  type ElementOrSelector,
   useAnimate,
 } from 'motion/react'
 import { useEffect, useRef } from 'react'
@@ -10,7 +10,7 @@ import { useEffect, useRef } from 'react'
 type AnimateParams = [
   ElementOrSelector,
   DOMKeyframesDefinition,
-  (DynamicAnimationOptions | undefined)?,
+  (AnimationOptions | undefined)?,
 ]
 
 type Animation = AnimateParams | Animation[]

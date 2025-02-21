@@ -1,11 +1,11 @@
+import { tabMenuItems } from './content'
+
 import { TabMenu } from '@/components/tab-menu'
 import { ScrollFade } from '@/components/scroll-fade'
 import { ScrollToButton } from '@/components/scroll-to-button'
 import { MouseIcon } from '@/components/icons/mouse-icon'
 import { PageProps } from '@/types/page'
 import { Section } from '@/components/section'
-
-import { tabMenuItems } from './content'
 
 export default async function About(props: PageProps) {
   const searchParams = await props.searchParams
@@ -21,7 +21,7 @@ export default async function About(props: PageProps) {
             <span>Atuando ativamente no Frontend</span>
             <span className="ml-10">com React.js, Next.js e TypeScript.</span>
           </p>
-          <p className="max-w-4xl text-pretty text-lg md:pl-4 md:text-xl">
+          <p className="max-w-4xl text-lg text-pretty md:pl-4 md:text-xl">
             A minha proatividade e a minha vontade de aprender coisas novas me
             fez ter contato com Node.js no Backend e já tive contato com
             diversas outras linguagens (Lua, Java Kotlin, C) para aplicações

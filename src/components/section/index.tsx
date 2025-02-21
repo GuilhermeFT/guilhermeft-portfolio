@@ -5,10 +5,7 @@ type SectionProps = HTMLAttributes<HTMLElement>
 
 export const Section = ({ className, children, ...props }: SectionProps) => {
   return (
-    <section
-      {...props}
-      className={twMerge('border-b border-b-gray-800 px-2', className)}
-    >
+    <section {...props} className={twMerge('px-2', className)}>
       {children}
     </section>
   )

@@ -1,6 +1,6 @@
-import { format } from '@/utils/date'
-
 import { AllPostsResponse } from './types'
+
+import { format } from '@/utils/date'
 
 export const formatTabnewsData = (
   data: AllPostsResponse[],

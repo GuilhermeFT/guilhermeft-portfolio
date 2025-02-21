@@ -151,7 +151,7 @@ export const tabMenuItems: TabMenuType[] = [
               href="mailto:
               guilhermetrind12@gmail.com"
               rel="noopener noreferrer"
-              className="text-white underline hover:text-g-blue"
+              className="hover:text-g-blue text-white underline"
             >
               guilhermetrind12@gmail.com
             </a>
@@ -278,7 +278,7 @@ export const tabMenuItems: TabMenuType[] = [
             <a
               href="mailto:
               guilhermetrind12@gmail.com"
-              className="text-white underline hover:text-g-blue"
+              className="hover:text-g-blue text-white underline"
             >
               guilhermetrind12@gmail.com
             </a>
@@ -293,7 +293,7 @@ export const tabMenuItems: TabMenuType[] = [
               href="https://www.linkedin.com/in/guilhermeft/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white underline hover:text-g-blue"
+              className="hover:text-g-blue text-white underline"
             >
               LinkedIn
             </a>

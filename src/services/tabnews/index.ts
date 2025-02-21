@@ -1,7 +1,5 @@
 import { AxiosError } from 'axios'
 
-import { TabnewsRoutes } from '@/utils/enum'
-
 import { TabnewsAPI } from '../../lib/tabnews'
 
 import {
@@ -11,6 +9,8 @@ import {
   TabnewsResponseError,
 } from './types'
 import { formatTabnewsData } from './helpers'
+
+import { TabnewsRoutes } from '@/utils/enum'
 
 export const getMyPosts = async (): Promise<ReturnType<AllPostsResponse[]>> => {
   try {

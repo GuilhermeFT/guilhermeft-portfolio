@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 
 import { ToggleButton } from './toggle-button'
 import { paths } from './desktop-navbar'
+import { cn } from '@/lib/utils'
 
 export const MobileNavbar = () => {
   const pathname = usePathname()
@@ -28,7 +29,10 @@ export const MobileNavbar = () => {
       <ToggleButton isOpen={isMenuOpen} toggleMenu={handleToggleMenu} />
 
       <motion.div
-        className="fixed left-0 top-0 z-10 flex h-dvh w-dvw items-center justify-center bg-g-dark-blue backdrop-blur-lg md:hidden"
+        className={cn(
+          'bg-g-dark-blue fixed top-0 left-0 z-10 flex h-dvh w-dvw items-center justify-center backdrop-blur-lg md:hidden',
+          !isMenuOpen && 'hidden',
+        )}
         initial={{
           y: '100%',
         }}
@@ -63,13 +67,13 @@ export const MobileNavbar = () => {
               bounce: 0,
               delay: isMenuOpen ? 0.4 : 0,
             }}
-            className="text-center text-sm uppercase text-zinc-400"
+            className="text-center text-sm text-zinc-400 uppercase"
           >
             Menu
           </motion.span>
 
           <ul className="text-3xl font-bold md:text-5xl">
-            <AnimatePresence mode="wait">
+            <AnimatePresence>
               {isMenuOpen &&
                 paths.map((path, i) => (
                   <motion.li

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { twMerge } from 'tailwind-merge'
 
-import { Button } from '@/components/button'
+import { Button } from '@/components/ui/button'
 
 type HeroButtonsProps = {
   className?: string

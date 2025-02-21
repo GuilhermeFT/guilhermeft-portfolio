@@ -9,11 +9,11 @@ export const AnimatedLogo = ({ className }: { className?: string }) => {
   return (
     <div
       className={twMerge(
-        'flex flex-col gap-4 justify-center items-center',
+        'flex flex-col items-center justify-center gap-4',
         className,
       )}
     >
-      <Logo className="w-16 h-auto" />
+      <Logo className="h-auto w-16" />
       <Text className="" />
     </div>
   )

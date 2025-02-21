@@ -1,3 +1,4 @@
+import { SmoothScroll } from '@/components/animations/smooth-scroll'
 import '@/styles/globals.css'
 
 import type { Metadata } from 'next'
@@ -20,7 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={montserrat.className}>{children}</body>
+      <body className={montserrat.className}>
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   )
 }

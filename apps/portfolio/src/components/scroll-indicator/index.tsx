@@ -43,7 +43,7 @@ export function ScrollIndicator() {
             Scroll
           </motion.span>
           <motion.div
-            className="from-g-dark-blue h-8 w-0.5 origin-top bg-linear-to-b to-transparent"
+            className="from-g-dark-blue h-8 w-0.5 origin-top bg-gradient-to-b to-transparent"
             animate={{
               scaleY: [1, 1.5, 1],
               opacity: [0, 1, 0],

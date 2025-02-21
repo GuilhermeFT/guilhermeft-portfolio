@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
-import { Button } from '../button'
+import { Button } from '../ui/button'
 
 type TabMenuProps = {
   id?: string
