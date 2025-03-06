@@ -9,12 +9,12 @@ export const paths = [
     label: 'Início',
   },
   {
-    href: '/about-me',
-    label: 'Sobre mim',
+    href: '/#all-projects',
+    label: 'Projetos',
   },
   {
-    href: '/projects',
-    label: 'Projetos',
+    href: '/about-me',
+    label: 'Sobre mim',
   },
   {
     href: '/articles',

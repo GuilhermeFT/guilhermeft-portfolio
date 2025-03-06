@@ -1,11 +1,11 @@
 import { DesktopNavbar } from './desktop-navbar'
-import { MobileNavbar } from './mobile-navbar'
+import { ToggleButton } from './toggle-button'
 
 export const Navbar = () => {
   return (
     <>
-      <MobileNavbar />
       <DesktopNavbar />
+      <ToggleButton />
     </>
   )
 }

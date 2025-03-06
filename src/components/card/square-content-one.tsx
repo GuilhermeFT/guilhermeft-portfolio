@@ -17,18 +17,18 @@ export const SquareContentOne = ({
         alt=""
         field={project?.banner}
         quality={100}
-        className="object-cover object-center opacity-50 transition-transform group-hover:scale-110"
+        className="object-cover object-center opacity-50 transition-transform duration-500 ease-in-out group-hover:scale-110"
       />
 
       <Link
         href={href || `/projects/${id}`}
-        className="group-hover:bg-opacity-85 absolute h-full w-full transition-all group-hover:bg-zinc-950"
+        className="group-hover:bg-opacity-85 absolute h-full w-full transition-all duration-500 ease-in-out group-hover:bg-zinc-950/50"
       >
         <div className="flex flex-col gap-4 bg-linear-to-b from-zinc-950 to-transparent p-4 transition-all lg:pt-8 lg:pr-12 lg:pl-10">
           <span className="text-g-light-gray animate-duration-500 animate-ease-out group-hover:animate-fade-up block text-sm font-light">
             {project?.year_started} — {project?.year_finished}
           </span>
-          <h3 className="break-md:words animate-delay-75 animate-duration-500 animate-ease-out group-hover:animate-fade-up text-2xl font-bold lg:max-w-80">
+          <h3 className="animate-delay-75 animate-duration-500 animate-ease-out group-hover:animate-fade-up text-2xl font-bold lg:max-w-80">
             {project?.project_name}
           </h3>
 

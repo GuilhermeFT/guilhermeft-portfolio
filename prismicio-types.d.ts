@@ -40,6 +40,18 @@ export interface ProjectsDocumentDataStackItem {
  */
 interface ProjectsDocumentData {
   /**
+   * Is Highlighted field in *Projects*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: projects.is_highlighted
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_highlighted: prismic.BooleanField
+
+  /**
    * Project Name field in *Projects*
    *
    * - **Field Type**: Text
@@ -59,9 +71,13 @@ interface ProjectsDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  project_link: prismic.LinkField & {
-    url?: string
-  }
+  project_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >
 
   /**
    * Repository Link field in *Projects*
@@ -72,21 +88,13 @@ interface ProjectsDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  repository_link: prismic.LinkField & {
-    url?: string
-  }
-
-  /**
-   * Is Highlighted field in *Projects*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: projects.is_highlighted
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  is_highlighted: prismic.BooleanField
+  repository_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >
 
   /**
    * Year Started field in *Projects*
@@ -209,6 +217,17 @@ declare module '@prismicio/client' {
       repositoryNameOrEndpoint: string,
       options?: prismic.ClientConfig,
     ): prismic.Client<AllDocumentTypes>
+  }
+
+  interface CreateWriteClient {
+    (
+      repositoryNameOrEndpoint: string,
+      options: prismic.WriteClientConfig,
+    ): prismic.WriteClient<AllDocumentTypes>
+  }
+
+  interface CreateMigration {
+    (): prismic.Migration<AllDocumentTypes>
   }
 
   namespace Content {

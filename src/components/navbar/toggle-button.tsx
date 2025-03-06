@@ -1,11 +1,9 @@
+import { useNavigation } from '@/store/use-navigation'
 import { twMerge } from 'tailwind-merge'
 
-type ToggleButtonProps = {
-  isOpen?: boolean
-  toggleMenu?: () => void
-}
+export const ToggleButton = () => {
+  const { isOpen, toggleMenu } = useNavigation()
 
-export const ToggleButton = ({ isOpen, toggleMenu }: ToggleButtonProps) => {
   return (
     <button
       onClick={toggleMenu}

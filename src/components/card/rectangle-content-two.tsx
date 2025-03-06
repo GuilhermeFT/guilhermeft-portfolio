@@ -8,7 +8,7 @@ type RectangleContentTwoProps = RectangleCardProps
 export const RectangleContentTwo = ({}: RectangleContentTwoProps) => {
   return (
     <Link
-      href="/projetos"
+      href="/projects"
       className="flex h-full w-full flex-col items-center justify-center gap-4 transition-all group-hover:bg-gray-950"
     >
       <div className="animate-duration-500 animate-ease-out group-hover:animate-fade-up rounded-full bg-gray-900 p-7">

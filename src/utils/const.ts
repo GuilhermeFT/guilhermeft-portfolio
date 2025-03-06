@@ -2,7 +2,7 @@ import { Images } from './images'
 
 export const navLinks = [
   { href: '/', label: 'Início' },
-  { href: '/projetos', label: 'Projetos' },
+  { href: '/projects', label: 'Projetos' },
   { href: '/artigos', label: 'Artigos' },
   { href: '/sobre-mim', label: 'Sobre mim' },
 ]

@@ -39,7 +39,7 @@ export const HeroSection = () => {
   ])
 
   return (
-    <Section className="flex h-dvh">
+    <Section className="flex h-dvh" disableAnimation>
       <div className="relative container flex flex-col items-center justify-center">
         <div
           ref={scope}
@@ -54,7 +54,7 @@ export const HeroSection = () => {
           </h1>
 
           <h6 className="gradient-text mb-10 text-base uppercase opacity-0 md:text-lg">
-            Desenvolvedor Sênior - Frontend
+            Software Developer
           </h6>
 
           <div className="grid w-full max-w-96 gap-4 opacity-0 sm:grid-cols-2">

@@ -3,6 +3,8 @@
 import useWindowSize from '@/hooks/use-window-size'
 import { useScroll, useSpring, motion, useTransform } from 'motion/react'
 import { useEffect, useRef } from 'react'
+import { FloatToggleMenu } from '../float-toggle-menu'
+import { MobileNavbar } from '../navbar/mobile-navbar'
 
 export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
   const ref = useRef<HTMLDivElement>(null)
@@ -26,6 +28,8 @@ export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div className="fixed h-full w-full overflow-hidden">
+      <FloatToggleMenu />
+      <MobileNavbar />
       <motion.div ref={ref} style={{ y }}>
         {children}
       </motion.div>

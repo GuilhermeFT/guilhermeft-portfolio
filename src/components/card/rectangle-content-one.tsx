@@ -13,14 +13,15 @@ export const RectangleContentOne = ({
   return (
     <>
       <PrismicNextImage
+        fallbackAlt=""
         field={project?.banner}
         quality={100}
         className="h-full object-cover object-center transition-transform group-hover:scale-110"
       />
 
       <Link
-        href={href || `/projetos/${id}`}
-        className="group-hover:bg-opacity-85 absolute h-full w-full transition-all group-hover:bg-gray-950"
+        href={href || `/projects/${id}`}
+        className="group-hover:bg-opacity-85 absolute h-full w-full transition-all group-hover:bg-gray-950/50"
       >
         <div className="flex flex-col gap-4 bg-linear-to-b from-gray-900 to-transparent p-4 pb-16 transition-all lg:pt-10 lg:pr-24 lg:pl-16">
           <time

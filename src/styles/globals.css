@@ -1,4 +1,8 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+/*
+  ---break---
+*/
+@custom-variant dark (&:is(.dark *));
 
 @theme {
   --height-17: 4.25rem;
@@ -8,6 +12,7 @@
   --color-g-dark-blue: #11338c;
   --color-g-light-blue: #c4e3ff;
   --color-g-light-gray: #8f9ba8;
+  --color-g-dark-gray: #212a3e;
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
 
@@ -70,7 +75,7 @@
 }
 
 @utility gradient-text {
-  @apply bg-linear-to-bl from-g-blue to-g-light-blue bg-clip-text text-transparent;
+  @apply from-g-blue to-g-light-blue bg-linear-to-bl bg-clip-text text-transparent;
 }
 
 @layer base {
@@ -79,7 +84,7 @@
   }
 
   body {
-    @apply fixed w-full bg-g-background text-white;
+    @apply bg-g-background w-full text-white;
   }
 
   ::-webkit-scrollbar {
@@ -120,5 +125,18 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+  }
+}
+
+/*
+  ---break---
+*/
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50 scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
   }
 }
