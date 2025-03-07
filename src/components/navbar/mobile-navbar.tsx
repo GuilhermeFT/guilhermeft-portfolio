@@ -32,7 +32,7 @@ export const MobileNavbar = () => {
         y: '-100%',
       }}
       animate={{
-        y: isOpen === undefined ? '-100%' : isOpen ? ['100%', 0] : [0, '-100%'],
+        y: isOpen ? 0 : '-100%',
         transition: {
           bounce: 0,
           duration: 0.5,

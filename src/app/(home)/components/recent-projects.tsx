@@ -23,7 +23,7 @@ export const RecentProjects = async () => {
               {projects.map((project) => (
                 <div
                   key={project.uid}
-                  className="group relative mx-3 flex aspect-square w-[75vw] items-center gap-4 overflow-hidden transition-all hover:scale-105 md:w-[40vw] lg:w-[35vw]"
+                  className="group relative mx-3 flex aspect-square w-[75vw] items-center gap-4 overflow-hidden transition-all hover:scale-105 md:w-[35vw] lg:w-[28vw]"
                 >
                   <PrismicNextImage
                     fill

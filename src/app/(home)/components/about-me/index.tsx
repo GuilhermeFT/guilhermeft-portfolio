@@ -4,14 +4,14 @@ import { tabMenuItems } from './content'
 
 export const AboutMe = () => {
   return (
-    <Section id="about-me" className="grid min-h-dvh items-center py-12">
-      <div className="container mx-auto grid gap-4 px-4 py-8">
-        <header className="grid gap-2">
-          <h3 className="gradient-text text-2xl font-normal uppercase md:text-4xl">
-            Sobre Mim
-          </h3>
-        </header>
+    <Section id="about-me" className="min-h-dvh px-0 pt-8">
+      <header className="border-g-dark-gray grid h-max gap-2 border-b py-6">
+        <h3 className="gradient-text text-center text-2xl font-normal uppercase md:text-4xl">
+          Sobre Mim
+        </h3>
+      </header>
 
+      <div className="container mx-auto grid gap-4 px-4 py-8">
         <Tabs
           defaultValue="my-journey"
           className="grid grid-cols-1 gap-4 md:grid-cols-[1fr_2fr]"

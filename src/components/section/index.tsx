@@ -32,7 +32,7 @@ export const Section = ({
       viewport={
         disableAnimation
           ? undefined
-          : { margin: '100px', once: true, amount: 0.3 }
+          : { margin: '100px', once: true, amount: 0.2 }
       }
       initial={disableAnimation ? undefined : initial}
       whileInView={disableAnimation ? undefined : anim}
