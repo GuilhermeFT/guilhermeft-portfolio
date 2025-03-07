@@ -11,10 +11,14 @@ type ScrollToButtonProps = {
 export const ScrollToButton = ({
   elementId,
   children,
-  className
+  className,
 }: ScrollToButtonProps) => {
   const handleClick = () => {
     document.getElementById(elementId)?.scrollIntoView({ behavior: 'smooth' })
   }
-  return <button onClick={handleClick} className={className}>{children}</button>
+  return (
+    <button onClick={handleClick} className={className}>
+      {children}
+    </button>
+  )
 }

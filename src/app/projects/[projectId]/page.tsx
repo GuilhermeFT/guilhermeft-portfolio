@@ -1,7 +1,6 @@
 import { PrismicRichText } from '@prismicio/react'
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next'
 
-import { PageTitle } from '@/components/page-title'
 import { getProjectByUid } from '@/services/prismic/projects'
 import { PageProps } from '@/types/page'
 
@@ -17,76 +16,73 @@ export default async function Project(props: PageProps<ProjectProps>) {
   const { projectId } = params
 
   const project = (await getProjectByUid(projectId)).data
+  console.log(project)
 
   const hasTechStack = project.stack.length > 0
   const hasProjectLink =
-    !!project.project_link.url && project.project_link.link_type === 'Web'
+    project.project_link.link_type === 'Web' && !!project.project_link.url
   const hasRepoLink =
-    !!project.repository_link.url && project.repository_link.link_type === 'Web'
+    project.repository_link.link_type === 'Web' && !!project.repository_link.url
 
   return (
-    <main>
+    <main className="container max-w-7xl">
       <div className="flex min-h-dvh flex-col items-center justify-center gap-8 px-4">
         <div className="container flex flex-1 flex-col gap-2 pt-36 md:items-start">
-          <PageTitle className="h-17 [font-size:_clamp(2rem,13.25vw,3rem)] md:text-[3rem]">
-            {project.project_name as string}
-          </PageTitle>
-
           <span className="block text-sm font-light text-zinc-400">
             {project?.year_started} — {project?.year_finished}
           </span>
+          <h1 className="h-17 [font-size:_clamp(2rem,13.25vw,3rem)] md:text-[3rem]">
+            {project.project_name as string}
+          </h1>
 
-          <section className="grid grid-cols-1 gap-8 xl:grid-cols-3">
-            <div className="h-max rounded-lg border-2 border-g-blue p-4">
-              <ul className="flex flex-col gap-2">
-                {hasProjectLink ? (
-                  <li className="flex gap-2">
-                    <p className="text-zinc-200">
-                      <strong className="text-white">Link: </strong>
-                      <PrismicNextLink
-                        className="text-zinc-300 underline hover:text-gray-400"
-                        field={project.project_link}
+          <div className="h-max w-full rounded p-4 shadow-lg">
+            <ul className="flex flex-col gap-4">
+              {hasProjectLink ? (
+                <li className="flex items-center gap-2">
+                  <strong className="text-gray-100">Link: </strong>
+                  <PrismicNextLink
+                    className="text-g-light-gray hover:text-g-light-blue underline transition-colors"
+                    field={project.project_link}
+                  >
+                    {project.project_link.link_type === 'Web' &&
+                      project.project_link?.url}
+                  </PrismicNextLink>
+                </li>
+              ) : null}
+
+              {hasRepoLink ? (
+                <li className="flex items-center gap-2">
+                  <strong className="text-gray-100">Repositório: </strong>
+                  <PrismicNextLink
+                    className="text-g-light-gray hover:text-g-light-blue underline transition-colors"
+                    field={project.repository_link}
+                  >
+                    {project.repository_link.link_type === 'Web' &&
+                      project.repository_link?.url}
+                  </PrismicNextLink>
+                </li>
+              ) : null}
+
+              {hasTechStack ? (
+                <li className="flex gap-2">
+                  <strong className="text-gray-100">Tecnologias: </strong>
+                  <div className="flex flex-wrap gap-2">
+                    {project.stack.map((tech) => (
+                      <span
+                        key={tech.technology}
+                        className="hover:text-g-dark-gray hover:bg-g-light-gray flex cursor-pointer items-center justify-center rounded-lg bg-gray-900 px-2 py-1 text-sm text-white transition-colors"
                       >
-                        {project.project_link?.url}
-                      </PrismicNextLink>
-                    </p>
-                  </li>
-                ) : null}
+                        {tech.technology}
+                      </span>
+                    ))}
+                  </div>
+                </li>
+              ) : null}
+            </ul>
+          </div>
 
-                {hasRepoLink ? (
-                  <li className="flex gap-2">
-                    <p className="text-zinc-200">
-                      <strong className="text-white">Repositório: </strong>
-                      <PrismicNextLink
-                        className="text-zinc-300 underline hover:text-gray-400"
-                        field={project.repository_link}
-                      >
-                        {project.repository_link?.url}
-                      </PrismicNextLink>
-                    </p>
-                  </li>
-                ) : null}
-
-                {hasTechStack ? (
-                  <li className="flex gap-2">
-                    <p className="flex flex-wrap items-center gap-2 text-zinc-200">
-                      <strong className="text-white">Tecnologias: </strong>
-                      {project.stack.map((tech) => (
-                        <span
-                          key={tech.technology}
-                          className="flex items-center justify-center rounded-lg bg-g-dark-blue px-2 py-1 text-sm"
-                        >
-                          {tech.technology}
-                        </span>
-                      ))}
-                      .
-                    </p>
-                  </li>
-                ) : null}
-              </ul>
-            </div>
-
-            <div className="group max-h-[40rem] overflow-hidden xl:col-span-2">
+          <section className="mt-16 grid gap-4">
+            <div className="group w-full overflow-hidden">
               <PrismicNextImage
                 alt=""
                 className="animate-fade transition-transform"
@@ -95,7 +91,7 @@ export default async function Project(props: PageProps<ProjectProps>) {
             </div>
           </section>
 
-          <section className="mb-32 mt-32 grid w-full gap-8 text-justify">
+          <section className="mt-16 mb-32 grid w-full gap-2 text-justify text-pretty">
             <PrismicRichText
               components={componentRender}
               field={project.content}

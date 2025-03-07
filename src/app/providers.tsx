@@ -2,7 +2,7 @@
 
 import { PrismicPreview } from '@prismicio/next'
 
-import { repositoryName } from '@/lib/prismicio'
+import { repositoryName } from '@/prismicio'
 
 type ProvidersProps = {
   children: React.ReactNode

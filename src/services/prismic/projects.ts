@@ -1,9 +1,13 @@
-import { createClient, filter } from '@/lib/prismicio'
+import { createClient, filter } from '@/prismicio'
 
-export const getAllProjects = async () => {
+export const getAllProjects = async (max?: number) => {
   const client = createClient()
 
   const projects = await client.getAllByType('projects')
+
+  if (max) {
+    return projects.slice(0, max)
+  }
 
   return projects
 }

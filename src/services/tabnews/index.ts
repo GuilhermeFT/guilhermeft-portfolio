@@ -1,7 +1,5 @@
 import { AxiosError } from 'axios'
 
-import { TabnewsRoutes } from '@/utils/enum'
-
 import { TabnewsAPI } from '../../lib/tabnews'
 
 import {
@@ -12,6 +10,8 @@ import {
 } from './types'
 import { formatTabnewsData } from './helpers'
 
+import { TabnewsRoutes } from '@/utils/enum'
+
 export const getMyPosts = async (): Promise<ReturnType<AllPostsResponse[]>> => {
   try {
     const { data } = await TabnewsAPI.get<AllPostsResponse[]>(
@@ -19,18 +19,20 @@ export const getMyPosts = async (): Promise<ReturnType<AllPostsResponse[]>> => {
     )
 
     const newData = await Promise.all(
-      data.map((post) =>
-        getPostBySlug(post.slug).then((response) => {
-          if (response.success) {
-            return {
-              ...post,
-              excerpt: response.data.body.slice(0, 100),
+      data
+        .filter((post) => post.status === 'published' && post.title)
+        .map((post) =>
+          getPostBySlug(post.slug).then((response) => {
+            if (response.success) {
+              return {
+                ...post,
+                excerpt: response.data.body.slice(0, 100),
+              }
             }
-          }
 
-          return post
-        }),
-      ),
+            return post
+          }),
+        ),
     )
 
     return {

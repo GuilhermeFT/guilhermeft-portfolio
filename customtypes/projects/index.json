@@ -6,9 +6,19 @@
   "status": true,
   "json": {
     "Main": {
+      "is_highlighted": {
+        "type": "Boolean",
+        "config": {
+          "label": "Is Highlighted",
+          "default_value": false,
+          "placeholder_true": "true",
+          "placeholder_false": "false"
+        }
+      },
       "uid": {
         "config": {
-          "label": "UID"
+          "label": "UID",
+          "placeholder": ""
         },
         "type": "UID"
       },
@@ -35,15 +45,6 @@
           "placeholder": "",
           "allowTargetBlank": true,
           "select": null
-        }
-      },
-      "is_highlighted": {
-        "type": "Boolean",
-        "config": {
-          "label": "Is Highlighted",
-          "default_value": false,
-          "placeholder_true": "true",
-          "placeholder_false": "false"
         }
       },
       "year_started": {

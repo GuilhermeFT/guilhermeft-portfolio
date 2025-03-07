@@ -1,6 +1,82 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+/*
+  ---break---
+*/
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --height-17: 4.25rem;
+
+  --color-g-background: #030917;
+  --color-g-blue: #1b6cff;
+  --color-g-dark-blue: #11338c;
+  --color-g-light-blue: #75bfff;
+  --color-g-light-gray: #8f9ba8;
+  --color-g-dark-gray: #212a3e;
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+@utility container {
+  margin-inline: auto;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility gradient-text {
+  @apply from-g-blue to-g-light-blue bg-linear-to-bl bg-clip-text text-transparent;
+}
 
 @layer base {
   html {
@@ -8,7 +84,7 @@
   }
 
   body {
-    @apply bg-g-background font-light text-white;
+    @apply bg-g-background w-full text-white;
   }
 
   ::-webkit-scrollbar {
@@ -22,10 +98,45 @@
   ::-webkit-scrollbar-thumb {
     @apply rounded-lg bg-zinc-800/75;
   }
+
+  :root {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 219 100% 55.3%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 223 78.3% 30.8%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 223 78.3% 30.8%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 223 78.3% 30.8%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 223 78.3% 30.8%;
+    --input: 223 78.3% 30.8%;
+    --ring: 219 100% 55.3%;
+    --radius: 0.8rem;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
 }
 
-@layer utilities {
-  .gradient-text {
-    @apply bg-gradient-to-bl from-g-blue to-g-light-blue bg-clip-text text-transparent;
+/*
+  ---break---
+*/
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50 scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
   }
 }
