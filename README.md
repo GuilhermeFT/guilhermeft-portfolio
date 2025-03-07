@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">guilhermeft-portfolio</h1>
 
-## Getting Started
+## 🔎 Sobre o projeto
+Esse é um monorepo que contém o projeto do meu portfólio e do site empresarial do meu negócio de Desenvolvimento. O objetivo principal é apresentar meu trabalho e oferecer informações sobre os serviços que eu forneço, permitindo que visitantes aprendam mais sobre minhas habilidades e experiências.
 
-First, run the development server:
+## 🧪 Tecnologias
+- TypeScript
+- React
+- Next.js
+- Tailwind CSS
+- Axios
+- Prisma
+- ESLint
+- Prettier
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Como executar
+Para clonar e executar o projeto localmente, siga as instruções abaixo:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Clone o repositório:
+   ```
+   git clone https://github.com/GuilhermeFT/guilhermeft-portfolio.git
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Navegue até o diretório do projeto:
+   ```
+   cd guilhermeft-portfolio
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Instale as dependências:
+   ```
+   pnpm install
+   ```
 
-## Learn More
+4. Inicie o servidor de desenvolvimento:
+   ```
+   pnpm dev
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+5. Abra seu navegador e acesse `http://localhost:3000` para visualizar o projeto em execução.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contribuindo 🤝
+Contribuições para este projeto são bem-vindas! Por favor, siga os passos abaixo:
+1. Clone o repositório (`git clone https://github.com/GuilhermeFT/guilhermeft-portfolio`);
+2. Crie uma nova branch (`git checkout -b feature/branch`);
+3. Faça suas alterações e as commit (`git commit -m 'feat: add new feature'`);
+4. Envie para a branch (`git push origin feature/branch`);
+5. Abra um Pull Request.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Licença 📄
+Este projeto é licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
