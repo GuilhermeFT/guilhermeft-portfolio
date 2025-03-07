@@ -1,5 +1,5 @@
 export type TabMenuType = {
-  id: 'my-start' | 'my-career' | 'my-skills' | 'my-stack' | 'contact'
+  id: string
   label: string
   content: React.ReactNode
 }

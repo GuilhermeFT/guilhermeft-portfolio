@@ -68,13 +68,13 @@ export const StackSection = () => {
   ]
 
   return (
-    <div className="py-10">
+    <div className="cursor-grab py-10">
       <Marquee>
         {stack.map((item) => (
           <TooltipWrapper key={item.label} text={item.label}>
             <button
               className={cn(
-                'm-4 text-[24vw] text-zinc-700 transition-all delay-100 ease-in-out hover:scale-105 md:text-[8vw]',
+                'm-4 cursor-grab text-[24vw] text-zinc-700 transition-all delay-100 ease-in-out hover:scale-105 md:text-[8vw]',
                 item.className,
               )}
             >

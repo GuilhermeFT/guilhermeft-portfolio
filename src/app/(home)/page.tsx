@@ -5,6 +5,8 @@ import { SelectedProjects } from './components/selected-projects'
 import { RecentProjects } from './components/recent-projects'
 import { TextSection } from './components/text-section'
 import { AllProjects } from './components/all-projects'
+import { AboutMe } from './components/about-me'
+import { ContactMe } from './components/contact-me'
 
 export default async function Home() {
   return (
@@ -20,6 +22,10 @@ export default async function Home() {
       <SelectedProjects />
 
       <AllProjects />
+
+      <AboutMe />
+
+      <ContactMe />
     </main>
   )
 }

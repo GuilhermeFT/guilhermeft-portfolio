@@ -1,33 +1,15 @@
 'use client'
 
+import { navLinks } from '@/utils/const'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-
-export const paths = [
-  {
-    href: '/',
-    label: 'Início',
-  },
-  {
-    href: '/#all-projects',
-    label: 'Projetos',
-  },
-  {
-    href: '/about-me',
-    label: 'Sobre mim',
-  },
-  {
-    href: '/articles',
-    label: 'Blog',
-  },
-]
 
 export const DesktopNavbar = () => {
   const pathname = usePathname()
 
   return (
     <nav className="hidden gap-8 md:flex">
-      {paths.map(({ href, label }) =>
+      {navLinks.map(({ href, label }) =>
         href === pathname ? (
           <span key={label} className="text-g-light-blue font-light">
             {label}

@@ -5,15 +5,15 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { AnimatePresence, motion } from 'motion/react'
 
-import { paths } from './desktop-navbar'
 import { cn } from '@/lib/utils'
 import { useNavigation } from '@/store/use-navigation'
 import { useEffect } from 'react'
+import { navLinks } from '@/utils/const'
 
 export const MobileNavbar = () => {
   const pathname = usePathname()
 
-  const { isOpen } = useNavigation()
+  const { isOpen, toggleMenu } = useNavigation()
 
   useEffect(() => {
     if (isOpen) {
@@ -59,7 +59,7 @@ export const MobileNavbar = () => {
         <ul className="text-3xl font-bold md:text-5xl">
           <AnimatePresence>
             {isOpen &&
-              paths.map((path, i) => (
+              navLinks.map((path, i) => (
                 <motion.li
                   key={path.href}
                   initial={{
@@ -85,7 +85,11 @@ export const MobileNavbar = () => {
                   }}
                   className="flex justify-center p-4"
                 >
-                  <Link href={path.href} className="flex items-center gap-2">
+                  <Link
+                    href={path.href}
+                    className="flex items-center gap-2"
+                    onClick={isOpen && toggleMenu}
+                  >
                     <span
                       className={twMerge(
                         'text-white',

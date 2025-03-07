@@ -1,10 +1,22 @@
 import { Images } from './images'
 
 export const navLinks = [
-  { href: '/', label: 'Início' },
-  { href: '/projects', label: 'Projetos' },
-  { href: '/artigos', label: 'Artigos' },
-  { href: '/sobre-mim', label: 'Sobre mim' },
+  {
+    href: '/',
+    label: 'Início',
+  },
+  {
+    href: '/#all-projects',
+    label: 'Projetos',
+  },
+  {
+    href: '/#about-me',
+    label: 'Sobre mim',
+  },
+  {
+    href: '/articles',
+    label: 'Blog',
+  },
 ]
 
 export const companies = [

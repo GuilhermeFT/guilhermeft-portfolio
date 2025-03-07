@@ -29,7 +29,7 @@ export const FloatToggleMenu = () => {
         toggleMenu()
       }}
       className={cn(
-        'bg-g-dark-blue absolute top-4 right-2 z-50 flex h-16 w-16 cursor-pointer items-center justify-center rounded-full px-5 opacity-0 transition-all duration-500 hover:scale-105 md:h-20 md:w-20 md:px-7',
+        'bg-g-dark-blue fixed top-4 right-2 z-50 flex h-16 w-16 cursor-pointer items-center justify-center rounded-full px-5 opacity-0 transition-all duration-500 hover:scale-105 md:h-20 md:w-20 md:px-7',
       )}
       initial={{
         opacity: 0,

@@ -4,8 +4,13 @@ import { ScrollIndicator } from '@/components/scroll-indicator'
 import { Section } from '@/components/section'
 import { Button } from '@/components/ui/button'
 import { useAnimationTimeline } from '@/hooks/animation-timeline'
+import Link from 'next/link'
 
 export const HeroSection = () => {
+  const handleDownload = () => {
+    window.open('/files/Resume - Guilherme F. Trindade.pdf', '_blank')
+  }
+
   const scope = useAnimationTimeline([
     [
       [
@@ -58,10 +63,18 @@ export const HeroSection = () => {
           </h6>
 
           <div className="grid w-full max-w-96 gap-4 opacity-0 sm:grid-cols-2">
-            <Button size="lg">Resume</Button>
-            <Button size="lg" variant="outline">
-              See Projects
+            <Button
+              size="lg"
+              className="cursor-pointer"
+              onClick={handleDownload}
+            >
+              Resume
             </Button>
+            <Link href="/#all-projects">
+              <Button size="lg" variant="outline" className="cursor-pointer">
+                See Projects
+              </Button>
+            </Link>
           </div>
         </div>
 
