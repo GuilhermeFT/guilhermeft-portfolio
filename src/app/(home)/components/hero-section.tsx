@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 export const HeroSection = () => {
   const handleDownload = () => {
-    window.open('/files/Resume - Guilherme F. Trindade.pdf', '_blank')
+    window.open('/files/resume.pdf', '_blank')
   }
 
   const scope = useAnimationTimeline([
