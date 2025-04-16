@@ -51,7 +51,7 @@ export default function HubPage() {
         </div>
       </main>
 
-      <footer className="bg-g-background/95 text-g-light-gray py-8 text-center text-sm">
+      <footer className="text-g-light-gray py-8 text-center text-sm">
         <div className="container mx-auto px-4">
           <p>
             © {new Date().getFullYear()} Guilhermeft Studio | CNPJ:
