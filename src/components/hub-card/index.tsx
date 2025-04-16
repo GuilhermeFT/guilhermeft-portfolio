@@ -21,7 +21,7 @@ export function HubCard({
   return (
     <Link
       href={href}
-      className={`group relative block h-96 overflow-hidden rounded-xl transition-all hover:scale-[1.02] ${className}`}
+      className={`group relative block h-72 overflow-hidden rounded-xl transition-all hover:scale-[1.02] ${className}`}
     >
       <div className="from-g-background/80 to-g-dark-gray/50 group-hover:to-g-dark-gray/0 group-hover:from-g-background/60 relative z-10 h-full w-full bg-gradient-to-l p-6 text-white transition-all duration-1000 group-hover:bg-gradient-to-r">
         <p className="text-sm md:text-xl">{subtitle}</p>
