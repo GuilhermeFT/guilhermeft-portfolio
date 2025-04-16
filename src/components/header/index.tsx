@@ -12,7 +12,7 @@ import { usePathname } from 'next/navigation'
 export const Header = () => {
   const pathname = usePathname()
 
-  const isAnimateEnabled = pathname === '/'
+  const isAnimateEnabled = pathname === '/portfolio'
 
   return (
     <motion.header

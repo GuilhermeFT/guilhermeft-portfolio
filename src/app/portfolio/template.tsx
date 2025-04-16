@@ -7,7 +7,7 @@ type TemplateProps = {
   children: React.ReactNode
 }
 
-export default function Template({ children }: TemplateProps) {
+export default function PortfolioTemplate({ children }: TemplateProps) {
   return (
     <>
       <FloatToggleMenu />

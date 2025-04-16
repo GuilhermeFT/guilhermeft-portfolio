@@ -2,7 +2,7 @@ import { ExternalLink } from 'lucide-react'
 
 import { getMyPosts } from '@/services/tabnews'
 import { TabnewsUsers } from '@/utils/enum'
-import { env } from '@/utils/env'
+import { ENV } from '@/utils/env'
 import Link from 'next/link'
 
 export const ArticleListItems = async () => {
@@ -17,7 +17,7 @@ export const ArticleListItems = async () => {
   return posts.data.map((post) => (
     <Link
       key={post.id}
-      href={`${env.NEXT_PUBLIC_TABNEWS_API_URL}/${TabnewsUsers.guilhermeft}/${post.slug}`}
+      href={`${ENV.NEXT_PUBLIC_TABNEWS_API_URL}/${TabnewsUsers.guilhermeft}/${post.slug}`}
       target="_blank"
       className="group flex min-h-32 gap-4 border-b border-zinc-700 py-4"
     >
