@@ -1,3 +1,4 @@
+import { Toaster } from '@/components/ui/sonner'
 import '@/styles/globals.css'
 
 import type { Metadata } from 'next'
@@ -20,7 +21,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={montserrat.className}>{children}</body>
+      <body className={montserrat.className}>
+        {children}
+        <Toaster />
+      </body>
     </html>
   )
 }
