@@ -1,4 +1,5 @@
 import { getAuthenticatedSheet } from '@/lib/googleapi'
+import { ENV } from '@/utils/env'
 import { z } from 'zod'
 
 export const leadSchema = z.object({
@@ -15,7 +16,7 @@ export const registerLead = async (data: Lead) => {
   const sheet = await getAuthenticatedSheet()
 
   sheet.spreadsheets.values.append({
-    spreadsheetId: process.env.SHEET_ID,
+    spreadsheetId: ENV.SHEET_ID,
     range: 'A1:E1',
     valueInputOption: 'USER_ENTERED',
     requestBody: {
