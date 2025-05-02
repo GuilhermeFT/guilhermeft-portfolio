@@ -8,7 +8,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
-import { ContactForm } from '@/components/contact-form'
+import { ContactForm } from '@/app/(bussiness)/studio/components/contact-form'
 import { ContactFormValues } from '@/lib/schema'
 
 interface WhatsAppModalProps {

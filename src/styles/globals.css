@@ -8,10 +8,15 @@
   --height-17: 4.25rem;
 
   --color-g-background: #030917;
+
+  --color-g-light: #e9e5ff;
+
   --color-g-blue: #1b6cff;
-  --color-g-dark-blue: #11338c;
   --color-g-light-blue: #75bfff;
+  --color-g-dark-blue: #11338c;
+
   --color-g-light-gray: #8f9ba8;
+  --color-g-medium-gray: #394867;
   --color-g-dark-gray: #212a3e;
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
@@ -138,5 +143,8 @@
   }
   body {
     @apply bg-background text-foreground overflow-x-hidden;
+  }
+  button {
+    @apply cursor-pointer;
   }
 }

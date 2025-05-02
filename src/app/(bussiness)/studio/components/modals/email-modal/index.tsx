@@ -8,7 +8,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
-import { ContactForm } from '@/components/contact-form'
+import { ContactForm } from '@/app/(bussiness)/studio/components/contact-form'
 import { ContactFormValues } from '@/lib/schema'
 
 interface EmailModalProps {
@@ -18,9 +18,9 @@ interface EmailModalProps {
 export function EmailModal({ emailAddress }: EmailModalProps) {
   const handleSubmit = (data: ContactFormValues) => {
     // Format message for Email
-    const subject = encodeURIComponent('Contato via site - Guilhermeft Studio')
+    const subject = encodeURIComponent('Contato via site - GTDEV')
     const body = encodeURIComponent(
-      `Olá,\n\nMeu nome é ${data.name}.\nGostaria de mais informações sobre os serviços do Guilhermeft Studio.\n\nTelefone: ${data.phone}\nEmail: ${data.email}\n\nAguardo retorno.`,
+      `Olá,\n\nMeu nome é ${data.name}.\nGostaria de mais informações sobre os serviços do GTDEV.\n\nTelefone: ${data.phone}\nEmail: ${data.email}\n\nAguardo retorno.`,
     )
     window.open(
       `mailto:${emailAddress}?subject=${subject}&body=${body}`,

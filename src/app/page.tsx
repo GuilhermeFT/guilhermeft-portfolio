@@ -34,29 +34,26 @@ export default function HubPage() {
       <main className="flex-1 px-6 pt-8 pb-12">
         <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8">
           <HubCard
-            title="Orçamento"
-            subtitle="CRIAÇÃO DE SITES"
-            href={ToolLinks.CREATE_SITE}
-            imageSrc={cardBackgroundOne}
-            alt="Site creation"
-          />
-
-          <HubCard
-            title="Portfólio"
-            subtitle="CONHEÇA MEU TRABALHO"
+            title="Portfólio Pessoal"
+            subtitle="MINHA JORNADA"
             href={ToolLinks.PORTFOLIO}
             imageSrc={cardBackgroundTwo}
             alt="My portfolio"
+          />
+
+          <HubCard
+            title="Contrate-me"
+            subtitle="MINHA EMPRESA"
+            href={ToolLinks.CREATE_SITE}
+            imageSrc={cardBackgroundOne}
+            alt="Site creation"
           />
         </div>
       </main>
 
       <footer className="text-g-light-gray py-8 text-center text-sm">
         <div className="container mx-auto px-4">
-          <p>
-            © {new Date().getFullYear()} Guilhermeft Studio | CNPJ:
-            43.673.320/0001-15
-          </p>
+          <p>© {new Date().getFullYear()} GTDEV | CNPJ: 43.673.320/0001-15</p>
           <p className="mt-2">
             <Link
               href="/privacy-policy"

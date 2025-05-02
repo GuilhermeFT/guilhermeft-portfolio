@@ -1,7 +1,7 @@
 import { Suspense } from 'react'
 
-import { ArticleListItems } from '@/components/articles/list-items'
-import { ArticleListSkeleton } from '@/components/articles/list-items/skeleton'
+import { ArticleListItems } from './components/list-items'
+import { ArticleListSkeleton } from './components/list-items/skeleton'
 import { Section } from '@/components/section'
 
 export default async function Blog() {

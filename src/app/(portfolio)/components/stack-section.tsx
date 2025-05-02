@@ -5,7 +5,7 @@ import { BiLogoJavascript, BiLogoTypescript } from 'react-icons/bi'
 import { IoLogoCss3 } from 'react-icons/io'
 import { SiPostgresql, SiStorybook } from 'react-icons/si'
 import { TbBrandKotlin } from 'react-icons/tb'
-import { TooltipWrapper } from '@/components/tooltipWrapper'
+import { TooltipWrapper } from '@/components/tooltip-wrapper'
 import { cn } from '@/lib/utils'
 
 export const StackSection = () => {
