@@ -54,6 +54,7 @@ export function ContactForm({
         <input
           id="name"
           type="text"
+          placeholder="Guilherme Trindade"
           {...register('name')}
           className="border-g-dark-gray bg-g-background/50 focus:border-g-blue focus:ring-g-blue w-full rounded-lg border p-3 text-white focus:ring-1 focus:outline-none"
         />
@@ -72,8 +73,26 @@ export function ContactForm({
         <input
           id="phone"
           type="tel"
+          placeholder="(11) 99999-9999"
           {...register('phone')}
           className="border-g-dark-gray bg-g-background/50 focus:border-g-blue focus:ring-g-blue w-full rounded-lg border p-3 text-white focus:ring-1 focus:outline-none"
+          onChange={(e) => {
+            let value = e.target.value
+
+            value = value.replace(/\D/g, '')
+
+            value = value.slice(0, 11)
+
+            if (value.length >= 11) {
+              value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`
+            } else if (value.length >= 7) {
+              value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`
+            } else if (value.length >= 2) {
+              value = `(${value.slice(0, 2)}) ${value.slice(2)}`
+            }
+
+            e.target.value = value
+          }}
         />
         {errors.phone && (
           <p className="text-sm text-red-500">{errors.phone.message}</p>
@@ -90,6 +109,7 @@ export function ContactForm({
         <input
           id="email"
           type="email"
+          placeholder="exemplo@email.com"
           {...register('email')}
           className="border-g-dark-gray bg-g-background/50 focus:border-g-blue focus:ring-g-blue w-full rounded-lg border p-3 text-white focus:ring-1 focus:outline-none"
         />

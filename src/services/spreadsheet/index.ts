@@ -1,8 +1,11 @@
+'use server'
+
 import { getAuthenticatedSheet } from '@/lib/googleapi'
 import { ENV } from '@/utils/env'
 import { z } from 'zod'
 
-export const leadSchema = z.object({
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const leadSchema = z.object({
   name: z.string().min(2).max(50),
   phone: z.string().min(10).max(15),
   email: z.string().email().min(5).max(100),

@@ -53,7 +53,10 @@ export default function HubPage() {
 
       <footer className="text-g-light-gray py-8 text-center text-sm">
         <div className="container mx-auto px-4">
-          <p>© {new Date().getFullYear()} GTDEV | CNPJ: 43.673.320/0001-15</p>
+          <p>
+            © {new Date().getFullYear()} GTDEV Studio | CNPJ:
+            43.673.320/0001-15
+          </p>
           <p className="mt-2">
             <Link
               href="/privacy-policy"

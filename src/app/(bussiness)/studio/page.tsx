@@ -8,7 +8,7 @@ import { ContactSection } from '@/app/(bussiness)/studio/components/contact-sect
 import { Footer } from '@/app/(bussiness)/studio/components/footer'
 
 export const metadata: Metadata = {
-  title: 'Consultoria de Desenvolvimento | GTDEV',
+  title: 'Consultoria de Desenvolvimento | GTDEV Studio',
   description:
     'Soluções digitais completas para o seu negócio: landing pages, sites profissionais e automações que transformam seu fluxo de trabalho.',
   keywords:
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function StudioPage() {
   return (
-    <div className="bg-g-light flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-white">
       <Header />
       <HeroSection />
       <AboutSection />

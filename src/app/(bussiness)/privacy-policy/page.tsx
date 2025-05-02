@@ -2,8 +2,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Política de Privacidade | GTDEV',
-  description: 'Política de privacidade e termos de uso do GTDEV',
+  title: 'Política de Privacidade | GTDEV Studio',
+  description: 'Política de privacidade e termos de uso do GTDEV Studio',
 }
 
 export default function PrivacyPolicyPage() {
@@ -29,10 +29,10 @@ export default function PrivacyPolicyPage() {
                 1. Informações Gerais
               </h2>
               <p className="mb-4 text-zinc-600">
-                Esta Política de Privacidade descreve como o GTDEV ({'nós'},{' '}
-                {'nosso'} ou {'nossos'}) coleta, usa, processa e divulga seus
-                dados, incluindo informações pessoais, em conexão com o acesso e
-                uso do nosso site e serviços.
+                Esta Política de Privacidade descreve como o GTDEV Studio (
+                {'nós'}, {'nosso'} ou {'nossos'}) coleta, usa, processa e
+                divulga seus dados, incluindo informações pessoais, em conexão
+                com o acesso e uso do nosso site e serviços.
               </p>
               <p className="text-zinc-600">
                 Ao utilizar nosso site e serviços, você concorda com os termos
@@ -158,7 +158,10 @@ export default function PrivacyPolicyPage() {
 
       <footer className="bg-g-light/95 py-8 text-center text-sm text-zinc-600">
         <div className="container mx-auto px-4">
-          <p>© {new Date().getFullYear()} GTDEV | CNPJ: 43.673.320/0001-15</p>
+          <p>
+            © {new Date().getFullYear()} GTDEV Studio | CNPJ:
+            43.673.320/0001-15
+          </p>
           <div className="mt-2 flex flex-col justify-center gap-2">
             <Link
               href="/studio"

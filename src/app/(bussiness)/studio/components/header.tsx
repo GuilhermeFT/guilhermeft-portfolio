@@ -9,7 +9,7 @@ export const Header = () => {
             href="/"
             className="text-g-dark-blue text-lg font-bold md:text-xl"
           >
-            GTDEV
+            GTDEV Studio
           </Link>
           <nav className="hidden space-x-8 md:flex">
             <Link

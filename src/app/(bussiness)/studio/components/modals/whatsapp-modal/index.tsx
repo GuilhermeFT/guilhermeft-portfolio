@@ -10,13 +10,21 @@ import {
 } from '@/components/ui/dialog'
 import { ContactForm } from '@/app/(bussiness)/studio/components/contact-form'
 import { ContactFormValues } from '@/lib/schema'
+import { registerLead } from '@/services/spreadsheet'
 
 interface WhatsAppModalProps {
   whatsappNumber: string
 }
 
 export function WhatsAppModal({ whatsappNumber }: WhatsAppModalProps) {
-  const handleSubmit = (data: ContactFormValues) => {
+  const handleSubmit = async (data: ContactFormValues) => {
+    await registerLead({
+      name: data.name,
+      phone: data.phone,
+      email: data.email,
+      source: 'whatsapp',
+    })
+
     // Format message for WhatsApp
     const message = encodeURIComponent(
       `Olá, meu nome é ${data.name}. Gostaria de mais informações sobre os serviços do Guilhermeft Studio.\n\nTelefone: ${data.phone}\nEmail: ${data.email}`,
