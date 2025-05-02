@@ -1,5 +1,7 @@
-import { Toaster } from '@/components/ui/sonner'
 import '@/styles/globals.css'
+
+import { Toaster } from '@/components/ui/sonner'
+import { Analytics } from '@vercel/analytics/next'
 
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
@@ -24,6 +26,7 @@ export default function RootLayout({
       <body className={montserrat.className}>
         {children}
         <Toaster />
+        <Analytics />
       </body>
     </html>
   )
