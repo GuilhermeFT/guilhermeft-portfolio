@@ -1,10 +1,9 @@
-import { PrismicRichText } from '@prismicio/react'
-import { PrismicNextImage, PrismicNextLink } from '@prismicio/next'
+import Image from 'next/image'
+import Link from 'next/link'
 
-import { getProjectByUid } from '@/services/prismic/projects'
+import { getProjectBySlug } from '@/services/payload/projects'
+import { RichText } from '@/components/rich-text'
 import { PageProps } from '@/types/page'
-
-import { componentRender } from './component-render'
 
 type ProjectProps = {
   projectId: string
@@ -15,24 +14,31 @@ export default async function Project(props: PageProps<ProjectProps>) {
 
   const { projectId } = params
 
-  const project = (await getProjectByUid(projectId)).data
-  console.log(project)
+  const project = await getProjectBySlug(projectId)
+
+  if (!project) {
+    return (
+      <main className="container max-w-7xl">
+        <div className="flex min-h-dvh flex-col items-center justify-center">
+          <p className="text-lg text-zinc-400">Projeto não encontrado</p>
+        </div>
+      </main>
+    )
+  }
 
   const hasTechStack = project.stack.length > 0
-  const hasProjectLink =
-    project.project_link.link_type === 'Web' && !!project.project_link.url
-  const hasRepoLink =
-    project.repository_link.link_type === 'Web' && !!project.repository_link.url
+  const hasProjectLink = !!project.projectLink
+  const hasRepoLink = !!project.repositoryLink
 
   return (
     <main className="container max-w-7xl">
       <div className="flex min-h-dvh flex-col items-center justify-center gap-8 px-4">
         <div className="container flex flex-1 flex-col gap-2 pt-36 md:items-start">
           <span className="block text-sm font-light text-zinc-400">
-            {project?.year_started} — {project?.year_finished}
+            {project?.yearStarted} — {project?.yearFinished}
           </span>
           <h1 className="h-17 [font-size:_clamp(2rem,13.25vw,3rem)] md:text-[3rem]">
-            {project.project_name as string}
+            {project.name}
           </h1>
 
           <div className="h-max w-full rounded p-4 shadow-lg">
@@ -40,26 +46,26 @@ export default async function Project(props: PageProps<ProjectProps>) {
               {hasProjectLink ? (
                 <li className="flex items-center gap-2">
                   <strong className="text-gray-100">Link: </strong>
-                  <PrismicNextLink
+                  <Link
+                    href={project.projectLink ?? '#'}
+                    target="_blank"
                     className="text-g-light-gray hover:text-g-light-blue underline transition-colors"
-                    field={project.project_link}
                   >
-                    {project.project_link.link_type === 'Web' &&
-                      project.project_link?.url}
-                  </PrismicNextLink>
+                    {project.projectLink}
+                  </Link>
                 </li>
               ) : null}
 
               {hasRepoLink ? (
                 <li className="flex items-center gap-2">
                   <strong className="text-gray-100">Repositório: </strong>
-                  <PrismicNextLink
+                  <Link
+                    href={project.repositoryLink ?? '#'}
+                    target="_blank"
                     className="text-g-light-gray hover:text-g-light-blue underline transition-colors"
-                    field={project.repository_link}
                   >
-                    {project.repository_link.link_type === 'Web' &&
-                      project.repository_link?.url}
-                  </PrismicNextLink>
+                    {project.repositoryLink}
+                  </Link>
                 </li>
               ) : null}
 
@@ -69,10 +75,10 @@ export default async function Project(props: PageProps<ProjectProps>) {
                   <div className="flex flex-wrap gap-2">
                     {project.stack.map((tech) => (
                       <span
-                        key={tech.technology}
+                        key={tech}
                         className="hover:text-g-dark-gray hover:bg-g-light-gray flex cursor-pointer items-center justify-center rounded-lg bg-gray-900 px-2 py-1 text-sm text-white transition-colors"
                       >
-                        {tech.technology}
+                        {tech}
                       </span>
                     ))}
                   </div>
@@ -81,21 +87,21 @@ export default async function Project(props: PageProps<ProjectProps>) {
             </ul>
           </div>
 
-          <section className="mt-16 grid gap-4">
-            <div className="group w-full overflow-hidden">
-              <PrismicNextImage
-                alt=""
-                className="animate-fade transition-transform"
-                field={project.image}
-              />
-            </div>
-          </section>
+          {project.imageUrl ? (
+            <section className="mt-16 grid gap-4">
+              <div className="group relative w-full overflow-hidden">
+                <Image
+                  src={project.imageUrl}
+                  alt={project.name}
+                  fill
+                  className="animate-fade object-cover transition-transform"
+                />
+              </div>
+            </section>
+          ) : null}
 
           <section className="mt-16 mb-32 grid w-full gap-2 text-justify text-pretty">
-            <PrismicRichText
-              components={componentRender}
-              field={project.content}
-            />
+            <RichText content={project.content} />
           </section>
         </div>
       </div>

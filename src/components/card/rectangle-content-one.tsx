@@ -1,4 +1,4 @@
-import { PrismicNextImage } from '@prismicio/next'
+import Image from 'next/image'
 import { MoveRight } from 'lucide-react'
 import Link from 'next/link'
 
@@ -12,12 +12,15 @@ export const RectangleContentOne = ({
 }: RectangleContentOneProps) => {
   return (
     <>
-      <PrismicNextImage
-        fallbackAlt=""
-        field={project?.banner}
-        quality={100}
-        className="h-full object-cover object-center transition-transform group-hover:scale-110"
-      />
+      {project?.bannerUrl ? (
+        <Image
+          src={project.bannerUrl}
+          alt={project?.name ?? ''}
+          fill
+          quality={100}
+          className="h-full object-cover object-center transition-transform group-hover:scale-110"
+        />
+      ) : null}
 
       <Link
         href={href || `/projects/${id}`}
@@ -28,10 +31,10 @@ export const RectangleContentOne = ({
             dateTime="qws"
             className="text-g-light-gray animate-duration-500 animate-ease-out group-hover:animate-fade-up block text-sm font-light"
           >
-            {project?.year_started} — {project?.year_finished}
+            {project?.yearStarted} — {project?.yearFinished}
           </time>
           <h3 className="break-md:words animate-delay-75 animate-duration-500 animate-ease-out group-hover:animate-fade-up text-4xl font-bold lg:max-w-80">
-            {project?.project_name}
+            {project?.name}
           </h3>
 
           <button className="text-g-light-gray animate-delay-150 animate-duration-500 group-hover:animate-fade-right hidden items-center gap-2 group-hover:flex">

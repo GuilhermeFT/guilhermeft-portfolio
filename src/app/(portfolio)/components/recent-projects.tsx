@@ -1,9 +1,10 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
 import { Marquee } from '@/components/animations/marquee'
 import { Section } from '@/components/section'
 import { Button } from '@/components/ui/button'
-import { getAllProjects } from '@/services/prismic/projects'
-import { PrismicNextImage } from '@prismicio/next'
-import Link from 'next/link'
+import { getAllProjects } from '@/services/payload/projects'
 
 export const RecentProjects = async () => {
   const projects = await getAllProjects(6)
@@ -22,22 +23,24 @@ export const RecentProjects = async () => {
             <Marquee speed={-0.2}>
               {projects.map((project) => (
                 <div
-                  key={project.uid}
+                  key={project.id}
                   className="group relative mx-3 flex aspect-square w-[75vw] items-center gap-4 overflow-hidden transition-all hover:scale-105 md:w-[35vw] lg:w-[28vw]"
                 >
-                  <PrismicNextImage
-                    fill
-                    alt=""
-                    field={project.data.banner}
-                    className="pointer-events-none w-full object-cover object-bottom transition-all delay-100 ease-in-out group-hover:grayscale-0 md:grayscale-100"
-                  />
+                  {project.bannerUrl ? (
+                    <Image
+                      fill
+                      src={project.bannerUrl}
+                      alt={project.name}
+                      className="pointer-events-none w-full object-cover object-bottom transition-all delay-100 ease-in-out group-hover:grayscale-0 md:grayscale-100"
+                    />
+                  ) : null}
 
                   <div className="absolute inset-0 flex h-full w-full items-end overflow-hidden bg-gradient-to-t from-black to-transparent p-8 opacity-0 transition-all delay-75 duration-500 ease-out group-hover:opacity-100">
                     <Link
-                      href={`/projects/${project.uid}`}
+                      href={`/projects/${project.slug}`}
                       className="block text-2xl font-bold text-pretty break-words"
                     >
-                      <p>{project.data.project_name}</p>
+                      <p>{project.name}</p>
                     </Link>
                   </div>
                 </div>

@@ -1,27 +1,17 @@
-import { JSXFunctionSerializer, JSXMapSerializer } from '@prismicio/react'
-
-export const componentRender: JSXMapSerializer | JSXFunctionSerializer = {
-  heading1: ({ children }) => (
+export const richTextComponents = {
+  heading1: ({ children }: { children: React.ReactNode }) => (
     <h1 className="mt-4 text-4xl font-bold text-zinc-300">{children}</h1>
   ),
-  heading2: ({ children }) => (
+  heading2: ({ children }: { children: React.ReactNode }) => (
     <h2 className="mt-4 text-3xl font-semibold text-zinc-300">{children}</h2>
   ),
-  heading3: ({ children }) => (
+  heading3: ({ children }: { children: React.ReactNode }) => (
     <h3 className="mt-4 text-2xl font-medium text-zinc-300">{children}</h3>
   ),
-  paragraph: ({ children }) => (
+  paragraph: ({ children }: { children: React.ReactNode }) => (
     <p className="text-g-light-gray indent-10 text-lg">{children}</p>
   ),
-  listItem: ({ children }) => (
+  listItem: ({ children }: { children: React.ReactNode }) => (
     <li className="text-g-light-gray ml-4 list-disc">{children}</li>
-  ),
-  hyperlink: ({ children, node }) => (
-    <a
-      href={node.data.url}
-      className="text-g-light-blue hover:text-g-dark-blue underline transition-colors"
-    >
-      {children}
-    </a>
   ),
 }

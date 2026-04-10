@@ -1,4 +1,4 @@
-import { PrismicNextImage } from '@prismicio/next'
+import Image from 'next/image'
 import { MoveRight } from 'lucide-react'
 import Link from 'next/link'
 
@@ -13,12 +13,15 @@ export const SquareContentOne = ({
 }: SquareContentOneProps) => {
   return (
     <>
-      <PrismicNextImage
-        alt=""
-        field={project?.banner}
-        quality={100}
-        className="object-cover object-center opacity-50 transition-transform duration-500 ease-in-out group-hover:scale-110"
-      />
+      {project?.bannerUrl ? (
+        <Image
+          src={project.bannerUrl}
+          alt={project?.name ?? ''}
+          fill
+          quality={100}
+          className="object-cover object-center opacity-50 transition-transform duration-500 ease-in-out group-hover:scale-110"
+        />
+      ) : null}
 
       <Link
         href={href || `/projects/${id}`}
@@ -26,10 +29,10 @@ export const SquareContentOne = ({
       >
         <div className="flex flex-col gap-4 bg-linear-to-b from-zinc-950 to-transparent p-4 transition-all lg:pt-8 lg:pr-12 lg:pl-10">
           <span className="text-g-light-gray animate-duration-500 animate-ease-out group-hover:animate-fade-up block text-sm font-light">
-            {project?.year_started} — {project?.year_finished}
+            {project?.yearStarted} — {project?.yearFinished}
           </span>
           <h3 className="animate-delay-75 animate-duration-500 animate-ease-out group-hover:animate-fade-up text-2xl font-bold lg:max-w-80">
-            {project?.project_name}
+            {project?.name}
           </h3>
 
           <button className="text-g-light-gray animate-delay-150 animate-duration-500 group-hover:animate-fade-right hidden items-center gap-2 group-hover:flex">

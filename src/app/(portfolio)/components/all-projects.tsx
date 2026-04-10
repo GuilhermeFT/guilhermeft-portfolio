@@ -1,6 +1,6 @@
 import { Card } from '@/components/card'
 import { Section } from '@/components/section'
-import { getAllProjects } from '@/services/prismic/projects'
+import { getAllProjects } from '@/services/payload/projects'
 
 export const AllProjects = async () => {
   const projects = await getAllProjects()
@@ -26,8 +26,8 @@ export const AllProjects = async () => {
                 <Card.Rectangle
                   key={project.id}
                   isButton={false}
-                  id={project.uid}
-                  project={project.data}
+                  id={project.slug}
+                  project={project}
                 />
               ))}
             </>

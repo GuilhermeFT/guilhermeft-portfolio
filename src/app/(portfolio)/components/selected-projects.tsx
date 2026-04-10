@@ -1,6 +1,6 @@
 import { Card } from '@/components/card'
 import { Section } from '@/components/section'
-import { getHighlightedProjects } from '@/services/prismic/projects'
+import { getHighlightedProjects } from '@/services/payload/projects'
 
 export const SelectedProjects = async () => {
   const projects = await getHighlightedProjects(3)
@@ -26,8 +26,8 @@ export const SelectedProjects = async () => {
                 <Card.Square
                   key={project.id}
                   isButton={false}
-                  id={project.uid}
-                  project={project.data}
+                  id={project.slug}
+                  project={project}
                 />
               ))}
             </>
