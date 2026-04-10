@@ -2,12 +2,12 @@
 
 import Link from 'next/link'
 import { motion } from 'motion/react'
+import { LogoLockup } from '@/components/header/logo-lockup'
 
 const menuItems = [
-  { label: 'Projetos', href: '/#projects' },
-  { label: 'Sobre', href: '/about' },
-  { label: 'Artigos', href: '/articles' },
-  { label: 'Contato', href: '/contact' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'About', href: '#about' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 const overlayVariants = {
@@ -56,31 +56,34 @@ export function NavOverlay({ isOpen, onClose }: NavOverlayProps) {
       initial="closed"
       animate={isOpen ? 'open' : 'closed'}
       variants={overlayVariants}
-      className="fixed inset-x-0 top-0 z-25 overflow-hidden bg-darkest"
+      className="bg-darkest fixed inset-x-0 top-0 z-25 overflow-hidden"
       aria-hidden={!isOpen}
     >
       {/* Top bar — logo left, close right */}
-      <div className="flex h-[var(--header-height)] items-center justify-between px-[14px]">
-        <Link
-          href="/"
-          onClick={onClose}
-          className="text-[13px] font-[800] uppercase tracking-[0.2em] text-white transition-colors duration-200 hover:text-gray-mid"
-        >
-          GUILHERME FT
-        </Link>
+      <div className="flex h-[var(--header-height)] items-center justify-between px-6 md:px-10">
+        <LogoLockup inverted onLinkClick={onClose} />
 
         <button
           onClick={onClose}
-          className="flex cursor-pointer items-center gap-2"
-          aria-label="Fechar menu"
+          className="flex cursor-pointer items-center gap-[10px] transition-opacity duration-200 hover:opacity-50"
+          aria-label="Close menu"
         >
-          <span className="text-[13px] font-[800] uppercase tracking-[0.2em] text-gray-mid">
-            FECHAR
+          <span
+            className="text-[11px] font-[600] tracking-[0.2em] uppercase"
+            style={{ color: 'var(--color-gray-mid)' }}
+          >
+            CLOSE
           </span>
           {/* X icon */}
           <div className="relative h-[22px] w-[22px]">
-            <i className="absolute inset-0 m-auto block h-[3px] w-full origin-center rotate-45 bg-gray-mid" />
-            <i className="absolute inset-0 m-auto block h-[3px] w-full origin-center -rotate-45 bg-gray-mid" />
+            <i
+              className="absolute inset-0 m-auto block h-[1.5px] w-full origin-center rotate-45"
+              style={{ background: 'var(--color-gray-mid)' }}
+            />
+            <i
+              className="absolute inset-0 m-auto block h-[1.5px] w-full origin-center -rotate-45"
+              style={{ background: 'var(--color-gray-mid)' }}
+            />
           </div>
         </button>
       </div>
@@ -89,7 +92,7 @@ export function NavOverlay({ isOpen, onClose }: NavOverlayProps) {
       <div className="flex h-[calc(100%-var(--header-height))] flex-col items-center justify-center">
         <motion.h5
           variants={labelVariants}
-          className="mb-6 uppercase tracking-[0.4em] text-gray-mid"
+          className="text-gray-mid mb-6 tracking-[0.4em] uppercase"
         >
           Menu
         </motion.h5>
@@ -100,7 +103,7 @@ export function NavOverlay({ isOpen, onClose }: NavOverlayProps) {
               <Link
                 href={item.href}
                 onClick={onClose}
-                className="block text-[2.125rem] font-[800] leading-[2.8125rem] tracking-[-0.01em] text-gray-mid transition-colors duration-200 hover:text-white"
+                className="text-gray-mid block text-[2.125rem] leading-[2.8125rem] font-[800] tracking-[-0.01em] transition-colors duration-200 hover:text-white"
               >
                 {item.label}
               </Link>
