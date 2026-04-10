@@ -2,6 +2,8 @@ import '@/styles/globals.css'
 
 import { Toaster } from '@/components/ui/sonner'
 import { Analytics } from '@vercel/analytics/next'
+import { Header } from '@/components/header'
+import { ScrollToTop } from '@/components/scroll-to-top'
 
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -26,7 +28,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={inter.variable}>
       <body>
+        <Header />
         {children}
+        <ScrollToTop />
         <Toaster />
         <Analytics />
       </body>
