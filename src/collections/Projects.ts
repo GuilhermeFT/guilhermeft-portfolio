@@ -1,7 +1,8 @@
 import { CollectionConfig, CollectionAfterChangeHook } from 'payload'
 
 const revalidateProjects: CollectionAfterChangeHook = async () => {
-  if (!process.env.NEXT_PUBLIC_SERVER_URL || !process.env.REVALIDATE_SECRET) return
+  if (!process.env.NEXT_PUBLIC_SERVER_URL || !process.env.REVALIDATE_SECRET)
+    return
   await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/revalidate`, {
     method: 'POST',
     headers: { 'x-revalidate-secret': process.env.REVALIDATE_SECRET },
