@@ -28,14 +28,14 @@ export const SquareContentOne = ({
         className="group-hover:bg-opacity-85 absolute h-full w-full transition-all duration-500 ease-in-out group-hover:bg-zinc-950/50"
       >
         <div className="flex flex-col gap-4 bg-linear-to-b from-zinc-950 to-transparent p-4 transition-all lg:pt-8 lg:pr-12 lg:pl-10">
-          <span className="text-g-light-gray animate-duration-500 animate-ease-out group-hover:animate-fade-up block text-sm font-light">
+          <span className="text-muted-foreground animate-duration-500 animate-ease-out group-hover:animate-fade-up block text-sm font-light">
             {project?.yearStarted} — {project?.yearFinished}
           </span>
           <h3 className="animate-delay-75 animate-duration-500 animate-ease-out group-hover:animate-fade-up text-2xl font-bold lg:max-w-80">
             {project?.name}
           </h3>
 
-          <button className="text-g-light-gray animate-delay-150 animate-duration-500 group-hover:animate-fade-right hidden items-center gap-2 group-hover:flex">
+          <button className="text-muted-foreground animate-delay-150 animate-duration-500 group-hover:animate-fade-right hidden items-center gap-2 group-hover:flex">
             <span>Veja mais</span>
             <MoveRight />
           </button>

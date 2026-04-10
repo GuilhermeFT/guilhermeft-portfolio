@@ -29,7 +29,7 @@ export const RectangleContentOne = ({
         <div className="flex flex-col gap-4 bg-linear-to-b from-gray-900 to-transparent p-4 pb-16 transition-all lg:pt-10 lg:pr-24 lg:pl-16">
           <time
             dateTime="qws"
-            className="text-g-light-gray animate-duration-500 animate-ease-out group-hover:animate-fade-up block text-sm font-light"
+            className="text-muted-foreground animate-duration-500 animate-ease-out group-hover:animate-fade-up block text-sm font-light"
           >
             {project?.yearStarted} — {project?.yearFinished}
           </time>
@@ -37,7 +37,7 @@ export const RectangleContentOne = ({
             {project?.name}
           </h3>
 
-          <button className="text-g-light-gray animate-delay-150 animate-duration-500 group-hover:animate-fade-right hidden items-center gap-2 group-hover:flex">
+          <button className="text-muted-foreground animate-delay-150 animate-duration-500 group-hover:animate-fade-right hidden items-center gap-2 group-hover:flex">
             <span>Veja mais</span>
             <MoveRight />
           </button>

@@ -1,4 +1,7 @@
-import { convertLexicalToHTML, defaultHTMLConverters } from '@payloadcms/richtext-lexical/html'
+import {
+  convertLexicalToHTML,
+  defaultHTMLConverters,
+} from '@payloadcms/richtext-lexical/html'
 
 export async function RichText({
   content,
@@ -10,7 +13,12 @@ export async function RichText({
   if (!content) return null
 
   if (typeof content === 'string') {
-    return <div className={className} dangerouslySetInnerHTML={{ __html: content }} />
+    return (
+      <div
+        className={className}
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
+    )
   }
 
   const html = await convertLexicalToHTML({
@@ -18,5 +26,7 @@ export async function RichText({
     data: content as Parameters<typeof convertLexicalToHTML>[0]['data'],
   })
 
-  return <div className={className} dangerouslySetInnerHTML={{ __html: html }} />
+  return (
+    <div className={className} dangerouslySetInnerHTML={{ __html: html }} />
+  )
 }
