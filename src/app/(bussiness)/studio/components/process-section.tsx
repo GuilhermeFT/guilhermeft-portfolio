@@ -3,18 +3,18 @@ import { Section } from '../../../../components/section'
 
 export const ProcessSection = () => {
   return (
-    <Section id="process" className="bg-g-light py-24">
+    <Section id="process" className="bg-muted py-24">
       <div className="container mx-auto px-4 md:px-8">
-        <h2 className="text-g-dark-blue mb-16 text-center text-3xl font-bold md:text-4xl">
+        <h2 className="text-foreground mb-16 text-center text-3xl font-bold md:text-4xl">
           Nossa metodologia em 6 etapas
         </h2>
-        <p className="text-g-medium-gray mb-12 text-center">
+        <p className="text-muted-foreground mb-12 text-center">
           Conheça o passo a passo da nossa consultoria digital
         </p>
 
         <div className="relative mx-auto max-w-3xl">
           {/* Timeline line */}
-          <div className="bg-g-blue absolute top-0 left-1/2 h-full w-0.5 -translate-x-1/2"></div>
+          <div className="bg-border absolute top-0 left-1/2 h-full w-0.5 -translate-x-1/2"></div>
 
           {/* Timeline items */}
           <div className="space-y-24">

@@ -8,17 +8,17 @@ export const ContactSection = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="mx-auto max-w-3xl">
           <div className="mb-12 text-center">
-            <h2 className="text-g-dark-blue mb-4 text-3xl font-bold md:text-4xl">
+            <h2 className="text-foreground mb-4 text-3xl font-bold md:text-4xl">
               Pronto para transformar seu negócio digitalmente?
             </h2>
-            <p className="text-g-medium-gray">
+            <p className="text-muted-foreground">
               Entre em contato para uma consultoria inicial gratuita
             </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="bg-g-light rounded-lg p-6 transition-all">
-              <h3 className="text-g-blue mb-4 text-xl font-bold">
+            <div className="bg-muted rounded-lg p-6 transition-all">
+              <h3 className="text-accent mb-4 text-xl font-bold">
                 <svg
                   className="mb-4 h-8 w-8"
                   viewBox="0 0 24 24"
@@ -29,15 +29,15 @@ export const ContactSection = () => {
                 </svg>
                 Atendimento rápido
               </h3>
-              <p className="text-g-medium-gray mb-6">
+              <p className="text-muted-foreground mb-6">
                 Converse diretamente com um de nossos consultores via WhatsApp e
                 tenha uma resposta rápida para suas principais dúvidas.
               </p>
               <WhatsAppModal whatsappNumber="5566992433225" />
             </div>
 
-            <div className="bg-g-light rounded-lg p-6 transition-all">
-              <h3 className="text-g-blue mb-4 text-xl font-bold">
+            <div className="bg-muted rounded-lg p-6 transition-all">
+              <h3 className="text-accent mb-4 text-xl font-bold">
                 <svg
                   className="mb-4 h-8 w-8"
                   viewBox="0 0 24 24"
@@ -47,7 +47,7 @@ export const ContactSection = () => {
                 </svg>
                 Proposta detalhada
               </h3>
-              <p className="text-g-medium-gray mb-6">
+              <p className="text-muted-foreground mb-6">
                 Envie-nos as informações do seu projeto para receber uma
                 proposta completa com análise preliminar e plano de ação
                 customizado.

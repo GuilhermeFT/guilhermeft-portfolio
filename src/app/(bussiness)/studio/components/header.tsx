@@ -7,33 +7,33 @@ export const Header = () => {
         <div className="flex h-20 items-center justify-between">
           <Link
             href="/"
-            className="text-g-dark-blue text-lg font-bold md:text-xl"
+            className="text-foreground text-lg font-bold md:text-xl"
           >
             GTDEV Studio
           </Link>
           <nav className="hidden space-x-8 md:flex">
             <Link
               href="#services"
-              className="text-g-medium-gray hover:text-g-blue text-sm font-medium transition-colors md:text-base"
+              className="text-muted-foreground hover:text-accent text-sm font-medium transition-colors md:text-base"
             >
               Serviços
             </Link>
             <Link
               href="#process"
-              className="text-g-medium-gray hover:text-g-blue text-sm font-medium transition-colors md:text-base"
+              className="text-muted-foreground hover:text-accent text-sm font-medium transition-colors md:text-base"
             >
               Processo
             </Link>
             <Link
               href="#contact"
-              className="text-g-medium-gray hover:text-g-blue text-sm font-medium transition-colors md:text-base"
+              className="text-muted-foreground hover:text-accent text-sm font-medium transition-colors md:text-base"
             >
               Contato
             </Link>
           </nav>
           <Link
             href="#contact"
-            className="bg-g-blue hover:bg-g-dark-blue rounded-full px-4 py-2 text-sm font-medium text-white transition-all md:text-base"
+            className="bg-accent hover:bg-primary rounded-full px-4 py-2 text-sm font-medium text-white transition-all md:text-base"
           >
             Iniciar Projeto
           </Link>

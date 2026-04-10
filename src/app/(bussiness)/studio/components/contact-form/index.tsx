@@ -14,7 +14,7 @@ interface ContactFormProps {
 export function ContactForm({
   onSubmit,
   submitButtonText,
-  submitButtonClassName = 'bg-g-blue hover:bg-g-dark-blue',
+  submitButtonClassName = 'bg-accent hover:bg-primary',
 }: ContactFormProps) {
   const {
     register,
@@ -47,7 +47,7 @@ export function ContactForm({
       <div className="space-y-2">
         <label
           htmlFor="name"
-          className="text-g-light-gray block text-sm font-medium"
+          className="text-muted-foreground block text-sm font-medium"
         >
           Nome completo
         </label>
@@ -56,7 +56,7 @@ export function ContactForm({
           type="text"
           placeholder="Guilherme Trindade"
           {...register('name')}
-          className="border-g-dark-gray bg-g-background/50 focus:border-g-blue focus:ring-g-blue w-full rounded-lg border p-3 text-white focus:ring-1 focus:outline-none"
+          className="border-border bg-background focus:border-accent focus:ring-accent text-foreground w-full rounded-lg border p-3 focus:ring-1 focus:outline-none"
         />
         {errors.name && (
           <p className="text-sm text-red-500">{errors.name.message}</p>
@@ -66,7 +66,7 @@ export function ContactForm({
       <div className="space-y-2">
         <label
           htmlFor="phone"
-          className="text-g-light-gray block text-sm font-medium"
+          className="text-muted-foreground block text-sm font-medium"
         >
           Telefone
         </label>
@@ -75,7 +75,7 @@ export function ContactForm({
           type="tel"
           placeholder="(11) 99999-9999"
           {...register('phone')}
-          className="border-g-dark-gray bg-g-background/50 focus:border-g-blue focus:ring-g-blue w-full rounded-lg border p-3 text-white focus:ring-1 focus:outline-none"
+          className="border-border bg-background focus:border-accent focus:ring-accent text-foreground w-full rounded-lg border p-3 focus:ring-1 focus:outline-none"
           onChange={(e) => {
             let value = e.target.value
 
@@ -102,7 +102,7 @@ export function ContactForm({
       <div className="space-y-2">
         <label
           htmlFor="email"
-          className="text-g-light-gray block text-sm font-medium"
+          className="text-muted-foreground block text-sm font-medium"
         >
           Email
         </label>
@@ -111,7 +111,7 @@ export function ContactForm({
           type="email"
           placeholder="exemplo@email.com"
           {...register('email')}
-          className="border-g-dark-gray bg-g-background/50 focus:border-g-blue focus:ring-g-blue w-full rounded-lg border p-3 text-white focus:ring-1 focus:outline-none"
+          className="border-border bg-background focus:border-accent focus:ring-accent text-foreground w-full rounded-lg border p-3 focus:ring-1 focus:outline-none"
         />
         {errors.email && (
           <p className="text-sm text-red-500">{errors.email.message}</p>

@@ -2,15 +2,15 @@ import { Section } from '@/components/section'
 
 export const ServicesSection = () => {
   return (
-    <Section id="services" className="bg-g-dark-gray py-24">
+    <Section id="services" className="bg-foreground py-24">
       <div className="container mx-auto px-4 md:px-8">
         <h2 className="mb-16 text-center text-2xl font-bold text-white md:text-4xl lg:text-5xl">
           O que fazemos
         </h2>
 
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
-          <div className="group bg-g-dark-blue/40 hover:shadow-g-dark-blue/20 rounded-lg p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-            <div className="text-g-light-blue mb-4 transition-transform duration-300">
+          <div className="group bg-primary/40 rounded-lg p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div className="text-accent-light mb-4 transition-transform duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-10 w-10"
@@ -26,17 +26,17 @@ export const ServicesSection = () => {
                 />
               </svg>
             </div>
-            <h3 className="group-hover:text-g-light-blue mb-3 text-lg font-bold text-white transition-colors duration-300 md:text-xl">
+            <h3 className="group-hover:text-accent-light mb-3 text-lg font-bold text-white transition-colors duration-300 md:text-xl">
               Websites & Landing Pages
             </h3>
-            <p className="text-g-light text-sm leading-relaxed md:text-base">
+            <p className="text-sm leading-relaxed text-gray-200 md:text-base">
               Criação de sites profissionais e páginas de alta conversão com
               design moderno e experiência do usuário excepcional.
             </p>
           </div>
 
-          <div className="group bg-g-dark-blue/40 hover:shadow-g-dark-blue/20 rounded-lg p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-            <div className="text-g-light-blue mb-4 transition-transform duration-300">
+          <div className="group bg-primary/40 rounded-lg p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div className="text-accent-light mb-4 transition-transform duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-10 w-10"
@@ -52,17 +52,17 @@ export const ServicesSection = () => {
                 />
               </svg>
             </div>
-            <h3 className="group-hover:text-g-light-blue mb-3 text-lg font-bold text-white transition-colors duration-300 md:text-xl">
+            <h3 className="group-hover:text-accent-light mb-3 text-lg font-bold text-white transition-colors duration-300 md:text-xl">
               Projetos Especiais
             </h3>
-            <p className="text-g-light text-sm leading-relaxed md:text-base">
+            <p className="text-sm leading-relaxed text-gray-200 md:text-base">
               Desenvolvimento de projetos digitais únicos, desde plataformas
               customizadas até integrações e automações específicas.
             </p>
           </div>
 
-          <div className="group bg-g-dark-blue/40 hover:shadow-g-dark-blue/20 rounded-lg p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-            <div className="text-g-light-blue mb-4 transition-transform duration-300">
+          <div className="group bg-primary/40 rounded-lg p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div className="text-accent-light mb-4 transition-transform duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-10 w-10"
@@ -78,10 +78,10 @@ export const ServicesSection = () => {
                 />
               </svg>
             </div>
-            <h3 className="group-hover:text-g-light-blue mb-3 text-lg font-bold text-white transition-colors duration-300 md:text-xl">
+            <h3 className="group-hover:text-accent-light mb-3 text-lg font-bold text-white transition-colors duration-300 md:text-xl">
               Produtos Digitais
             </h3>
-            <p className="text-g-light text-sm leading-relaxed md:text-base">
+            <p className="text-sm leading-relaxed text-gray-200 md:text-base">
               Nossas soluções SaaS e produtos próprios que ajudam empresas a
               resolverem desafios específicos de forma eficiente.
             </p>

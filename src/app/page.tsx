@@ -11,14 +11,14 @@ import cardBackgroundTwo from '@/assets/images/card-background-2.png'
 
 export default function HubPage() {
   return (
-    <div className="flex min-h-screen flex-col text-white">
+    <div className="text-foreground flex min-h-screen flex-col">
       <header className="flex items-center justify-between p-6">
         <Link href="/">
           <Image src={logo} alt="Logo Guilherme Trindade" className="w-12" />
         </Link>
         <div className="flex items-center gap-2">
           <div className="text-right">
-            <h2 className="text-lg font-medium text-white">
+            <h2 className="text-foreground text-lg font-medium">
               Guilherme Trindade
             </h2>
             <p className="text-sm text-gray-400">Software Developer</p>
@@ -51,11 +51,10 @@ export default function HubPage() {
         </div>
       </main>
 
-      <footer className="text-g-light-gray py-8 text-center text-sm">
+      <footer className="text-muted-foreground py-8 text-center text-sm">
         <div className="container mx-auto px-4">
           <p>
-            © {new Date().getFullYear()} GTDEV Studio | CNPJ:
-            43.673.320/0001-15
+            © {new Date().getFullYear()} GTDEV Studio | CNPJ: 43.673.320/0001-15
           </p>
           <p className="mt-2">
             <Link

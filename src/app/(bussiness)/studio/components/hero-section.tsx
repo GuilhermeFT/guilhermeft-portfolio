@@ -10,11 +10,11 @@ export const HeroSection = () => {
 
       <div className="relative z-10 container mx-auto">
         <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-g-dark-blue mb-8 text-[2.5rem] leading-tight font-bold md:text-6xl lg:text-7xl">
+          <h1 className="text-foreground mb-8 text-[2.5rem] leading-tight font-bold md:text-6xl lg:text-7xl">
             Tecnologia e inovação{' '}
             <span className="gradient-text">para seu negócio</span> evoluir
           </h1>
-          <p className="text-g-medium-gray mx-auto mb-10 max-w-2xl text-lg md:text-xl">
+          <p className="text-muted-foreground mx-auto mb-10 max-w-2xl text-lg md:text-xl">
             De landing pages impactantes a produtos inovadores, desenvolvemos
             soluções que transformam ideias em realidade e criam experiências
             digitais memoráveis
@@ -22,13 +22,13 @@ export const HeroSection = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="#contact"
-              className="bg-g-blue hover:bg-g-dark-blue rounded-full px-6 py-3 text-base font-medium text-white transition-all md:text-lg"
+              className="bg-accent hover:bg-primary rounded-full px-6 py-3 text-base font-medium text-white transition-all md:text-lg"
             >
               Iniciar Projeto →
             </Link>
             <Link
               href="#process"
-              className="border-g-medium-gray text-g-medium-gray hover:bg-g-light rounded-full border bg-white px-6 py-3 text-base font-medium transition-all md:text-lg"
+              className="border-border text-muted-foreground hover:bg-muted rounded-full border bg-white px-6 py-3 text-base font-medium transition-all md:text-lg"
             >
               Conheça nossas soluções
             </Link>

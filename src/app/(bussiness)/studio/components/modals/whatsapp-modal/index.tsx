@@ -41,12 +41,12 @@ export function WhatsAppModal({ whatsappNumber }: WhatsAppModalProps) {
         </svg>
         Contato via WhatsApp
       </DialogTrigger>
-      <DialogContent className="bg-g-background border-g-dark-gray text-white">
+      <DialogContent className="bg-background border-border text-foreground">
         <DialogHeader>
-          <DialogTitle className="text-xl font-bold text-white">
+          <DialogTitle className="text-foreground text-xl font-bold">
             Contato via WhatsApp
           </DialogTitle>
-          <DialogDescription className="text-g-light-gray">
+          <DialogDescription className="text-muted-foreground">
             Preencha seus dados para prosseguir com o contato
           </DialogDescription>
         </DialogHeader>
