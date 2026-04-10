@@ -14,20 +14,21 @@ export const Section = ({
   id,
   disableAnimation,
 }: SectionProps) => {
-  const initial = {
-    opacity: 0,
-    y: 100,
-  }
-
   return (
     <motion.section
+      id={id}
+      initial={disableAnimation ? undefined : { opacity: 0, y: 30 }}
+      whileInView={disableAnimation ? undefined : { opacity: 1, y: 0 }}
       viewport={
         disableAnimation
           ? undefined
           : { margin: '100px', once: true, amount: 0.2 }
       }
-      initial={disableAnimation ? undefined : initial}
-      id={id}
+      transition={
+        disableAnimation
+          ? undefined
+          : { duration: 0.7, ease: [0.3, 0, 0.5, 1] }
+      }
       className={twMerge('px-2', className)}
     >
       {children}

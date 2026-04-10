@@ -1,6 +1,5 @@
 import { FloatToggleMenu } from '@/components/float-toggle-menu'
 import { Footer } from './components/footer'
-import { Header } from './components/header'
 import { MobileNavbar } from '@/app/(portfolio)/components/navbar/mobile-navbar'
 
 type TemplateProps = {
@@ -12,7 +11,6 @@ export default function PortfolioTemplate({ children }: TemplateProps) {
     <>
       <FloatToggleMenu />
       <MobileNavbar />
-      <Header />
       {children}
       <Footer />
     </>
