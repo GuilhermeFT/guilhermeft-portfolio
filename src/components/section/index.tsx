@@ -19,14 +19,6 @@ export const Section = ({
     y: 100,
   }
 
-  const anim = {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1,
-      ease: 'easeInOut',
-    },
-  }
   return (
     <motion.section
       viewport={
@@ -35,7 +27,6 @@ export const Section = ({
           : { margin: '100px', once: true, amount: 0.2 }
       }
       initial={disableAnimation ? undefined : initial}
-      whileInView={disableAnimation ? undefined : anim}
       id={id}
       className={twMerge('px-2', className)}
     >
