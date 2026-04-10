@@ -6,7 +6,7 @@ import { Header } from '@/components/header'
 import { ScrollToTop } from '@/components/scroll-to-top'
 
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Playfair_Display } from 'next/font/google'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -15,9 +15,16 @@ const inter = Inter({
   display: 'swap',
 })
 
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '700', '900'],
+  variable: '--font-playfair',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
-  title: 'Guilherme Trindade - Developer',
-  description: 'I am a Developer based in Brazil.',
+  title: 'Guilherme FT — Full-Stack Software Developer',
+  description: 'Full-Stack Software Developer based in Brazil.',
 }
 
 export default function RootLayout({
@@ -26,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body>
         <Header />
         {children}

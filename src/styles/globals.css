@@ -2,8 +2,9 @@
 
 /* ─── Design Tokens ──────────────────────────────────────────── */
 @theme {
-  /* Fonte */
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  /* Fontes */
+  --font-sans:    var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-playfair), Georgia, 'Times New Roman', serif;
 
   /* Cores brutas (watracz palette) */
   --color-darkest:   #0f141e;
@@ -46,6 +47,18 @@
   --color-overlay-dark-98:  color-mix(in srgb, #0f141e 98%, transparent);
   --color-overlay-white-95: color-mix(in srgb, #ffffff 95%, transparent);
 
+  /* ─── Editorial / Hero palette ──────────────────────────────── */
+  --color-editorial-bg:      #F5F5F3;  /* hero section background          */
+  --color-editorial-dark:    #0D0D0D;  /* hero H1 headline                 */
+  --color-editorial-ink:     #111111;  /* logo name, CTAs, menu trigger    */
+  --color-editorial-body:    #555555;  /* hero body paragraph text         */
+  --color-editorial-muted:   #888888;  /* logo subtitle, eyebrow, sep      */
+  --color-editorial-sep:     #AAAAAA;  /* "or" separator between CTAs      */
+  /* Frosted-glass header bg on scroll (semi-transparent editorial-bg)     */
+  --color-header-scrolled:   rgba(245, 245, 243, 0.92);
+  /* Ghost text stroke for bleed effect                                    */
+  --color-bleed-stroke:      rgba(0, 0, 0, 0.07);
+
   /* Border radius — estilo editorial (reto) */
   --radius:    0px;
   --radius-lg: 0px;
@@ -58,7 +71,7 @@
   --ease-watracz: cubic-bezier(0.3, 0, 0.5, 1);
 
   /* Header */
-  --header-height: 5.3125rem; /* 85px */
+  --header-height: 4.5rem; /* 72px */
 
   /* Container */
   --container-max: 1480px;
@@ -90,7 +103,7 @@
 }
 
 @utility gradient-text {
-  background: linear-gradient(to bottom left, var(--color-accent), #75bfff);
+  background: linear-gradient(to bottom left, var(--color-accent), var(--color-accent-light));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -101,6 +114,23 @@
   line-height: 1.04;
   font-weight: 800;
   letter-spacing: -0.01em;
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+@utility hero-bleed-text {
+  font-size: clamp(200px, 28vw, 380px);
+  font-weight: 900;
+  -webkit-text-stroke: 1px var(--color-bleed-stroke);
+  color: transparent;
+  font-family: var(--font-display);
+  line-height: 1;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: -0.02em;
 }
 
 /* ─── Base Layer ─────────────────────────────────────────────── */
@@ -121,8 +151,8 @@
 
   /* Seleção de texto */
   ::selection {
-    background-color: #878a8f;
-    color: #ffffff;
+    background-color: var(--color-gray-mid);
+    color: var(--color-white);
   }
 
   /* Scrollbar customizada */
