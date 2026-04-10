@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import { HeroSection } from '../components/hero-section'
 import { StackSection } from '../components/stack-section'
 import { SelectedProjects } from '../components/selected-projects'

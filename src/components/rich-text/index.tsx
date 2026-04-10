@@ -1,10 +1,22 @@
-export function RichText({
+import { convertLexicalToHTML, defaultHTMLConverters } from '@payloadcms/richtext-lexical/html'
+
+export async function RichText({
   content,
+  className,
 }: {
-  content: string | object | undefined
+  content: unknown
+  className?: string
 }) {
+  if (!content) return null
+
   if (typeof content === 'string') {
-    return <div dangerouslySetInnerHTML={{ __html: content }} />
+    return <div className={className} dangerouslySetInnerHTML={{ __html: content }} />
   }
-  return null
+
+  const html = await convertLexicalToHTML({
+    converters: defaultHTMLConverters,
+    data: content as Parameters<typeof convertLexicalToHTML>[0]['data'],
+  })
+
+  return <div className={className} dangerouslySetInnerHTML={{ __html: html }} />
 }
