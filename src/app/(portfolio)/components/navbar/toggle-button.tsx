@@ -12,14 +12,14 @@ export const ToggleButton = () => {
       <div className="relative flex h-3 w-full flex-col justify-between">
         <span
           className={twMerge(
-            'absolute top-0 h-0.5 w-full rounded-xl bg-white transition-all duration-500',
-            isOpen && 'top-1.5 -translate-y-1/2 -rotate-45',
+            'bg-foreground absolute top-0 h-0.5 w-full rounded-xl transition-all duration-500',
+            isOpen && 'top-1.5 -translate-y-1/2 -rotate-45 bg-white',
           )}
         />
         <span
           className={twMerge(
-            'absolute bottom-0 h-0.5 w-3/4 rounded-xl bg-white transition-all duration-500',
-            isOpen && 'bottom-1.5 w-full translate-y-1/2 rotate-45',
+            'bg-foreground absolute bottom-0 h-0.5 w-3/4 rounded-xl transition-all duration-500',
+            isOpen && 'bottom-1.5 w-full translate-y-1/2 rotate-45 bg-white',
           )}
         />
       </div>

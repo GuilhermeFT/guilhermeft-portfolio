@@ -14,9 +14,8 @@ export const RecentProjects = async () => {
       <div className="grid">
         <div className="container">
           <header className="grid gap-2">
-            <h3 className="gradient-text text-2xl font-normal uppercase md:text-4xl">
-              Trabalhos Recentes
-            </h3>
+            <h5>Portfólio</h5>
+            <h2>Trabalhos Recentes</h2>
           </header>
 
           <div className="mt-7 cursor-grab">
@@ -49,10 +48,8 @@ export const RecentProjects = async () => {
           </div>
         </div>
 
-        <Link href="#all-projects" className="mt-10 place-self-center text-lg">
-          <Button size="lg" className="cursor-pointer">
-            Ver todos os projetos
-          </Button>
+        <Link href="#all-projects" className="mt-10 place-self-center">
+          <Button variant="pill">Ver todos os projetos</Button>
         </Link>
       </div>
     </Section>

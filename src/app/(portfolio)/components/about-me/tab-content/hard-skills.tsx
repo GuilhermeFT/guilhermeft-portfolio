@@ -4,10 +4,10 @@ export const HardSkills = () => {
       <li className="ms-4 mb-6">
         <div className="bg-primary border-primary absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border" />
 
-        <span className="gradient-text mb-1 text-sm leading-none font-normal">
+        <span className="text-accent mb-1 text-sm leading-none font-normal">
           Desenvolvimento Front-end
         </span>
-        <h3 className="text-xl font-semibold text-white">
+        <h3 className="text-foreground text-xl font-semibold">
           React.js, Next.js & TypeScript
         </h3>
         <p className="text-muted-foreground mb-4 text-lg font-normal">
@@ -18,10 +18,10 @@ export const HardSkills = () => {
       <li className="ms-4 mb-6">
         <div className="bg-primary border-primary absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border" />
 
-        <span className="gradient-text mb-1 text-sm leading-none font-normal">
+        <span className="text-accent mb-1 text-sm leading-none font-normal">
           Desenvolvimento Mobile
         </span>
-        <h3 className="text-xl font-semibold text-white">
+        <h3 className="text-foreground text-xl font-semibold">
           React Native & Expo | Kotlin & Java (Android)
         </h3>
         <p className="text-muted-foreground text-lg font-normal">
@@ -32,10 +32,10 @@ export const HardSkills = () => {
       <li className="ms-4 mb-6">
         <div className="bg-primary border-primary absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border" />
 
-        <span className="gradient-text mb-1 text-sm leading-none font-normal">
+        <span className="text-accent mb-1 text-sm leading-none font-normal">
           Testes Automatizados
         </span>
-        <h3 className="text-xl font-semibold text-white">
+        <h3 className="text-foreground text-xl font-semibold">
           Jest, React Testing Library & Cypress
         </h3>
         <p className="text-muted-foreground text-lg font-normal">
@@ -46,10 +46,10 @@ export const HardSkills = () => {
       <li className="ms-4 mb-6">
         <div className="bg-primary border-primary absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border" />
 
-        <span className="gradient-text mb-1 text-sm leading-none font-normal">
+        <span className="text-accent mb-1 text-sm leading-none font-normal">
           DevOps
         </span>
-        <h3 className="text-xl font-semibold text-white">
+        <h3 className="text-foreground text-xl font-semibold">
           Docker, Git & GitHub Actions | Vercel | VPS
         </h3>
         <p className="text-muted-foreground text-lg font-normal">

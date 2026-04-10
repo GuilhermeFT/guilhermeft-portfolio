@@ -2,7 +2,7 @@
 import { Section } from '@/components/section'
 export const TextSection = () => {
   return (
-    <Section className="py-32 text-zinc-200">
+    <Section className="py-32">
       <div className="container flex flex-col gap-4 md:grid-cols-2">
         <div className="overflow-hidden">
           <h3 className="max-w-max text-3xl font-semibold md:text-4xl">

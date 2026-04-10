@@ -74,7 +74,7 @@ export const StackSection = () => {
           <TooltipWrapper key={item.label} text={item.label}>
             <button
               className={cn(
-                'm-4 cursor-grab text-[24vw] text-zinc-700 transition-all delay-100 ease-in-out hover:scale-105 md:text-[8vw]',
+                'text-gray-dark m-4 cursor-grab text-[24vw] transition-all delay-100 ease-in-out hover:scale-105 md:text-[8vw]',
                 item.className,
               )}
             >

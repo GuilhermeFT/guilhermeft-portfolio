@@ -26,7 +26,7 @@ export const MobileNavbar = () => {
   return (
     <motion.div
       className={cn(
-        'bg-overlay-dark-98 fixed top-0 left-0 z-10 flex h-dvh w-dvw items-center justify-center backdrop-blur-lg',
+        'bg-overlay-dark-98 fixed top-0 left-0 z-10 flex h-dvh w-dvw items-center justify-center',
       )}
       initial={{
         y: '-100%',
@@ -51,12 +51,12 @@ export const MobileNavbar = () => {
             bounce: 0,
             delay: isOpen ? 0.4 : 0,
           }}
-          className="text-center text-sm text-zinc-400 uppercase"
+          className="text-muted-foreground text-center text-sm uppercase"
         >
           Menu
         </motion.span>
 
-        <ul className="text-3xl font-bold md:text-5xl">
+        <ul className="text-3xl font-extrabold md:text-5xl">
           <AnimatePresence>
             {isOpen &&
               navLinks.map((path, i) => (
@@ -92,8 +92,8 @@ export const MobileNavbar = () => {
                   >
                     <span
                       className={twMerge(
-                        'text-white',
-                        pathname === path.href && 'text-accent',
+                        'text-gray-mid transition-colors hover:text-white',
+                        pathname === path.href && 'text-white',
                       )}
                     >
                       {path.label}

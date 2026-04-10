@@ -35,7 +35,7 @@ export const Header = () => {
           },
         }
       }
-      className="absolute z-10 flex h-20 w-full flex-col items-center justify-center gap-2 px-4 pt-6"
+      className="bg-overlay-white-95 fixed top-0 z-20 flex h-20 w-full flex-col items-center justify-center gap-2 px-4 pt-6 backdrop-blur-sm"
     >
       <div className="container flex w-full items-center justify-between">
         <Link className="flex w-max" href="/">

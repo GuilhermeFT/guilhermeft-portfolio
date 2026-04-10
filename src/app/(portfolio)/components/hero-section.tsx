@@ -12,28 +12,12 @@ export const HeroSection = () => {
   }
 
   const scope = useAnimationTimeline([
+    [['h5', { opacity: 1, y: [20, 0] }, { duration: 0.8, delay: 0.2 }]],
     [
-      [
-        'h1',
-        { opacity: 1 },
-        {
-          duration: 1.2,
-        },
-      ],
+      ['h1', { opacity: 1 }, { duration: 1.2 }],
       ['h1', { scale: [0.2, 1] }, { duration: 1.5, ease: 'circOut' }],
     ],
-    [
-      [
-        'h6:first-of-type',
-        { opacity: 1, y: [50, 0], scale: [1] },
-        { duration: 0.8, delay: 0.2 },
-      ],
-      [
-        'h6:last-of-type',
-        { opacity: [0, 1], y: [-50, 0], scale: [1] },
-        { duration: 0.8, delay: 0.25 },
-      ],
-    ],
+    [['h3', { opacity: [0, 1], y: [20, 0] }, { duration: 0.8, delay: 0.2 }]],
     [
       'div > div',
       { opacity: 1 },
@@ -48,31 +32,23 @@ export const HeroSection = () => {
       <div className="relative container flex flex-col items-center justify-center">
         <div
           ref={scope}
-          className="flex w-full flex-1 flex-col items-center justify-center gap-4 text-center"
+          className="flex w-full flex-1 flex-col items-center justify-center gap-6 text-center"
         >
-          <h6 className="gradient-text flex items-center gap-2 text-base uppercase opacity-0 md:text-lg">
-            Olá, eu sou
-          </h6>
+          <h5 className="opacity-0">Software Developer</h5>
 
-          <h1 className="mb-4 flex items-center gap-2 text-5xl font-extralight tracking-widest opacity-0 md:text-7xl">
-            Guilherme Trindade
-          </h1>
+          <h1 className="h1-large mb-2 opacity-0">Guilherme Trindade</h1>
 
-          <h6 className="gradient-text mb-10 text-base uppercase opacity-0 md:text-lg">
-            Software Developer
-          </h6>
+          <h3 className="text-muted-foreground font-medium opacity-0">
+            Construindo interfaces e experiências que fazem a diferença.
+          </h3>
 
-          <div className="grid w-full max-w-96 gap-4 opacity-0 sm:grid-cols-2">
-            <Button
-              size="lg"
-              className="cursor-pointer"
-              onClick={handleDownload}
-            >
-              Resume
+          <div className="mt-4 grid w-full max-w-sm gap-4 opacity-0 sm:grid-cols-2">
+            <Button variant="pill" onClick={handleDownload}>
+              Currículo
             </Button>
             <Link href="/#all-projects">
-              <Button size="lg" variant="outline" className="cursor-pointer">
-                See Projects
+              <Button variant="pill-outline" className="w-full">
+                Ver Projetos
               </Button>
             </Link>
           </div>

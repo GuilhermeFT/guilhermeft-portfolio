@@ -11,12 +11,8 @@ export const AllProjects = async () => {
     <Section className="py-24" id="all-projects">
       <div className="container">
         <header className="grid gap-2">
-          <span className="text-sm text-zinc-400 uppercase md:text-lg">
-            Veja todos os meus projetos
-          </span>
-          <h3 className="gradient-text text-2xl font-normal uppercase md:text-4xl">
-            Todos os Projetos
-          </h3>
+          <h5>Portfólio</h5>
+          <h2>Todos os Projetos</h2>
         </header>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">

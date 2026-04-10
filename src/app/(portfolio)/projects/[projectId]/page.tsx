@@ -22,7 +22,9 @@ export default async function Project(props: PageProps<ProjectProps>) {
     return (
       <main className="container max-w-7xl">
         <div className="flex min-h-dvh flex-col items-center justify-center">
-          <p className="text-lg text-zinc-400">Projeto não encontrado</p>
+          <p className="text-muted-foreground text-lg">
+            Projeto não encontrado
+          </p>
         </div>
       </main>
     )
@@ -36,7 +38,7 @@ export default async function Project(props: PageProps<ProjectProps>) {
     <main className="container max-w-7xl">
       <div className="flex min-h-dvh flex-col items-center justify-center gap-8 px-4">
         <div className="container flex flex-1 flex-col gap-2 pt-36 md:items-start">
-          <span className="block text-sm font-light text-zinc-400">
+          <span className="text-muted-foreground block text-sm font-light">
             {project?.yearStarted} — {project?.yearFinished}
           </span>
           <h1 className="h-17 [font-size:_clamp(2rem,13.25vw,3rem)] md:text-[3rem]">
@@ -47,11 +49,11 @@ export default async function Project(props: PageProps<ProjectProps>) {
             <ul className="flex flex-col gap-4">
               {hasProjectLink ? (
                 <li className="flex items-center gap-2">
-                  <strong className="text-gray-100">Link: </strong>
+                  <strong className="text-foreground">Link: </strong>
                   <Link
                     href={project.projectLink ?? '#'}
                     target="_blank"
-                    className="text-muted-foreground hover:text-accent-light underline transition-colors"
+                    className="text-muted-foreground hover:text-accent underline transition-colors"
                   >
                     {project.projectLink}
                   </Link>
@@ -60,11 +62,11 @@ export default async function Project(props: PageProps<ProjectProps>) {
 
               {hasRepoLink ? (
                 <li className="flex items-center gap-2">
-                  <strong className="text-gray-100">Repositório: </strong>
+                  <strong className="text-foreground">Repositório: </strong>
                   <Link
                     href={project.repositoryLink ?? '#'}
                     target="_blank"
-                    className="text-muted-foreground hover:text-accent-light underline transition-colors"
+                    className="text-muted-foreground hover:text-accent underline transition-colors"
                   >
                     {project.repositoryLink}
                   </Link>
@@ -73,12 +75,12 @@ export default async function Project(props: PageProps<ProjectProps>) {
 
               {hasTechStack ? (
                 <li className="flex gap-2">
-                  <strong className="text-gray-100">Tecnologias: </strong>
+                  <strong className="text-foreground">Tecnologias: </strong>
                   <div className="flex flex-wrap gap-2">
                     {project.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="hover:text-foreground hover:bg-muted flex cursor-pointer items-center justify-center rounded-lg bg-gray-900 px-2 py-1 text-sm text-white transition-colors"
+                        className="hover:text-foreground hover:bg-muted border-border bg-surface text-foreground flex cursor-pointer items-center justify-center border px-2 py-1 text-sm transition-colors"
                       >
                         {tech}
                       </span>

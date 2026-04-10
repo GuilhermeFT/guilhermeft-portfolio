@@ -1,13 +1,13 @@
 export const SoftSkills = () => {
   return (
-    <ol className="relative dark:border-gray-700">
+    <ol className="relative">
       <li className="ms-4 mb-6">
         <div className="bg-primary border-primary absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border" />
 
-        <span className="gradient-text mb-1 text-sm leading-none font-normal">
+        <span className="text-accent mb-1 text-sm leading-none font-normal">
           Liderança Técnica & Colaboração
         </span>
-        <h3 className="text-xl font-semibold text-white">
+        <h3 className="text-foreground text-xl font-semibold">
           Capacidade de liderar equipes e orientar desenvolvedores
         </h3>
         <p className="text-muted-foreground text-lg font-normal">
@@ -19,10 +19,10 @@ export const SoftSkills = () => {
       <li className="ms-4 mb-6">
         <div className="bg-primary border-primary absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border" />
 
-        <span className="gradient-text mb-1 text-sm leading-none font-normal">
+        <span className="text-accent mb-1 text-sm leading-none font-normal">
           Proatividade & Resolução de Problemas
         </span>
-        <h3 className="text-xl font-semibold text-white">
+        <h3 className="text-foreground text-xl font-semibold">
           Sempre em busca de otimização e inovação
         </h3>
         <p className="text-muted-foreground text-lg font-normal">
@@ -33,10 +33,10 @@ export const SoftSkills = () => {
       <li className="ms-4 mb-6">
         <div className="bg-primary border-primary absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border" />
 
-        <span className="gradient-text mb-1 text-sm leading-none font-normal">
+        <span className="text-accent mb-1 text-sm leading-none font-normal">
           Comunicação & Trabalho em Equipe
         </span>
-        <h3 className="text-xl font-semibold text-white">
+        <h3 className="text-foreground text-xl font-semibold">
           Habilidade de alinhar requisitos com stakeholders
         </h3>
         <p className="text-muted-foreground text-lg font-normal">
@@ -48,10 +48,10 @@ export const SoftSkills = () => {
       <li className="ms-4 mb-6">
         <div className="bg-primary border-primary absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border" />
 
-        <span className="gradient-text mb-1 text-sm leading-none font-normal">
+        <span className="text-accent mb-1 text-sm leading-none font-normal">
           Adaptabilidade & Aprendizado Contínuo
         </span>
-        <h3 className="text-xl font-semibold text-white">
+        <h3 className="text-foreground text-xl font-semibold">
           Acompanho as tendências do mercado
         </h3>
         <p className="text-muted-foreground text-lg font-normal">

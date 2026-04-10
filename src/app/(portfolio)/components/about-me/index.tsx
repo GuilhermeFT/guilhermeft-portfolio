@@ -6,9 +6,7 @@ export const AboutMe = () => {
   return (
     <Section id="about-me" className="min-h-dvh px-0 pt-8">
       <header className="border-border grid h-max gap-2 border-b py-6">
-        <h3 className="gradient-text text-center text-2xl font-normal uppercase md:text-4xl">
-          Sobre Mim
-        </h3>
+        <h2 className="text-center">Sobre Mim</h2>
       </header>
 
       <div className="container mx-auto grid gap-4 px-4 py-8">
