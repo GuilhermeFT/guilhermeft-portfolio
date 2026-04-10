@@ -4,11 +4,13 @@ import { Toaster } from '@/components/ui/sonner'
 import { Analytics } from '@vercel/analytics/next'
 
 import type { Metadata } from 'next'
-import { Montserrat } from 'next/font/google'
+import { Inter } from 'next/font/google'
 
-const montserrat = Montserrat({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+const inter = Inter({
   subsets: ['latin'],
+  weight: ['400', '500', '700', '800'],
+  variable: '--font-inter',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -22,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR">
-      <body className={montserrat.className}>
+    <html lang="pt-BR" className={inter.variable}>
+      <body>
         {children}
         <Toaster />
         <Analytics />

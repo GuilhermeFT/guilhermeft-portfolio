@@ -1,150 +1,210 @@
 @import 'tailwindcss';
-/*
-  ---break---
-*/
-@custom-variant dark (&:is(.dark *));
 
+/* ─── Design Tokens ──────────────────────────────────────────── */
 @theme {
+  /* Fonte */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Cores brutas (watracz palette) */
+  --color-darkest:   #0f141e;
+  --color-dark-alt:  #0e1322;
+  --color-gray-dark: #7a808c;
+  --color-gray-mid:  #878a8f;
+  --color-gray-300:  #ced2d9;
+  --color-gray-200:  #cfd0d2;
+  --color-gray-100:  #d5d5d7;
+  --color-surface:   #f3f3f5;
+  --color-surface-2: #f7f7f7;
+  --color-white:     #ffffff;
+  --color-accent:       #007aff;
+  --color-accent-light: #75bfff;
+  --color-error:        #ff5959;
+
+  /* Cores semânticas (mapeadas para shadcn/ui pattern) */
+  --color-background:           #ffffff;
+  --color-foreground:           #0f141e;
+  --color-muted:                #f3f3f5;
+  --color-muted-foreground:     #878a8f;
+  --color-border:               #e7e8e9;
+  --color-input:                #e7e8e9;
+  --color-ring:                 #0f141e;
+  --color-primary:              #0f141e;
+  --color-primary-foreground:   #ffffff;
+  --color-secondary:            #f3f3f5;
+  --color-secondary-foreground: #0f141e;
+  --color-destructive:          #ff5959;
+  --color-destructive-foreground: #ffffff;
+  --color-card:                 #ffffff;
+  --color-card-foreground:      #0f141e;
+  --color-popover:              #ffffff;
+  --color-popover-foreground:   #0f141e;
+
+  /* Overlays */
+  --color-overlay-dark-30:  color-mix(in srgb, #0f141e 30%, transparent);
+  --color-overlay-dark-90:  color-mix(in srgb, #0f141e 90%, transparent);
+  --color-overlay-dark-95:  color-mix(in srgb, #0f141e 95%, transparent);
+  --color-overlay-dark-98:  color-mix(in srgb, #0f141e 98%, transparent);
+  --color-overlay-white-95: color-mix(in srgb, #ffffff 95%, transparent);
+
+  /* Border radius — estilo editorial (reto) */
+  --radius:    0px;
+  --radius-lg: 0px;
+  --radius-md: 0px;
+  --radius-sm: 0px;
+  --radius-pill: 23px;
+
+  /* Easing */
+  --ease-default: cubic-bezier(0.3, 0, 0.5, 1);
+  --ease-watracz: cubic-bezier(0.3, 0, 0.5, 1);
+
+  /* Container */
+  --container-max: 1480px;
+  --container-px:  2.5rem;
+
+  /* Botão */
+  --btn-height: 46px;
+
+  /* Alturas customizadas legadas */
   --height-17: 4.25rem;
-
-  --color-g-background: #030917;
-
-  --color-g-light: #e9e5ff;
-
-  --color-g-blue: #1b6cff;
-  --color-g-light-blue: #75bfff;
-  --color-g-dark-blue: #11338c;
-
-  --color-g-light-gray: #8f9ba8;
-  --color-g-medium-gray: #394867;
-  --color-g-dark-gray: #212a3e;
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
-
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
-
-  --color-popover: hsl(var(--popover));
-  --color-popover-foreground: hsl(var(--popover-foreground));
-
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
-
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
-
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
-
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
-
-  --color-destructive: hsl(var(--destructive));
-  --color-destructive-foreground: hsl(var(--destructive-foreground));
-
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
-
-  --color-chart-1: hsl(var(--chart-1));
-  --color-chart-2: hsl(var(--chart-2));
-  --color-chart-3: hsl(var(--chart-3));
-  --color-chart-4: hsl(var(--chart-4));
-  --color-chart-5: hsl(var(--chart-5));
-
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
 }
 
-@utility container {
-  margin-inline: auto;
-}
-
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
+/* ─── Compatibilidade com bordas (Tailwind v4) ──────────────── */
 @layer base {
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+    border-color: var(--color-border);
   }
+}
+
+/* ─── Utilitários customizados ───────────────────────────────── */
+@utility container {
+  margin-inline: auto;
+  max-width: var(--container-max);
+  padding-inline: var(--container-px);
 }
 
 @utility gradient-text {
-  @apply from-g-blue to-g-light-blue bg-linear-to-bl bg-clip-text text-transparent;
+  background: linear-gradient(to bottom left, var(--color-accent), #75bfff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
+@utility h1-large {
+  font-size: clamp(3.875rem, 6vw, 4.5rem);
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+/* ─── Base Layer ─────────────────────────────────────────────── */
 @layer base {
   html {
-    @apply scroll-p-24 scroll-smooth;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
   }
 
   body {
-    @apply bg-g-background w-full text-white;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-weight: 500;
+    overflow-x: hidden;
+    line-height: 1.5625rem;
   }
 
+  /* Seleção de texto */
+  ::selection {
+    background-color: #878a8f;
+    color: #ffffff;
+  }
+
+  /* Scrollbar customizada */
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
   }
-
   ::-webkit-scrollbar-track {
-    @apply bg-g-background;
+    background: var(--color-surface);
   }
-
   ::-webkit-scrollbar-thumb {
-    @apply rounded-lg bg-zinc-800/75;
+    background: var(--color-gray-200);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gray-mid);
   }
 
-  :root {
-    --background: 224 71.4% 4.1%;
-    --foreground: 210 20% 98%;
-    --card: 224 71.4% 4.1%;
-    --card-foreground: 210 20% 98%;
-    --popover: 224 71.4% 4.1%;
-    --popover-foreground: 210 20% 98%;
-    --primary: 219 100% 55.3%;
-    --primary-foreground: 210 20% 98%;
-    --secondary: 223 78.3% 30.8%;
-    --secondary-foreground: 210 20% 98%;
-    --muted: 223 78.3% 30.8%;
-    --muted-foreground: 217.9 10.6% 64.9%;
-    --accent: 223 78.3% 30.8%;
-    --accent-foreground: 210 20% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 223 78.3% 30.8%;
-    --input: 223 78.3% 30.8%;
-    --ring: 219 100% 55.3%;
-    --radius: 0.8rem;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
   }
-}
 
-/*
-  ---break---
-*/
+  h1 {
+    font-size: clamp(2.125rem, 4vw, 2.75rem);
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--color-foreground);
+  }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50 scroll-smooth;
+  h2 {
+    font-size: clamp(1.75rem, 3vw, 2rem);
+    line-height: 1.25;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--color-foreground);
   }
-  body {
-    @apply bg-background text-foreground overflow-x-hidden;
+
+  h3 {
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    line-height: 1.36;
+    font-weight: 800;
+    color: var(--color-foreground);
   }
+
+  h4 {
+    font-size: 1.125rem;
+    line-height: 1.5625rem;
+    font-weight: 800;
+    color: var(--color-foreground);
+  }
+
+  h5 {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    color: var(--color-muted-foreground);
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5625rem;
+    font-weight: 500;
+    color: var(--color-foreground);
+  }
+
+  p.small, .text-small {
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s var(--ease-default);
+  }
+
   button {
-    @apply cursor-pointer;
+    cursor: pointer;
+  }
+
+  * {
+    outline-color: color-mix(in srgb, var(--color-ring) 50%, transparent);
   }
 }
