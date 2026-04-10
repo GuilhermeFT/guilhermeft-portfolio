@@ -51,7 +51,7 @@ export default async function Project(props: PageProps<ProjectProps>) {
                   <Link
                     href={project.projectLink ?? '#'}
                     target="_blank"
-                    className="text-g-light-gray hover:text-g-light-blue underline transition-colors"
+                    className="text-muted-foreground hover:text-accent-light underline transition-colors"
                   >
                     {project.projectLink}
                   </Link>
@@ -64,7 +64,7 @@ export default async function Project(props: PageProps<ProjectProps>) {
                   <Link
                     href={project.repositoryLink ?? '#'}
                     target="_blank"
-                    className="text-g-light-gray hover:text-g-light-blue underline transition-colors"
+                    className="text-muted-foreground hover:text-accent-light underline transition-colors"
                   >
                     {project.repositoryLink}
                   </Link>
@@ -78,7 +78,7 @@ export default async function Project(props: PageProps<ProjectProps>) {
                     {project.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="hover:text-g-dark-gray hover:bg-g-light-gray flex cursor-pointer items-center justify-center rounded-lg bg-gray-900 px-2 py-1 text-sm text-white transition-colors"
+                        className="hover:text-foreground hover:bg-muted flex cursor-pointer items-center justify-center rounded-lg bg-gray-900 px-2 py-1 text-sm text-white transition-colors"
                       >
                         {tech}
                       </span>

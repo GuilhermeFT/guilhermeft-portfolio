@@ -4,7 +4,7 @@ export const Footer = () => {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-g-dark-gray border-t py-4">
+    <footer className="border-border border-t py-4">
       <p className="text-center text-sm">
         © {year} - Código fonte disponível no{' '}
         <Link

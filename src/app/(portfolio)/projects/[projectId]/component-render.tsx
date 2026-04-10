@@ -9,9 +9,9 @@ export const richTextComponents = {
     <h3 className="mt-4 text-2xl font-medium text-zinc-300">{children}</h3>
   ),
   paragraph: ({ children }: { children: React.ReactNode }) => (
-    <p className="text-g-light-gray indent-10 text-lg">{children}</p>
+    <p className="text-muted-foreground indent-10 text-lg">{children}</p>
   ),
   listItem: ({ children }: { children: React.ReactNode }) => (
-    <li className="text-g-light-gray ml-4 list-disc">{children}</li>
+    <li className="text-muted-foreground ml-4 list-disc">{children}</li>
   ),
 }

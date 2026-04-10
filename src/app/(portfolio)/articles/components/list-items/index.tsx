@@ -10,7 +10,7 @@ export const ArticleListItems = async () => {
 
   if (!posts.success || !posts.data.length) {
     return (
-      <p className="text-g-light-gray text-center">Sem posts para exibir</p>
+      <p className="text-muted-foreground text-center">Sem posts para exibir</p>
     )
   }
 
@@ -28,7 +28,7 @@ export const ArticleListItems = async () => {
         >
           {post.created_at}
         </time>
-        <strong className="group-hover:text-g-blue text-xl font-normal transition-colors">
+        <strong className="group-hover:text-accent text-xl font-normal transition-colors">
           {post.title}
         </strong>
 

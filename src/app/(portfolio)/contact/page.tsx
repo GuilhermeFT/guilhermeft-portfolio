@@ -24,7 +24,7 @@ export default async function Contact() {
               target="_blank"
               rel="noreferrer"
             >
-              <p className="text-g-light-gray text-lg font-normal">
+              <p className="text-muted-foreground text-lg font-normal">
                 contato@guilhermeft.dev
               </p>
             </a>
@@ -34,7 +34,7 @@ export default async function Contact() {
               target="_blank"
               rel="noreferrer"
             >
-              <p className="text-g-light-gray text-lg font-normal">
+              <p className="text-muted-foreground text-lg font-normal">
                 guilhermetrind12@gmail.com
               </p>
             </a>
@@ -48,7 +48,7 @@ export default async function Contact() {
               target="_blank"
               rel="noreferrer"
             >
-              <p className="text-g-light-gray text-lg font-normal">
+              <p className="text-muted-foreground text-lg font-normal">
                 +55 (66) 99243-3225
               </p>
             </a>
@@ -63,7 +63,7 @@ export default async function Contact() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <p className="text-g-light-gray text-lg font-normal">
+                <p className="text-muted-foreground text-lg font-normal">
                   LinkedIn
                 </p>
               </a>
@@ -73,7 +73,9 @@ export default async function Contact() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <p className="text-g-light-gray text-lg font-normal">GitHub</p>
+                <p className="text-muted-foreground text-lg font-normal">
+                  GitHub
+                </p>
               </a>
             </div>
           </div>

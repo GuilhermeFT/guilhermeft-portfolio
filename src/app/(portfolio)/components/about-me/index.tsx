@@ -5,7 +5,7 @@ import { tabMenuItems } from './content'
 export const AboutMe = () => {
   return (
     <Section id="about-me" className="min-h-dvh px-0 pt-8">
-      <header className="border-g-dark-gray grid h-max gap-2 border-b py-6">
+      <header className="border-border grid h-max gap-2 border-b py-6">
         <h3 className="gradient-text text-center text-2xl font-normal uppercase md:text-4xl">
           Sobre Mim
         </h3>

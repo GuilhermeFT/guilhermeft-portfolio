@@ -9,7 +9,7 @@ export const ResumeSection = () => {
     <Section className="flex items-center bg-gray-950 py-16 md:py-32">
       <motion.div className="container grid gap-8">
         <motion.div
-          className="from-g-dark-blue grid w-full gap-2 bg-gradient-to-r to-transparent p-4 transition-transform delay-100 duration-700 ease-in-out hover:scale-105"
+          className="from-primary grid w-full gap-2 bg-gradient-to-r to-transparent p-4 transition-transform delay-100 duration-700 ease-in-out hover:scale-105"
           viewport={{
             margin: '100px',
             once: true,
@@ -35,7 +35,7 @@ export const ResumeSection = () => {
         </motion.div>
 
         <motion.div
-          className="from-g-dark-gray grid w-full justify-end gap-2 place-self-end bg-gradient-to-l to-transparent p-4 transition-transform delay-100 duration-700 ease-in-out hover:scale-105"
+          className="from-muted grid w-full justify-end gap-2 place-self-end bg-gradient-to-l to-transparent p-4 transition-transform delay-100 duration-700 ease-in-out hover:scale-105"
           viewport={{
             margin: '100px',
             once: true,

@@ -11,14 +11,14 @@ export const DesktopNavbar = () => {
     <nav className="hidden gap-8 md:flex">
       {navLinks.map(({ href, label }) =>
         href === pathname ? (
-          <span key={label} className="text-g-light-blue font-light">
+          <span key={label} className="text-accent-light font-light">
             {label}
           </span>
         ) : (
           <Link
             key={href}
             href={href}
-            className="hover:text-g-light-gray font-light text-zinc-300 transition-colors"
+            className="hover:text-muted-foreground text-muted-foreground/60 font-light transition-colors"
           >
             {label}
           </Link>

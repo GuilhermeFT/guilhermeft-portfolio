@@ -26,7 +26,7 @@ export const MobileNavbar = () => {
   return (
     <motion.div
       className={cn(
-        'bg-g-dark-blue fixed top-0 left-0 z-10 flex h-dvh w-dvw items-center justify-center backdrop-blur-lg',
+        'bg-overlay-dark-98 fixed top-0 left-0 z-10 flex h-dvh w-dvw items-center justify-center backdrop-blur-lg',
       )}
       initial={{
         y: '-100%',
@@ -93,7 +93,7 @@ export const MobileNavbar = () => {
                     <span
                       className={twMerge(
                         'text-white',
-                        pathname === path.href && 'text-g-blue',
+                        pathname === path.href && 'text-accent',
                       )}
                     >
                       {path.label}
