@@ -41,7 +41,7 @@ export function LogoLockup({ inverted = false, onLinkClick }: LogoLockupProps) {
       {/* Name block */}
       <div className="flex flex-col">
         <span
-          className="font-display text-[17px] leading-[1.1] font-[700] tracking-[0.01em]"
+          className="font-display text-[20px] leading-[1.1] font-[700] tracking-[0.01em]"
           style={{
             color: inverted
               ? 'var(--color-white)'
@@ -51,7 +51,7 @@ export function LogoLockup({ inverted = false, onLinkClick }: LogoLockupProps) {
           Guilherme FT
         </span>
         <span
-          className="mt-[3px] hidden text-[9.5px] leading-[1] font-[400] tracking-[0.18em] uppercase md:block"
+          className="mt-[3px] hidden text-[11px] leading-[1] font-[400] tracking-[0.18em] uppercase md:block"
           style={{
             color: inverted
               ? 'var(--color-gray-mid)'

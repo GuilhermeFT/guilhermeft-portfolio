@@ -56,7 +56,7 @@ export function NavOverlay({ isOpen, onClose }: NavOverlayProps) {
       initial="closed"
       animate={isOpen ? 'open' : 'closed'}
       variants={overlayVariants}
-      className="bg-darkest fixed inset-x-0 top-0 z-25 overflow-hidden"
+      className="bg-darkest fixed inset-x-0 top-0 z-[200] overflow-hidden"
       aria-hidden={!isOpen}
     >
       {/* Top bar — logo left, close right */}
@@ -103,7 +103,7 @@ export function NavOverlay({ isOpen, onClose }: NavOverlayProps) {
               <Link
                 href={item.href}
                 onClick={onClose}
-                className="text-gray-mid block text-[2.125rem] leading-[2.8125rem] font-[800] tracking-[-0.01em] transition-colors duration-200 hover:text-white"
+                className="text-gray-mid block text-5xl leading-tight font-[800] tracking-[-0.01em] transition-colors duration-200 hover:text-white md:text-6xl lg:text-7xl"
               >
                 {item.label}
               </Link>

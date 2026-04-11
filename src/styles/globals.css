@@ -1,66 +1,64 @@
 @import 'tailwindcss';
 
 /* ─── Design Tokens ──────────────────────────────────────────── */
-@theme {
+@theme inline {
   /* Fontes */
-  --font-sans:    var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-playfair), Georgia, 'Times New Roman', serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
   /* Cores brutas (watracz palette) */
-  --color-darkest:   #0f141e;
-  --color-dark-alt:  #0e1322;
+  --color-darkest: #0f141e;
+  --color-dark-alt: #0e1322;
   --color-gray-dark: #7a808c;
-  --color-gray-mid:  #878a8f;
-  --color-gray-300:  #ced2d9;
-  --color-gray-200:  #cfd0d2;
-  --color-gray-100:  #d5d5d7;
-  --color-surface:   #f3f3f5;
+  --color-gray-mid: #878a8f;
+  --color-gray-300: #ced2d9;
+  --color-gray-200: #cfd0d2;
+  --color-gray-100: #d5d5d7;
+  --color-surface: #f3f3f5;
   --color-surface-2: #f7f7f7;
-  --color-white:     #ffffff;
-  --color-accent:       #007aff;
+  --color-white: #ffffff;
+  --color-accent: #007aff;
   --color-accent-light: #75bfff;
-  --color-error:        #ff5959;
+  --color-error: #ff5959;
 
   /* Cores semânticas (mapeadas para shadcn/ui pattern) */
-  --color-background:           #ffffff;
-  --color-foreground:           #0f141e;
-  --color-muted:                #f3f3f5;
-  --color-muted-foreground:     #878a8f;
-  --color-border:               #e7e8e9;
-  --color-input:                #e7e8e9;
-  --color-ring:                 #0f141e;
-  --color-primary:              #0f141e;
-  --color-primary-foreground:   #ffffff;
-  --color-secondary:            #f3f3f5;
+  --color-background: #ffffff;
+  --color-foreground: #0f141e;
+  --color-muted: #f3f3f5;
+  --color-muted-foreground: #878a8f;
+  --color-border: #e7e8e9;
+  --color-input: #e7e8e9;
+  --color-ring: #0f141e;
+  --color-primary: #0f141e;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f3f3f5;
   --color-secondary-foreground: #0f141e;
-  --color-destructive:          #ff5959;
+  --color-destructive: #ff5959;
   --color-destructive-foreground: #ffffff;
-  --color-card:                 #ffffff;
-  --color-card-foreground:      #0f141e;
-  --color-popover:              #ffffff;
-  --color-popover-foreground:   #0f141e;
+  --color-card: #ffffff;
+  --color-card-foreground: #0f141e;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #0f141e;
 
   /* Overlays */
-  --color-overlay-dark-30:  color-mix(in srgb, #0f141e 30%, transparent);
-  --color-overlay-dark-90:  color-mix(in srgb, #0f141e 90%, transparent);
-  --color-overlay-dark-95:  color-mix(in srgb, #0f141e 95%, transparent);
-  --color-overlay-dark-98:  color-mix(in srgb, #0f141e 98%, transparent);
+  --color-overlay-dark-30: color-mix(in srgb, #0f141e 30%, transparent);
+  --color-overlay-dark-90: color-mix(in srgb, #0f141e 90%, transparent);
+  --color-overlay-dark-95: color-mix(in srgb, #0f141e 95%, transparent);
+  --color-overlay-dark-98: color-mix(in srgb, #0f141e 98%, transparent);
   --color-overlay-white-95: color-mix(in srgb, #ffffff 95%, transparent);
 
   /* ─── Editorial / Hero palette ──────────────────────────────── */
-  --color-editorial-bg:      #F5F5F3;  /* hero section background          */
-  --color-editorial-dark:    #0D0D0D;  /* hero H1 headline                 */
-  --color-editorial-ink:     #111111;  /* logo name, CTAs, menu trigger    */
-  --color-editorial-body:    #555555;  /* hero body paragraph text         */
-  --color-editorial-muted:   #888888;  /* logo subtitle, eyebrow, sep      */
-  --color-editorial-sep:     #AAAAAA;  /* "or" separator between CTAs      */
+  --color-editorial-bg: #ffffff; /* hero section background          */
+  --color-editorial-dark: #0d0d0d; /* hero H1 headline                 */
+  --color-editorial-ink: #111111; /* logo name, CTAs, menu trigger    */
+  --color-editorial-body: #555555; /* hero body paragraph text         */
+  --color-editorial-muted: #888888; /* logo subtitle, eyebrow, sep      */
+  --color-editorial-sep: #aaaaaa; /* "or" separator between CTAs      */
   /* Frosted-glass header bg on scroll (semi-transparent editorial-bg)     */
-  --color-header-scrolled:   rgba(245, 245, 243, 0.92);
-  /* Ghost text stroke for bleed effect                                    */
-  --color-bleed-stroke:      rgba(0, 0, 0, 0.07);
+  --color-header-scrolled: rgba(245, 245, 243, 0.92);
 
   /* Border radius — estilo editorial (reto) */
-  --radius:    0px;
+  --radius: 0px;
   --radius-lg: 0px;
   --radius-md: 0px;
   --radius-sm: 0px;
@@ -75,7 +73,7 @@
 
   /* Container */
   --container-max: 1480px;
-  --container-px:  2.5rem;
+  --container-px: 2.5rem;
 
   /* Botão */
   --btn-height: 46px;
@@ -103,7 +101,11 @@
 }
 
 @utility gradient-text {
-  background: linear-gradient(to bottom left, var(--color-accent), var(--color-accent-light));
+  background: linear-gradient(
+    to bottom left,
+    var(--color-accent),
+    var(--color-accent-light)
+  );
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -118,19 +120,6 @@
 
 @utility font-display {
   font-family: var(--font-display);
-}
-
-@utility hero-bleed-text {
-  font-size: clamp(200px, 28vw, 380px);
-  font-weight: 900;
-  -webkit-text-stroke: 1px var(--color-bleed-stroke);
-  color: transparent;
-  font-family: var(--font-display);
-  line-height: 1;
-  white-space: nowrap;
-  user-select: none;
-  pointer-events: none;
-  letter-spacing: -0.02em;
 }
 
 /* ─── Base Layer ─────────────────────────────────────────────── */
@@ -171,7 +160,12 @@
   }
 
   /* Headings */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-sans);
   }
 
@@ -220,7 +214,8 @@
     color: var(--color-foreground);
   }
 
-  p.small, .text-small {
+  p.small,
+  .text-small {
     font-size: 0.8125rem;
     line-height: 1.25rem;
     font-weight: 400;
@@ -240,6 +235,22 @@
   * {
     outline-color: color-mix(in srgb, var(--color-ring) 50%, transparent);
   }
+}
+
+/* ─── Hero bleed text — unlayered, highest cascade priority ─── */
+.hero-bleed-text {
+  font-size: clamp(100px, 23vw, 9999px);
+  font-weight: 800;
+  color: var(--color-editorial-bg);
+  text-shadow:
+    0 0 120px rgba(0, 0, 0, 0.06),
+    0 0 60px rgba(255, 0, 0, 0.008);
+  font-family: var(--font-display);
+  line-height: 1;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: -0.04em;
 }
 
 /* ─── Keyframes ──────────────────────────────────────────────── */

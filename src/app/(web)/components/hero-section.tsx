@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { Mail } from 'lucide-react'
 import { motion } from 'motion/react'
 import { ScrollIndicator } from '@/components/scroll-indicator'
 
@@ -28,14 +27,11 @@ const bleedIn = {
 
 export function HeroSection() {
   return (
-    <section
-      className="relative h-dvh min-h-[600px]"
-      style={{ background: 'var(--color-editorial-bg)' }}
-    >
-      {/* Bleed text — absolutely centered, overflows both viewport edges */}
+    <section className="bg-editorial-bg relative flex h-dvh min-h-150 overflow-hidden">
+      {/* Bleed text — absolute, starts at left edge, bleeds off-screen right */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-[45%] left-1/2 z-0 w-max -translate-x-1/2 -translate-y-1/2"
+        className="pointer-events-none absolute top-[28%] left-0 z-0 w-max -translate-y-1/2"
       >
         <motion.span
           className="hero-bleed-text"
@@ -43,72 +39,59 @@ export function HeroSection() {
           animate="visible"
           variants={bleedIn}
         >
-          developer
+          Software
         </motion.span>
       </div>
 
-      {/* Portrait placeholder — right 55%, full height, desktop only */}
+      {/* Portrait — absolute, anchored top-right, full section height.
+          Clips on the right at smaller viewports (overflow-hidden on section). */}
       <div
         aria-hidden
-        className="absolute top-0 right-0 z-[1] hidden h-full w-[55%] md:block"
+        className="pointer-events-none absolute top-0 right-0 z-1 h-full translate-x-[clamp(0%,calc(75%*(768px-100vw)/378px),75%)] md:right-[8vw] xl:right-[14vw]"
       >
-        {/*
-          Replace this div with:
-          <Image
-            src="/images/portrait.jpg"
-            fill
-            alt=""
-            style={{ objectFit: 'cover', objectPosition: 'top center' }}
-          />
-          when portrait photo is available.
-        */}
-        <div
-          className="h-full w-full"
-          style={{ background: 'var(--color-surface)' }}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/picture.png"
+          alt=""
+          className="h-full w-auto max-w-none select-none"
+          draggable={false}
         />
       </div>
 
-      {/* Left content column */}
-      <div className="absolute top-1/2 left-[8vw] z-10 max-w-[480px] -translate-y-1/2">
+      {/* Left content — flex child, stretches full height, content sits near bottom */}
+      <div className="relative z-10 flex max-w-3xl flex-col justify-end pr-6 pb-20 pl-[8vw] md:pr-0 xl:max-w-4xl">
         {/* Eyebrow */}
         <motion.p
-          className="mb-4 text-[11px] font-[500] tracking-[0.25em] uppercase"
-          style={{ color: 'var(--color-editorial-muted)' }}
+          className="text-editorial-muted mb-4 text-xs font-medium tracking-[0.25em] uppercase"
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
           custom={0}
         >
-          GUILHERME FT
+          GUILHERME F. Trindade
         </motion.p>
 
         {/* H1 headline */}
         <motion.h1
-          className="font-display mb-0 text-[clamp(42px,5.5vw,72px)] leading-[1.05] font-[800] tracking-[-0.02em]"
-          style={{
-            color: 'var(--color-editorial-dark)',
-            fontFamily: 'var(--font-display)',
-          }}
+          className="font-display text-editorial-dark mb-0 text-5xl leading-[1.05] font-extrabold tracking-[-0.035em] md:text-6xl lg:text-7xl"
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
           custom={0.1}
         >
-          Full-Stack Software
-          <br />
-          Developer
+          Engenheiro de Software
         </motion.h1>
 
         {/* Bio paragraph */}
         <motion.p
-          className="mt-5 max-w-[420px] text-[15px] leading-[1.65]"
-          style={{ color: 'var(--color-editorial-body)' }}
+          className="text-editorial-body max-w-120 text-base leading-[1.65]"
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
           custom={0.2}
         >
-          Building interfaces and digital experiences that make a difference.
+          Transformo problemas complexos em soluções digitais simples — do
+          design ao código.
         </motion.p>
 
         {/* CTAs */}
@@ -121,42 +104,22 @@ export function HeroSection() {
         >
           <Link
             href="#projects"
-            className="text-sm font-[700] underline-offset-2 transition-all duration-150 hover:underline"
-            style={{ color: 'var(--color-editorial-ink)' }}
+            className="text-editorial-ink text-sm font-bold underline-offset-2 transition-all duration-150 hover:underline"
           >
-            View Projects
+            Ver Projetos
           </Link>
-          <span
-            className="text-sm"
-            style={{ color: 'var(--color-editorial-sep)' }}
-          >
-            or
-          </span>
+          <span className="text-editorial-sep text-sm">ou</span>
           <Link
             href="#about"
-            className="text-sm font-[700] underline-offset-2 transition-all duration-150 hover:underline"
-            style={{ color: 'var(--color-editorial-ink)' }}
+            className="text-editorial-ink text-sm font-bold underline-offset-2 transition-all duration-150 hover:underline"
           >
-            About Me
+            Sobre Mim
           </Link>
         </motion.div>
       </div>
 
       {/* Scroll indicator — bottom-center */}
       <ScrollIndicator />
-
-      {/* Floating email badge — fixed, persists across scroll */}
-      <a
-        href="mailto:guilhermeft.dev@gmail.com"
-        aria-label="Send email"
-        className="fixed bottom-8 left-8 z-[99] flex h-10 w-10 items-center justify-center rounded-full transition-transform duration-200 ease-out hover:scale-110"
-        style={{
-          background: 'var(--color-editorial-ink)',
-          color: 'var(--color-white)',
-        }}
-      >
-        <Mail size={16} />
-      </a>
     </section>
   )
 }
