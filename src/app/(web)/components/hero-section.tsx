@@ -43,60 +43,59 @@ export function HeroSection() {
         </motion.span>
       </div>
 
-      {/* Portrait — absolute, anchored top-right, full section height.
-          Clips on the right at smaller viewports (overflow-hidden on section). */}
+      {/* Portrait — absolute, anchored bottom-right, slides off-screen on smaller viewports. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-0 right-0 z-1 h-full translate-x-[clamp(0%,calc(75%*(768px-100vw)/378px),75%)] md:right-[8vw] xl:right-[14vw]"
+        className="pointer-events-none absolute bottom-0 right-0 z-1 flex h-full items-end translate-x-[clamp(0%,calc(75%*(768px-100vw)/378px),75%)] md:right-[8vw] xl:right-[14vw]"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/picture.png"
           alt=""
-          className="h-full w-auto max-w-none select-none"
+          className="h-[90%] w-auto max-w-none select-none"
           draggable={false}
         />
       </div>
 
       {/* Left content — flex child, stretches full height, content sits near bottom */}
-      <div className="relative z-10 flex max-w-3xl flex-col justify-end pr-6 pb-20 pl-[8vw] md:pr-0 xl:max-w-4xl">
+      <div className="relative z-10 flex max-w-[630px] flex-col justify-end pr-6 pb-20 pl-[8vw] md:pr-0">
         {/* Eyebrow */}
         <motion.p
-          className="text-editorial-muted mb-4 text-xs font-medium tracking-[0.25em] uppercase"
+          className="text-editorial-muted py-[5px] text-[14px] font-medium tracking-[0.4em] uppercase"
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
           custom={0}
         >
-          GUILHERME F. Trindade
+          GUILHERME FT
         </motion.p>
 
         {/* H1 headline */}
         <motion.h1
-          className="font-display text-editorial-dark mb-0 text-5xl leading-[1.05] font-extrabold tracking-[-0.035em] md:text-6xl lg:text-7xl"
+          className="font-display text-editorial-dark h1-large mb-0"
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
           custom={0.1}
         >
-          Engenheiro de Software
+          Consultoria e Desenvolvimento de Software
         </motion.h1>
 
         {/* Bio paragraph */}
         <motion.p
-          className="text-editorial-body max-w-120 text-base leading-[1.65]"
+          className="text-editorial-body mt-[20px] text-[22px] leading-[1.36] font-medium"
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
           custom={0.2}
         >
-          Transformo problemas complexos em soluções digitais simples — do
-          design ao código.
+          Ajudamos empresas a construir produtos digitais de alto impacto — com
+          estratégia, design e tecnologia.
         </motion.p>
 
         {/* CTAs */}
         <motion.div
-          className="mt-8 flex items-center gap-3"
+          className="mt-[20px] flex items-center gap-[15px]"
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
@@ -104,16 +103,16 @@ export function HeroSection() {
         >
           <Link
             href="#projects"
-            className="text-editorial-ink text-sm font-bold underline-offset-2 transition-all duration-150 hover:underline"
+            className="text-editorial-ink text-[18px] font-[800] underline-offset-2 transition-all duration-150 hover:underline"
           >
             Ver Projetos
           </Link>
-          <span className="text-editorial-sep text-sm">ou</span>
+          <span className="text-editorial-sep text-base font-medium">ou</span>
           <Link
-            href="#about"
-            className="text-editorial-ink text-sm font-bold underline-offset-2 transition-all duration-150 hover:underline"
+            href="#how-it-works"
+            className="text-editorial-ink text-[18px] font-[800] underline-offset-2 transition-all duration-150 hover:underline"
           >
-            Sobre Mim
+            Como Funciona
           </Link>
         </motion.div>
       </div>
