@@ -58,7 +58,7 @@ export function LogoLockup({ inverted = false, onLinkClick }: LogoLockupProps) {
               : 'var(--color-editorial-muted)',
           }}
         >
-          SOFTWARE DEVELOPER
+          CONSULTORIA & TECNOLOGIA
         </span>
       </div>
     </Link>

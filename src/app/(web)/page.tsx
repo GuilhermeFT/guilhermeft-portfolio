@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import { HeroSection } from './components/hero-section'
 
 export const metadata: Metadata = {
-  title: 'Guilherme FT — Full-Stack Software Developer',
-  description: 'Full-Stack Software Developer based in Brazil.',
+  title: 'Guilherme FT — Consultoria e Tecnologia',
+  description:
+    'Consultoria e desenvolvimento de software para empresas que querem crescer com tecnologia.',
 }
 
 export default function HomePage() {
