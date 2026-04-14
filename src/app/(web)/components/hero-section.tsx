@@ -58,7 +58,7 @@ export function HeroSection() {
       </div>
 
       {/* Left content — flex child, stretches full height, content sits near bottom */}
-      <div className="relative z-10 flex max-w-[630px] flex-col justify-end pr-6 pb-20 pl-[8vw] md:pr-0">
+      <div className="relative z-10 flex w-full max-w-[630px] flex-col justify-end pl-6 pr-6 pb-20 md:pl-[8vw] md:pr-0">
         {/* Eyebrow */}
         <motion.p
           className="text-editorial-muted py-[5px] text-[14px] font-medium tracking-[0.4em] uppercase"
@@ -72,7 +72,7 @@ export function HeroSection() {
 
         {/* H1 headline */}
         <motion.h1
-          className="font-display text-editorial-dark h1-large mb-0"
+          className="font-display text-editorial-dark mb-0 text-[clamp(2rem,9.5vw,2.75rem)] leading-[1.06] font-[800] tracking-[-0.01em] md:text-[clamp(3.875rem,6vw,4.5rem)] md:leading-[1.04]"
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
@@ -83,7 +83,7 @@ export function HeroSection() {
 
         {/* Bio paragraph */}
         <motion.p
-          className="text-editorial-body mt-[20px] text-[22px] leading-[1.36] font-medium"
+          className="text-editorial-body mt-[20px] text-[16px] leading-[1.5] font-medium md:text-[22px] md:leading-[1.36]"
           initial="hidden"
           animate="visible"
           variants={fadeInUp}

@@ -239,7 +239,7 @@
 
 /* ─── Hero bleed text — unlayered, highest cascade priority ─── */
 .hero-bleed-text {
-  font-size: clamp(100px, 23vw, 9999px);
+  font-size: clamp(60px, 23vw, 9999px);
   font-weight: 800;
   color: var(--color-editorial-bg);
   text-shadow:
