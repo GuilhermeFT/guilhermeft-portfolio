@@ -10,7 +10,7 @@ export function LogoLockup({ inverted = false, onLinkClick }: LogoLockupProps) {
     <Link
       href="/"
       onClick={onLinkClick}
-      className="flex items-center gap-[14px] no-underline"
+      className="flex items-center gap-[14px] no-underline transition-transform duration-200 hover:scale-105 motion-reduce:transition-none motion-reduce:hover:scale-100"
       style={{
         color: inverted ? 'var(--color-white)' : 'var(--color-editorial-ink)',
       }}
