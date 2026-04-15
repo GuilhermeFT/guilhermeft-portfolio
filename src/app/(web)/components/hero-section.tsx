@@ -98,7 +98,7 @@ export function HeroSection() {
       </motion.div>
 
       {/* Left content — flex child, stretches full height, content sits near bottom */}
-      <div className="relative z-10 flex w-full max-w-[630px] flex-col justify-end pl-6 pr-6 pb-20 md:pl-[8vw] md:pr-0">
+      <div className="relative z-10 flex w-full max-w-[760px] flex-col justify-end pl-6 pr-6 pb-20 md:pl-[8vw] md:pr-0">
         {/* Eyebrow */}
         <motion.p
           className="text-editorial-muted py-[5px] text-[14px] font-medium tracking-[0.4em] uppercase"
@@ -148,7 +148,7 @@ export function HeroSection() {
             className="inline-flex items-center px-6 text-[16px] font-[800] text-white transition-opacity duration-150 hover:opacity-90"
             style={{
               height: 'var(--btn-height)',
-              backgroundColor: 'var(--color-accent)',
+              backgroundColor: 'var(--color-editorial-dark)',
             }}
           >
             💬 Falar no WhatsApp
