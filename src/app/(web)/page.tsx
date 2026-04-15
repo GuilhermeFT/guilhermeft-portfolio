@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { HeroSection } from './components/hero-section'
+import { ServicesSection } from './components/services-section'
 
 export const metadata: Metadata = {
   title: 'Guilherme FT — Consultoria e Tecnologia',
@@ -11,6 +12,7 @@ export default function HomePage() {
   return (
     <main>
       <HeroSection />
+      <ServicesSection />
     </main>
   )
 }
