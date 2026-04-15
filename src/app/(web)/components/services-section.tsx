@@ -62,7 +62,7 @@ export function ServicesSection() {
           </h2>
         </motion.div>
 
-        {/* Cards grid */}
+        {/* Cards grid — gap-px + bg-border = hairline separators */}
         <div
           className="grid grid-cols-1 gap-px md:grid-cols-3"
           style={{ backgroundColor: 'var(--color-border)' }}
@@ -92,6 +92,7 @@ function ServiceCard({ service, index, shouldReduceMotion }: ServiceCardProps) {
 
   return (
     <motion.article
+      /* Scroll-in entry */
       initial={shouldReduceMotion ? undefined : { opacity: 0, y: 32 }}
       whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
@@ -99,69 +100,182 @@ function ServiceCard({ service, index, shouldReduceMotion }: ServiceCardProps) {
         shouldReduceMotion
           ? undefined
           : {
-              duration: 0.5,
+              duration: 0.55,
               delay: index * 0.1,
               ease: [0.22, 1, 0.36, 1],
             }
       }
-      className="group relative flex min-h-[400px] flex-col justify-between p-10"
+      /* Hover — propagates "hover" variant name to all motion children */
+      whileHover={shouldReduceMotion ? undefined : 'hover'}
+      className="relative flex min-h-[420px] flex-col justify-between overflow-hidden p-10"
       style={{ backgroundColor: 'var(--color-darkest)' }}
     >
-      {/* Top row: icon + service number */}
+      {/* ── Subtle bg highlight overlay ─────────────────────────── */}
+      <motion.div
+        aria-hidden
+        initial={{ opacity: 0 }}
+        variants={shouldReduceMotion ? undefined : { hover: { opacity: 1 } }}
+        transition={{ duration: 0.4 }}
+        className="pointer-events-none absolute inset-0"
+        style={{ backgroundColor: 'rgba(255,255,255,0.025)' }}
+      />
+
+      {/* ── Left accent bar — scaleY reveal from top ────────────── */}
+      <motion.span
+        aria-hidden
+        initial={{ scaleY: 0 }}
+        variants={
+          shouldReduceMotion
+            ? undefined
+            : {
+                hover: {
+                  scaleY: 1,
+                  transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
+                },
+              }
+        }
+        className="pointer-events-none absolute top-0 left-0 h-full w-[2px] origin-top"
+        style={{ backgroundColor: 'var(--color-accent)' }}
+      />
+
+      {/* ── Top row: icon + service number ──────────────────────── */}
       <div className="flex items-start justify-between">
-        <div
-          className="transition-colors duration-300"
-          style={{ color: 'var(--color-white)' }}
+        {/* Icon: scale + slight color shift to gray-dark on hover */}
+        <motion.div
+          initial={{ scale: 1, color: 'var(--color-white)' }}
+          variants={
+            shouldReduceMotion
+              ? undefined
+              : {
+                  hover: {
+                    scale: 1.18,
+                    color: 'var(--color-gray-300)',
+                    transition: {
+                      type: 'spring',
+                      stiffness: 380,
+                      damping: 22,
+                    },
+                  },
+                }
+          }
         >
-          <Icon
-            size={48}
-            strokeWidth={1.25}
-            className="transition-colors duration-300 group-hover:text-[color:var(--color-accent)]"
-          />
-        </div>
-        <span
-          className="text-sm font-[500] tracking-[0.1em] tabular-nums"
-          style={{ color: 'rgba(255,255,255,0.2)' }}
+          <Icon size={48} strokeWidth={1.25} />
+        </motion.div>
+
+        {/* Number: fade up in opacity */}
+        <motion.span
+          initial={{ opacity: 0.18 }}
+          variants={
+            shouldReduceMotion
+              ? undefined
+              : {
+                  hover: {
+                    opacity: 0.55,
+                    transition: { duration: 0.3 },
+                  },
+                }
+          }
+          className="text-sm font-[500] tracking-[0.12em] tabular-nums"
+          style={{ color: 'var(--color-gray-dark)' }}
         >
           {number}
-        </span>
+        </motion.span>
       </div>
 
-      {/* Bottom: title + description + cta */}
+      {/* ── Bottom: text block ───────────────────────────────────── */}
       <div>
-        <h3
+        {/* Title: slides right */}
+        <motion.h3
+          initial={{ x: 0 }}
+          variants={
+            shouldReduceMotion
+              ? undefined
+              : {
+                  hover: {
+                    x: 6,
+                    transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] },
+                  },
+                }
+          }
           className="mb-3 text-2xl leading-tight font-[800] tracking-[-0.01em]"
           style={{ color: 'var(--color-white)' }}
         >
           {title}
-        </h3>
-        <p
+        </motion.h3>
+
+        {/* Description: slides right with slight delay */}
+        <motion.p
+          initial={{ x: 0, opacity: 0.7 }}
+          variants={
+            shouldReduceMotion
+              ? undefined
+              : {
+                  hover: {
+                    x: 6,
+                    opacity: 1,
+                    transition: {
+                      duration: 0.3,
+                      delay: 0.04,
+                      ease: [0.22, 1, 0.36, 1],
+                    },
+                  },
+                }
+          }
           className="text-base leading-relaxed"
           style={{ color: 'var(--color-gray-mid)' }}
         >
           {description}
-        </p>
+        </motion.p>
 
+        {/* CTA */}
         <div className="mt-8">
           <span
-            className="relative inline-block text-sm font-[700] tracking-wide uppercase"
+            className="relative inline-flex items-center gap-1 text-sm font-[700] tracking-wide uppercase"
             style={{ color: 'var(--color-accent)' }}
           >
-            Saiba mais →
-            <span
-              className="absolute bottom-[-2px] left-0 block h-px w-0 transition-[width] duration-300 ease-in-out group-hover:w-full motion-reduce:transition-none"
-              style={{ backgroundColor: 'var(--color-accent)' }}
+            Saiba mais
+            {/* Arrow slides independently */}
+            <motion.span
+              initial={{ x: 0 }}
+              variants={
+                shouldReduceMotion
+                  ? undefined
+                  : {
+                      hover: {
+                        x: 5,
+                        transition: {
+                          duration: 0.25,
+                          ease: [0.22, 1, 0.36, 1],
+                        },
+                      },
+                    }
+              }
+            >
+              →
+            </motion.span>
+            {/* Underline grows */}
+            <motion.span
               aria-hidden
+              initial={{ width: '0%' }}
+              variants={
+                shouldReduceMotion
+                  ? undefined
+                  : {
+                      hover: {
+                        width: '100%',
+                        transition: {
+                          duration: 0.3,
+                          ease: [0.22, 1, 0.36, 1],
+                        },
+                      },
+                    }
+              }
+              className="absolute bottom-[-2px] left-0 block h-px"
+              style={{ backgroundColor: 'var(--color-accent)' }}
             />
           </span>
         </div>
       </div>
-
-      {/* Inset accent border on hover */}
-      <span
-        aria-hidden
-        className="pointer-events-none absolute inset-0 border border-transparent transition-colors duration-300 group-hover:border-[color:var(--color-accent)] motion-reduce:transition-none"
-      />
     </motion.article>
   )
 }
