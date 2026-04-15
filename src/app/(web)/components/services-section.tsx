@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 import { Code2, Globe, Bot } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
@@ -33,8 +34,16 @@ const services: {
   },
 ]
 
+/** Directional entry: left ← | bottom ↑ | right → */
+const entryVariants = [
+  { hidden: { opacity: 0, x: -60 }, visible: { opacity: 1, x: 0 } },
+  { hidden: { opacity: 0, y: 60 }, visible: { opacity: 1, y: 0 } },
+  { hidden: { opacity: 0, x: 60 }, visible: { opacity: 1, x: 0 } },
+] as const
+
 export function ServicesSection() {
   const shouldReduceMotion = useReducedMotion()
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
     <section id="services" className="py-24 md:py-32">
@@ -73,6 +82,9 @@ export function ServicesSection() {
               service={service}
               index={index}
               shouldReduceMotion={!!shouldReduceMotion}
+              isDimmed={hoveredIndex !== null && hoveredIndex !== index}
+              onHoverStart={() => setHoveredIndex(index)}
+              onHoverEnd={() => setHoveredIndex(null)}
             />
           ))}
         </div>
@@ -85,197 +97,248 @@ type ServiceCardProps = {
   service: (typeof services)[number]
   index: number
   shouldReduceMotion: boolean
+  isDimmed: boolean
+  onHoverStart: () => void
+  onHoverEnd: () => void
 }
 
-function ServiceCard({ service, index, shouldReduceMotion }: ServiceCardProps) {
+function ServiceCard({
+  service,
+  index,
+  shouldReduceMotion,
+  isDimmed,
+  onHoverStart,
+  onHoverEnd,
+}: ServiceCardProps) {
   const { Icon, number, title, description } = service
+  const entry = entryVariants[index]
 
   return (
-    <motion.article
-      /* Scroll-in entry */
-      initial={shouldReduceMotion ? undefined : { opacity: 0, y: 32 }}
-      whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={
+    /*
+     * Outer div owns the spotlight dimming effect independently from Framer's
+     * whileInView / whileHover — avoids any animate vs whileInView conflicts.
+     */
+    <div
+      style={
         shouldReduceMotion
           ? undefined
           : {
-              duration: 0.55,
-              delay: index * 0.1,
-              ease: [0.22, 1, 0.36, 1],
+              opacity: isDimmed ? 0.38 : 1,
+              transform: isDimmed ? 'scale(0.985)' : 'scale(1)',
+              transition: 'opacity 0.45s ease, transform 0.45s ease',
             }
       }
-      /* Hover — propagates "hover" variant name to all motion children */
-      whileHover={shouldReduceMotion ? undefined : 'hover'}
-      className="relative flex min-h-[420px] flex-col justify-between overflow-hidden p-10"
-      style={{ backgroundColor: 'var(--color-darkest)' }}
     >
-      {/* ── Subtle bg highlight overlay ─────────────────────────── */}
-      <motion.div
-        aria-hidden
-        initial={{ opacity: 0 }}
-        variants={shouldReduceMotion ? undefined : { hover: { opacity: 1 } }}
-        transition={{ duration: 0.4 }}
-        className="pointer-events-none absolute inset-0"
-        style={{ backgroundColor: 'rgba(255,255,255,0.025)' }}
-      />
-
-      {/* ── Left accent bar — scaleY reveal from top ────────────── */}
-      <motion.span
-        aria-hidden
-        initial={{ scaleY: 0 }}
-        variants={
+      <motion.article
+        /* Directional scroll-in entry */
+        initial={shouldReduceMotion ? undefined : entry.hidden}
+        whileInView={shouldReduceMotion ? undefined : entry.visible}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={
           shouldReduceMotion
             ? undefined
             : {
-                hover: {
-                  scaleY: 1,
-                  transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
-                },
+                duration: 0.6,
+                delay: index * 0.13,
+                ease: [0.22, 1, 0.36, 1],
               }
         }
-        className="pointer-events-none absolute top-0 left-0 h-full w-[2px] origin-top"
-        style={{ backgroundColor: 'var(--color-accent)' }}
-      />
-
-      {/* ── Top row: icon + service number ──────────────────────── */}
-      <div className="flex items-start justify-between">
-        {/* Icon: scale + slight color shift to gray-dark on hover */}
+        /* Hover — propagates "hover" variant name to all motion children */
+        whileHover={shouldReduceMotion ? undefined : 'hover'}
+        onHoverStart={onHoverStart}
+        onHoverEnd={onHoverEnd}
+        className="relative flex min-h-[420px] flex-col justify-between overflow-hidden p-10"
+        style={{ backgroundColor: 'var(--color-darkest)' }}
+      >
+        {/* ── Subtle bg highlight ──────────────────────────────── */}
         <motion.div
-          initial={{ scale: 1, color: 'var(--color-white)' }}
-          variants={
-            shouldReduceMotion
-              ? undefined
-              : {
-                  hover: {
-                    scale: 1.18,
-                    color: 'var(--color-gray-300)',
-                    transition: {
-                      type: 'spring',
-                      stiffness: 380,
-                      damping: 22,
-                    },
-                  },
-                }
-          }
-        >
-          <Icon size={48} strokeWidth={1.25} />
-        </motion.div>
+          aria-hidden
+          initial={{ opacity: 0 }}
+          variants={shouldReduceMotion ? undefined : { hover: { opacity: 1 } }}
+          transition={{ duration: 0.45 }}
+          className="pointer-events-none absolute inset-0"
+          style={{ backgroundColor: 'rgba(255,255,255,0.03)' }}
+        />
 
-        {/* Number: fade up in opacity */}
+        {/* ── Left accent bar — scaleY from top ───────────────── */}
         <motion.span
-          initial={{ opacity: 0.18 }}
+          aria-hidden
+          initial={{ scaleY: 0 }}
           variants={
             shouldReduceMotion
               ? undefined
               : {
                   hover: {
-                    opacity: 0.55,
-                    transition: { duration: 0.3 },
+                    scaleY: 1,
+                    transition: { duration: 0.38, ease: [0.22, 1, 0.36, 1] },
                   },
                 }
           }
-          className="text-sm font-[500] tracking-[0.12em] tabular-nums"
-          style={{ color: 'var(--color-gray-dark)' }}
+          className="pointer-events-none absolute top-0 left-0 h-full w-[2px] origin-top"
+          style={{ backgroundColor: 'var(--color-accent)' }}
+        />
+
+        {/* ── Ghost number — large decorative bg text ──────────── */}
+        <motion.span
+          aria-hidden
+          initial={{ opacity: 0, y: 16 }}
+          variants={
+            shouldReduceMotion
+              ? undefined
+              : {
+                  hover: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
+                  },
+                }
+          }
+          className="pointer-events-none absolute right-7 bottom-7 text-[128px] leading-none font-[900] tabular-nums select-none"
+          style={{ color: 'rgba(255,255,255,0.05)' }}
         >
           {number}
         </motion.span>
-      </div>
 
-      {/* ── Bottom: text block ───────────────────────────────────── */}
-      <div>
-        {/* Title: slides right */}
-        <motion.h3
-          initial={{ x: 0 }}
-          variants={
-            shouldReduceMotion
-              ? undefined
-              : {
-                  hover: {
-                    x: 6,
-                    transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] },
-                  },
-                }
-          }
-          className="mb-3 text-2xl leading-tight font-[800] tracking-[-0.01em]"
-          style={{ color: 'var(--color-white)' }}
-        >
-          {title}
-        </motion.h3>
-
-        {/* Description: slides right with slight delay */}
-        <motion.p
-          initial={{ x: 0, opacity: 0.7 }}
-          variants={
-            shouldReduceMotion
-              ? undefined
-              : {
-                  hover: {
-                    x: 6,
-                    opacity: 1,
-                    transition: {
-                      duration: 0.3,
-                      delay: 0.04,
-                      ease: [0.22, 1, 0.36, 1],
+        {/* ── Top row: icon + number ───────────────────────────── */}
+        <div className="flex items-start justify-between">
+          {/* Icon: spring scale + slight tilt + color to gray-300 */}
+          <motion.div
+            initial={{ scale: 1, rotate: 0, color: 'var(--color-white)' }}
+            variants={
+              shouldReduceMotion
+                ? undefined
+                : {
+                    hover: {
+                      scale: 1.22,
+                      rotate: -7,
+                      color: 'var(--color-gray-300)',
+                      transition: {
+                        type: 'spring',
+                        stiffness: 340,
+                        damping: 18,
+                      },
                     },
-                  },
-                }
-          }
-          className="text-base leading-relaxed"
-          style={{ color: 'var(--color-gray-mid)' }}
-        >
-          {description}
-        </motion.p>
-
-        {/* CTA */}
-        <div className="mt-8">
-          <span
-            className="relative inline-flex items-center gap-1 text-sm font-[700] tracking-wide uppercase"
-            style={{ color: 'var(--color-accent)' }}
+                  }
+            }
           >
-            Saiba mais
-            {/* Arrow slides independently */}
-            <motion.span
-              initial={{ x: 0 }}
-              variants={
-                shouldReduceMotion
-                  ? undefined
-                  : {
-                      hover: {
-                        x: 5,
-                        transition: {
-                          duration: 0.25,
-                          ease: [0.22, 1, 0.36, 1],
-                        },
-                      },
-                    }
-              }
-            >
-              →
-            </motion.span>
-            {/* Underline grows */}
-            <motion.span
-              aria-hidden
-              initial={{ width: '0%' }}
-              variants={
-                shouldReduceMotion
-                  ? undefined
-                  : {
-                      hover: {
-                        width: '100%',
-                        transition: {
-                          duration: 0.3,
-                          ease: [0.22, 1, 0.36, 1],
-                        },
-                      },
-                    }
-              }
-              className="absolute bottom-[-2px] left-0 block h-px"
-              style={{ backgroundColor: 'var(--color-accent)' }}
-            />
-          </span>
+            <Icon size={48} strokeWidth={1.25} />
+          </motion.div>
+
+          {/* Service number: fades in to gray-mid */}
+          <motion.span
+            initial={{ opacity: 0.18 }}
+            variants={
+              shouldReduceMotion
+                ? undefined
+                : {
+                    hover: {
+                      opacity: 0.65,
+                      transition: { duration: 0.3 },
+                    },
+                  }
+            }
+            className="text-sm font-[500] tracking-[0.12em] tabular-nums"
+            style={{ color: 'var(--color-gray-dark)' }}
+          >
+            {number}
+          </motion.span>
         </div>
-      </div>
-    </motion.article>
+
+        {/* ── Bottom text block ─────────────────────────────────── */}
+        <div>
+          {/* Title: slides right */}
+          <motion.h3
+            initial={{ x: 0 }}
+            variants={
+              shouldReduceMotion
+                ? undefined
+                : {
+                    hover: {
+                      x: 8,
+                      transition: { duration: 0.32, ease: [0.22, 1, 0.36, 1] },
+                    },
+                  }
+            }
+            className="mb-3 text-2xl leading-tight font-[800] tracking-[-0.01em]"
+            style={{ color: 'var(--color-white)' }}
+          >
+            {title}
+          </motion.h3>
+
+          {/* Description: slides right + brightens, slight delay */}
+          <motion.p
+            initial={{ x: 0, opacity: 0.65 }}
+            variants={
+              shouldReduceMotion
+                ? undefined
+                : {
+                    hover: {
+                      x: 8,
+                      opacity: 1,
+                      transition: {
+                        duration: 0.32,
+                        delay: 0.05,
+                        ease: [0.22, 1, 0.36, 1],
+                      },
+                    },
+                  }
+            }
+            className="text-base leading-relaxed"
+            style={{ color: 'var(--color-gray-mid)' }}
+          >
+            {description}
+          </motion.p>
+
+          {/* CTA */}
+          <div className="mt-8">
+            <span
+              className="relative inline-flex items-center gap-1 text-sm font-[700] tracking-wide uppercase"
+              style={{ color: 'var(--color-accent)' }}
+            >
+              Saiba mais
+              {/* Arrow slides right */}
+              <motion.span
+                initial={{ x: 0 }}
+                variants={
+                  shouldReduceMotion
+                    ? undefined
+                    : {
+                        hover: {
+                          x: 6,
+                          transition: {
+                            duration: 0.26,
+                            ease: [0.22, 1, 0.36, 1],
+                          },
+                        },
+                      }
+                }
+              >
+                →
+              </motion.span>
+              {/* Underline grows from left */}
+              <motion.span
+                aria-hidden
+                initial={{ width: '0%' }}
+                variants={
+                  shouldReduceMotion
+                    ? undefined
+                    : {
+                        hover: {
+                          width: '100%',
+                          transition: {
+                            duration: 0.32,
+                            ease: [0.22, 1, 0.36, 1],
+                          },
+                        },
+                      }
+                }
+                className="absolute bottom-[-2px] left-0 block h-px"
+                style={{ backgroundColor: 'var(--color-accent)' }}
+              />
+            </span>
+          </div>
+        </div>
+      </motion.article>
+    </div>
   )
 }
