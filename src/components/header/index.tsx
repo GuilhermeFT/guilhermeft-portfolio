@@ -37,11 +37,11 @@ export function Header() {
         <div className="flex h-[var(--header-height)] items-center justify-between px-6 md:px-10">
           <LogoLockup />
 
-          {/* MENU button */}
+          {/* MENU button — visible on all screen sizes */}
           <button
             onClick={() => setIsMenuOpen(true)}
-            className="flex cursor-pointer items-center gap-[10px] transition-opacity duration-200 hover:opacity-50"
-            aria-label="Open menu"
+            className="flex cursor-pointer items-center gap-[10px] transition-opacity duration-200 hover:opacity-50 motion-reduce:transition-none"
+            aria-label="Abrir menu"
           >
             <span
               className="text-[11px] font-[600] tracking-[0.2em] uppercase"
@@ -50,7 +50,7 @@ export function Header() {
               MENU
             </span>
             {/* Hamburger — 3 lines × 22px wide × 1.5px tall, 5px gap */}
-            <div className="relative h-[22px] w-[22px]">
+            <div className="relative h-[22px] w-[22px]" aria-hidden="true">
               <i
                 className="absolute top-[2px] right-0 left-0 block h-[1.5px]"
                 style={{ background: 'var(--color-editorial-ink)' }}
