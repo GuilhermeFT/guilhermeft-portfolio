@@ -1,46 +1,43 @@
 'use client'
 
-import { useRef } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
+import { Code2, Globe, Bot } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 
-const services = [
+const services: {
+  number: string
+  Icon: LucideIcon
+  title: string
+  description: string
+}[] = [
   {
-    icon: '🖥️',
+    number: '01',
+    Icon: Code2,
     title: 'Sistemas sob medida',
     description:
       'Da ideia ao deploy — sistemas que automatizam processos, centralizam dados e eliminam retrabalho no seu negócio.',
   },
   {
-    icon: '🌐',
+    number: '02',
+    Icon: Globe,
     title: 'Sites e Landing Pages',
     description:
       'Presença digital que converte. Do portfólio institucional à página de vendas focada em geração de leads.',
   },
   {
-    icon: '🤖',
+    number: '03',
+    Icon: Bot,
     title: 'Automações com IA',
     description:
       'Integração de inteligência artificial no seu fluxo de trabalho — atendimento, geração de documentos, análise de dados.',
   },
 ]
 
-const entryDirections = [
-  { hidden: { opacity: 0, x: -48 }, show: { opacity: 1, x: 0 } },
-  { hidden: { opacity: 0, y: 48 }, show: { opacity: 1, y: 0 } },
-  { hidden: { opacity: 0, x: 48 }, show: { opacity: 1, x: 0 } },
-] as const
-
 export function ServicesSection() {
   const shouldReduceMotion = useReducedMotion()
-  const sectionRef = useRef<HTMLElement>(null)
 
   return (
-    <section
-      id="services"
-      ref={sectionRef}
-      className="py-24 md:py-32"
-      style={{ backgroundColor: 'var(--color-darkest)' }}
-    >
+    <section id="services" className="py-24 md:py-32">
       <div className="container">
         {/* Section heading */}
         <motion.div
@@ -60,28 +57,24 @@ export function ServicesSection() {
           >
             Serviços
           </p>
-          <h2
-            className="text-3xl leading-tight font-[800] tracking-[-0.01em] md:text-4xl lg:text-5xl"
-            style={{ color: 'var(--color-white)' }}
-          >
+          <h2 className="text-3xl leading-tight font-[800] tracking-[-0.01em] md:text-4xl lg:text-5xl">
             O que eu entrego
           </h2>
         </motion.div>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {services.map((service, index) => {
-            const variant = entryDirections[index]
-
-            return (
-              <ServiceCard
-                key={service.title}
-                service={service}
-                variant={variant}
-                shouldReduceMotion={!!shouldReduceMotion}
-              />
-            )
-          })}
+        <div
+          className="grid grid-cols-1 gap-px md:grid-cols-3"
+          style={{ backgroundColor: 'var(--color-border)' }}
+        >
+          {services.map((service, index) => (
+            <ServiceCard
+              key={service.title}
+              service={service}
+              index={index}
+              shouldReduceMotion={!!shouldReduceMotion}
+            />
+          ))}
         </div>
       </div>
     </section>
@@ -90,102 +83,85 @@ export function ServicesSection() {
 
 type ServiceCardProps = {
   service: (typeof services)[number]
-  variant: (typeof entryDirections)[number]
+  index: number
   shouldReduceMotion: boolean
 }
 
-function ServiceCard({
-  service,
-  variant,
-  shouldReduceMotion,
-}: ServiceCardProps) {
+function ServiceCard({ service, index, shouldReduceMotion }: ServiceCardProps) {
+  const { Icon, number, title, description } = service
+
   return (
     <motion.article
-      variants={
-        shouldReduceMotion
-          ? undefined
-          : {
-              hidden: { ...variant.hidden },
-              show: {
-                ...variant.show,
-                transition: {
-                  duration: 0.5,
-                  ease: [0.22, 1, 0.36, 1] as const,
-                },
-              },
-            }
-      }
-      initial="hidden"
-      whileInView="show"
+      initial={shouldReduceMotion ? undefined : { opacity: 0, y: 32 }}
+      whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
-      whileHover={shouldReduceMotion ? undefined : { y: -6 }}
       transition={
         shouldReduceMotion
           ? undefined
-          : { type: 'spring', stiffness: 300, damping: 20 }
+          : {
+              duration: 0.5,
+              delay: index * 0.1,
+              ease: [0.22, 1, 0.36, 1],
+            }
       }
-      className="group flex flex-col gap-6 border p-8"
-      style={{
-        borderColor: 'rgba(255,255,255,0.08)',
-        backgroundColor: 'rgba(255,255,255,0.03)',
-      }}
-      onMouseEnter={(e) => {
-        if (shouldReduceMotion) return
-        const el = e.currentTarget
-        el.style.boxShadow = '0 16px 40px rgba(0,0,0,0.4)'
-        el.style.borderColor = 'var(--color-accent)'
-      }}
-      onMouseLeave={(e) => {
-        if (shouldReduceMotion) return
-        const el = e.currentTarget
-        el.style.boxShadow = 'none'
-        el.style.borderColor = 'rgba(255,255,255,0.08)'
-      }}
+      className="group relative flex min-h-[400px] flex-col justify-between p-10"
+      style={{ backgroundColor: 'var(--color-darkest)' }}
     >
-      {/* Icon */}
-      <motion.span
-        className="block text-5xl leading-none select-none md:text-6xl"
-        whileHover={shouldReduceMotion ? undefined : { scale: 1.15, rotate: 5 }}
-        transition={
-          shouldReduceMotion
-            ? undefined
-            : { type: 'spring', stiffness: 300, damping: 20 }
-        }
-        aria-hidden
-      >
-        {service.icon}
-      </motion.span>
-
-      {/* Text */}
-      <div className="flex flex-grow flex-col gap-3">
-        <h3
-          className="text-2xl leading-tight font-[800] tracking-[-0.01em]"
+      {/* Top row: icon + service number */}
+      <div className="flex items-start justify-between">
+        <div
+          className="transition-colors duration-300"
           style={{ color: 'var(--color-white)' }}
         >
-          {service.title}
+          <Icon
+            size={48}
+            strokeWidth={1.25}
+            className="transition-colors duration-300 group-hover:text-[color:var(--color-accent)]"
+          />
+        </div>
+        <span
+          className="text-sm font-[500] tracking-[0.1em] tabular-nums"
+          style={{ color: 'rgba(255,255,255,0.2)' }}
+        >
+          {number}
+        </span>
+      </div>
+
+      {/* Bottom: title + description + cta */}
+      <div>
+        <h3
+          className="mb-3 text-2xl leading-tight font-[800] tracking-[-0.01em]"
+          style={{ color: 'var(--color-white)' }}
+        >
+          {title}
         </h3>
         <p
           className="text-base leading-relaxed"
           style={{ color: 'var(--color-gray-mid)' }}
         >
-          {service.description}
+          {description}
         </p>
+
+        <div className="mt-8">
+          <span
+            className="relative inline-block text-sm font-[700] tracking-wide uppercase"
+            style={{ color: 'var(--color-accent)' }}
+          >
+            Saiba mais →
+            <span
+              className="absolute bottom-[-2px] left-0 block h-px w-0 transition-[width] duration-300 ease-in-out group-hover:w-full motion-reduce:transition-none"
+              style={{ backgroundColor: 'var(--color-accent)' }}
+              aria-hidden
+            />
+          </span>
+        </div>
       </div>
 
-      {/* "Saiba mais" link with animated underline */}
-      <div className="mt-auto pt-2">
-        <span
-          className="relative inline-block text-sm font-[700] tracking-wide uppercase"
-          style={{ color: 'var(--color-accent)' }}
-        >
-          Saiba mais →
-          <span
-            className="absolute bottom-[-2px] left-0 block h-px w-0 transition-[width] duration-300 ease-in-out group-hover:w-full motion-reduce:transition-none"
-            style={{ backgroundColor: 'var(--color-accent)' }}
-            aria-hidden
-          />
-        </span>
-      </div>
+      {/* Inset accent border on hover */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-0 border border-transparent transition-colors duration-300 group-hover:border-[color:var(--color-accent)] motion-reduce:transition-none"
+      />
     </motion.article>
   )
 }
