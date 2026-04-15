@@ -175,7 +175,7 @@ function ServiceCard({
                 }
           }
           className="pointer-events-none absolute top-0 left-0 h-full w-[2px] origin-top"
-          style={{ backgroundColor: 'var(--color-accent)' }}
+          style={{ backgroundColor: 'var(--color-gray-300)' }}
         />
 
         {/* ── Ghost number — large decorative bg text ──────────── */}
@@ -293,7 +293,7 @@ function ServiceCard({
           <div className="mt-8">
             <span
               className="relative inline-flex items-center gap-1 text-sm font-[700] tracking-wide uppercase"
-              style={{ color: 'var(--color-accent)' }}
+              style={{ color: 'var(--color-gray-300)' }}
             >
               Saiba mais
               {/* Arrow slides right */}
@@ -333,7 +333,7 @@ function ServiceCard({
                       }
                 }
                 className="absolute bottom-[-2px] left-0 block h-px"
-                style={{ backgroundColor: 'var(--color-accent)' }}
+                style={{ backgroundColor: 'var(--color-gray-300)' }}
               />
             </span>
           </div>
