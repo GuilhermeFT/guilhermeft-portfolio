@@ -3,13 +3,7 @@
 import Link from 'next/link'
 import { motion, useReducedMotion } from 'motion/react'
 import { LogoLockup } from '@/components/header/logo-lockup'
-
-const menuItems = [
-  { label: 'Projetos', href: '#projects' },
-  { label: 'Serviços', href: '#services' },
-  { label: 'Como Funciona', href: '#how-it-works' },
-  { label: 'Contato', href: '#contact' },
-]
+import { navLinks } from '@/utils/const'
 
 const overlayVariants = {
   closed: {
@@ -125,7 +119,7 @@ export function NavOverlay({ isOpen, onClose }: NavOverlayProps) {
           variants={prefersReducedMotion ? listVariantsReduced : listVariants}
           className="text-center"
         >
-          {menuItems.map((item) => (
+          {navLinks.map((item) => (
             <motion.li
               key={item.href}
               variants={
