@@ -6,6 +6,10 @@ export type Project = {
   slug: string
   name: string
   isHighlighted: boolean
+  category?: string | null
+  problem?: string | null
+  solution?: string | null
+  result?: string | null
   projectLink?: string | null
   repositoryLink?: string | null
   yearStarted?: number | null
@@ -28,6 +32,10 @@ function toProject(doc: any): Project {
     slug: doc.slug,
     name: doc.name,
     isHighlighted: doc.isHighlighted ?? false,
+    category: doc.category ?? null,
+    problem: doc.problem ?? null,
+    solution: doc.solution ?? null,
+    result: doc.result ?? null,
     projectLink: doc.projectLink ?? null,
     repositoryLink: doc.repositoryLink ?? null,
     yearStarted: doc.yearStarted ?? null,
