@@ -66,6 +66,31 @@ export const Projects: CollectionConfig = {
       defaultValue: false,
     },
     {
+      name: 'category',
+      type: 'select',
+      label: 'Categoria',
+      options: [
+        { label: 'Sistemas', value: 'Sistemas' },
+        { label: 'Web', value: 'Web' },
+        { label: 'Automação', value: 'Automação' },
+      ],
+    },
+    {
+      name: 'problem',
+      type: 'text',
+      label: 'Problema (resumo de 1 linha)',
+    },
+    {
+      name: 'solution',
+      type: 'textarea',
+      label: 'Solução (1–2 linhas)',
+    },
+    {
+      name: 'result',
+      type: 'text',
+      label: 'Resultado em destaque (ex: +40% conversão)',
+    },
+    {
       name: 'projectLink',
       type: 'text',
       label: 'Link do Projeto (URL)',
