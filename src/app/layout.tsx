@@ -3,6 +3,7 @@ import '@/styles/globals.css'
 import { Toaster } from '@/components/ui/sonner'
 import { Analytics } from '@vercel/analytics/next'
 import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
 import { ScrollToTop } from '@/components/scroll-to-top'
 
 import type { Metadata } from 'next'
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <Footer />
         <ScrollToTop />
         <Toaster />
         <Analytics />
