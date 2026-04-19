@@ -16,9 +16,13 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Guilherme FT — Consultoria e Tecnologia',
+  metadataBase: new URL('https://guilhermeft.dev'),
+  title: {
+    default: 'Guilherme FT | Engenheiro de Software & Desenvolvimento Sob Medida',
+    template: '%s | Guilherme FT',
+  },
   description:
-    'Consultoria e desenvolvimento de software para empresas que querem crescer com tecnologia.',
+    'Desenvolvimento de software sob medida para negócios que querem crescer. Transformo problemas reais em soluções digitais que funcionam. Conheça os projetos em guilhermeft.dev',
 }
 
 export default function RootLayout({
@@ -27,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="pt-BR" className={inter.variable}>
       <body>
         <Header />
         {children}
